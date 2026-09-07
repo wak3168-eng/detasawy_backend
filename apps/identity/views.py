@@ -100,8 +100,11 @@ def me(request):
 @api_view(["PUT"])
 @permission_classes([IsAuthenticated])
 def profile(request):
+    from apps.ref.services import capture_suggestions
+
     instance, _ = Profile.objects.get_or_create(user=request.user)
     serializer = ProfileSerializer(instance, data=request.data, partial=True)
     serializer.is_valid(raise_exception=True)
     serializer.save()
+    capture_suggestions(instance)
     return Response(serializer.data)

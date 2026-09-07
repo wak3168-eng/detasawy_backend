@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -77,6 +78,70 @@ class Tribe(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Suggestion(models.Model):
+    """Review queue for entries contributors add through the wizard's
+    "can't find it? add yours" flow."""
+
+    KIND_CHOICES = [
+        ("province", "province"),
+        ("district", "district"),
+        ("tehsil", "tehsil"),
+        ("tribe", "tribe"),
+    ]
+    STATUS_CHOICES = [
+        ("pending", "pending"),
+        ("approved", "approved"),
+        ("merged", "merged"),
+        ("rejected", "rejected"),
+    ]
+
+    kind = models.CharField(max_length=20, choices=KIND_CHOICES)
+    name = models.CharField(max_length=160)
+    normalized_name = models.CharField(max_length=160)
+    parent_id = models.CharField(max_length=220, blank=True)
+    parent_name = models.CharField(max_length=160, blank=True)
+    suggested_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="suggestions",
+    )
+    times_suggested = models.PositiveIntegerField(default=1)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="pending")
+    merge_into = models.ForeignKey(
+        Tribe,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="For the merge action: the existing tribe this duplicates.",
+    )
+    resolved_ref_id = models.CharField(max_length=220, blank=True)
+    note = models.TextField(blank=True)
+    reviewed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="reviewed_suggestions",
+    )
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["kind", "normalized_name", "parent_id"],
+                name="unique_suggestion_per_parent",
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.kind}: {self.name}"
 
 
 class TribeDistrict(models.Model):
