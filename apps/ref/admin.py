@@ -1,5 +1,3 @@
-import difflib
-
 from django.contrib import admin
 
 from apps.ref.models import (
@@ -12,11 +10,11 @@ from apps.ref.models import (
     Tribe,
     TribeDistrict,
 )
-from apps.ref.normalize import normalize_name
 from apps.ref.services import (
     approve_suggestion,
     merge_suggestion,
     reject_suggestion,
+    sibling_candidates,
 )
 
 admin.site.site_header = "Detasawy administration"
@@ -118,19 +116,12 @@ class SuggestionAdmin(admin.ModelAdmin):
 
     @admin.display(description="Possible duplicates")
     def possible_duplicates(self, obj):
-        if obj is None or obj.kind != "tribe":
+        if obj is None:
             return "—"
-        if obj.parent_id:
-            siblings = Tribe.objects.filter(parent_id=obj.parent_id)
-        else:
-            siblings = Tribe.objects.filter(parent__isnull=True)
-        by_norm = {normalize_name(t.name): t for t in siblings}
-        close = difflib.get_close_matches(
-            obj.normalized_name, by_norm.keys(), n=3, cutoff=0.6,
-        )
-        if not close:
+        candidates = sibling_candidates(obj)
+        if not candidates:
             return "none found"
-        return "; ".join(f"{by_norm[n].name} ({by_norm[n].id})" for n in close)
+        return "; ".join(f"{c['name']} ({c['id']})" for c in candidates)
 
     def _run(self, request, queryset, action, label):
         done, failed = 0, []

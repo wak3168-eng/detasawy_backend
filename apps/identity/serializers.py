@@ -33,9 +33,18 @@ class LoginSerializer(serializers.Serializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    role = serializers.SerializerMethodField()
+
     class Meta:
         model = User
-        fields = ["name", "email"]
+        fields = ["name", "email", "role"]
+
+    def get_role(self, obj):
+        if obj.is_superuser:
+            return "superadmin"
+        if obj.is_staff:
+            return "reviewer"
+        return "contributor"
 
 
 class ProfileSerializer(serializers.ModelSerializer):

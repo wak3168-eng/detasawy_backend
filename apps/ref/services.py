@@ -1,3 +1,5 @@
+import difflib
+
 from django.db.models import F
 from django.utils import timezone
 
@@ -217,3 +219,18 @@ def merge_suggestion(suggestion: Suggestion, reviewer) -> str:
 
 def reject_suggestion(suggestion: Suggestion, reviewer):
     _resolve(suggestion, reviewer, "rejected", "")
+
+
+def sibling_candidates(suggestion: Suggestion, limit: int = 3):
+    """Fuzzy possible-duplicate matches among the suggestion's siblings."""
+    if suggestion.kind != "tribe":
+        return []
+    if suggestion.parent_id:
+        siblings = Tribe.objects.filter(parent_id=suggestion.parent_id)
+    else:
+        siblings = Tribe.objects.filter(parent__isnull=True)
+    by_norm = {normalize_name(t.name): t for t in siblings}
+    close = difflib.get_close_matches(
+        suggestion.normalized_name, by_norm.keys(), n=limit, cutoff=0.6,
+    )
+    return [{"id": by_norm[n].id, "name": by_norm[n].name} for n in close]
