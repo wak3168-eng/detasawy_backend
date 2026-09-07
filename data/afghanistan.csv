@@ -1,0 +1,275 @@
+﻿country,province,region,ethnic_group,confederation,tribe,clan,sub_clan,language,iso_639_3,note
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Popalzai,Sadozai,Kamran Khel,Southern Pashto,pbt,Ruling lineage of the Durrani Empire from 1747
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Popalzai,Sadozai,Wazirzada,Southern Pashto,pbt,Ruling lineage of the Durrani Empire from 1747
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Popalzai,Bamizai,,Southern Pashto,pbt,Ruling lineage of the Durrani Empire from 1747
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Popalzai,Khaljai,,Southern Pashto,pbt,Ruling lineage of the Durrani Empire from 1747
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Barakzai,Mohammadzai,Musahiban,Southern Pashto,pbt,Royal house of Afghanistan 1823-1973
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Barakzai,Mohammadzai,Yahya Khel,Southern Pashto,pbt,Royal house of Afghanistan 1823-1973
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Barakzai,Sherzai,,Southern Pashto,pbt,Royal house of Afghanistan 1823-1973
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Barakzai,Painda Khel,,Southern Pashto,pbt,Royal house of Afghanistan 1823-1973
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Alikozai,,,Southern Pashto,pbt,
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Achakzai,,,Southern Pashto,pbt,Separated from Barakzai by Ahmad Shah Durrani; Spin Boldak
+Afghanistan,Kandahar,South,Pashtun,Durrani (Zirak),Mastizai,,,Southern Pashto,pbt,Small; called Musazai by Hayat Khan
+Afghanistan,Kandahar,South,Pashtun,Durrani (Panjpai),Nurzai,,,Southern Pashto,pbt,
+Afghanistan,Kandahar,South,Pashtun,Durrani (Panjpai),Ishaqzai,,,Southern Pashto,pbt,Also called Sakzai
+Afghanistan,Kandahar,South,Pashtun,Ghurghusht,Kakar,,,Southern Pashto,pbt,
+Afghanistan,Kandahar,South,Pashtun,Ghurghusht,Panni,,,Southern Pashto,pbt,
+Afghanistan,Kandahar,South,Pashtun,Ghurghusht,Babi,,,Southern Pashto,pbt,
+Afghanistan,Kandahar,South,Tajik,,Kandahari Tajik,,,Dari,prs,
+Afghanistan,Kandahar,South,Qizilbash,,Qizilbash,,,Dari,prs,
+Afghanistan,Helmand,South,Pashtun,Durrani (Panjpai),Alizai,Hassanzai,,Southern Pashto,pbt,"Musa Qala, Kajaki, Baghran"
+Afghanistan,Helmand,South,Pashtun,Durrani (Panjpai),Alizai,Khalozai,,Southern Pashto,pbt,"Musa Qala, Kajaki, Baghran"
+Afghanistan,Helmand,South,Pashtun,Durrani (Panjpai),Alizai,Pirzai,,Southern Pashto,pbt,"Musa Qala, Kajaki, Baghran"
+Afghanistan,Helmand,South,Pashtun,Durrani (Panjpai),Nurzai,,,Southern Pashto,pbt,
+Afghanistan,Helmand,South,Pashtun,Durrani (Panjpai),Ishaqzai,,,Southern Pashto,pbt,
+Afghanistan,Helmand,South,Pashtun,Durrani (Zirak),Barakzai,Mohammadzai,,Southern Pashto,pbt,
+Afghanistan,Helmand,South,Pashtun,Durrani (Zirak),Popalzai,,,Southern Pashto,pbt,
+Afghanistan,Helmand,South,Baloch,,Baloch,Rakhshani,,Western Balochi,bgn,
+Afghanistan,Helmand,South,Baloch,,Baloch,Sarbandi,,Western Balochi,bgn,
+Afghanistan,Helmand,South,Brahui,,Brahui,,,Brahui,brh,
+Afghanistan,Uruzgan,South,Pashtun,Durrani (Zirak),Popalzai,,,Southern Pashto,pbt,
+Afghanistan,Uruzgan,South,Pashtun,Durrani (Zirak),Barakzai,,,Southern Pashto,pbt,
+Afghanistan,Uruzgan,South,Pashtun,Durrani (Panjpai),Nurzai,,,Southern Pashto,pbt,
+Afghanistan,Uruzgan,South,Pashtun,Ghilji,Tokhi,,,Central Pashto,pst,
+Afghanistan,Uruzgan,South,Hazara,,Hazara,Uruzgani,,Hazaragi,haz,
+Afghanistan,Uruzgan,South,Hazara,,Hazara,Dai Kundi,,Hazaragi,haz,
+Afghanistan,Zabul,South,Pashtun,Ghilji (Turan),Hotak,Malak Yar,,Central Pashto,pst,Ruling house of the Hotak dynasty 1709-1738; Kalat-i-Ghilji
+Afghanistan,Zabul,South,Pashtun,Ghilji (Turan),Hotak,Dolat Yar,,Central Pashto,pst,Ruling house of the Hotak dynasty 1709-1738; Kalat-i-Ghilji
+Afghanistan,Zabul,South,Pashtun,Ghilji (Turan),Hotak,Yusuf,,Central Pashto,pst,Ruling house of the Hotak dynasty 1709-1738; Kalat-i-Ghilji
+Afghanistan,Zabul,South,Pashtun,Ghilji (Turan),Tokhi,,,Central Pashto,pst,
+Afghanistan,Zabul,South,Pashtun,Ghurghusht,Kakar,,,Southern Pashto,pbt,
+Afghanistan,Zabul,South,Pashtun,Ghilji,Nasar,,,Central Pashto,pst,Largely nomadic (kuchi)
+Afghanistan,Zabul,South,Hazara,,Hazara,Dai Chopan,,Hazaragi,haz,
+Afghanistan,Nimroz,South-West,Baloch,,Baloch,,,Western Balochi,bgn,
+Afghanistan,Nimroz,South-West,Brahui,,Brahui,,,Brahui,brh,Only Dravidian language in the region
+Afghanistan,Nimroz,South-West,Pashtun,Durrani (Panjpai),Nurzai,,,Southern Pashto,pbt,
+Afghanistan,Nimroz,South-West,Pashtun,Sarbani,Barech,,,Southern Pashto,pbt,
+Afghanistan,Nimroz,South-West,Tajik,,Sistani Tajik,,,Dari,prs,
+Afghanistan,Farah,West,Pashtun,Durrani (Panjpai),Nurzai,,,Southern Pashto,pbt,
+Afghanistan,Farah,West,Pashtun,Durrani (Panjpai),Alizai,,,Southern Pashto,pbt,
+Afghanistan,Farah,West,Pashtun,Durrani (Panjpai),Ishaqzai,,,Southern Pashto,pbt,
+Afghanistan,Farah,West,Pashtun,Sarbani,Barech,,,Southern Pashto,pbt,
+Afghanistan,Farah,West,Tajik,,Farahi Tajik,,,Dari,prs,
+Afghanistan,Farah,West,Baloch,,Baloch,,,Western Balochi,bgn,
+Afghanistan,Herat,West,Tajik,,Herati Tajik,,,Dari,prs,Majority community
+Afghanistan,Herat,West,Pashtun,Durrani (Panjpai),Nurzai,,,Southern Pashto,pbt,
+Afghanistan,Herat,West,Pashtun,Durrani (Panjpai),Alizai,,,Southern Pashto,pbt,
+Afghanistan,Herat,West,Aimaq,,Jamshidi,,,Aimaq,aiq,
+Afghanistan,Herat,West,Aimaq,,Taimuri,,,Aimaq,aiq,
+Afghanistan,Herat,West,Turkmen,,Turkmen,Ersari,,Turkmen,tuk,
+Afghanistan,Herat,West,Turkmen,,Turkmen,Teke,,Turkmen,tuk,
+Afghanistan,Herat,West,Hazara,,Hazara,,,Hazaragi,haz,
+Afghanistan,Herat,West,Moghol,,Moghol,Kundur,,Mogholi,mhj,Last Mongolic language of Afghanistan - moribund or extinct
+Afghanistan,Herat,West,Moghol,,Moghol,Karez-i-Mulla,,Mogholi,mhj,Last Mongolic language of Afghanistan - moribund or extinct
+Afghanistan,Herat,West,Qizilbash,,Qizilbash,,,Dari,prs,
+Afghanistan,Badghis,West,Aimaq,,Firozkohi,,,Aimaq,aiq,
+Afghanistan,Badghis,West,Aimaq,,Hazara-e-Qala-e-Naw,,,Aimaq,aiq,
+Afghanistan,Badghis,West,Aimaq,,Jamshidi,,,Aimaq,aiq,
+Afghanistan,Badghis,West,Pashtun,Durrani (Panjpai),Nurzai,,,Southern Pashto,pbt,
+Afghanistan,Badghis,West,Turkmen,,Turkmen,,,Turkmen,tuk,
+Afghanistan,Badghis,West,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Ghor,West / Central,Aimaq,,Taimani,,,Aimaq,aiq,Largest group in Ghor
+Afghanistan,Ghor,West / Central,Aimaq,,Firozkohi,,,Aimaq,aiq,
+Afghanistan,Ghor,West / Central,Aimaq,,Zuri,,,Aimaq,aiq,
+Afghanistan,Ghor,West / Central,Hazara,,Hazara,,,Hazaragi,haz,
+Afghanistan,Ghor,West / Central,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Bamyan,Central (Hazarajat),Hazara,,Hazara,Dai Zangi,,Hazaragi,haz,
+Afghanistan,Bamyan,Central (Hazarajat),Hazara,,Hazara,Dai Kundi,,Hazaragi,haz,
+Afghanistan,Bamyan,Central (Hazarajat),Hazara,,Hazara,Sheikh Ali,,Hazaragi,haz,
+Afghanistan,Bamyan,Central (Hazarajat),Hazara,,Hazara,Dai Mirak,,Hazaragi,haz,
+Afghanistan,Bamyan,Central (Hazarajat),Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Bamyan,Central (Hazarajat),Pashtun,Ghilji,Kuchi (nomadic),,,Central Pashto,pst,Seasonal - historic grazing disputes with settled Hazara
+Afghanistan,Daykundi,Central (Hazarajat),Hazara,,Hazara,Dai Kundi,,Hazaragi,haz,
+Afghanistan,Daykundi,Central (Hazarajat),Hazara,,Hazara,Polada,,Hazaragi,haz,
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Turan),Andar,,,Central Pashto,pst,
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Turan),Taraki,Murk Khel,,Central Pashto,pst,
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Turan),Taraki,Mirak Khel,,Central Pashto,pst,
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Turan),Tokhi,,,Central Pashto,pst,
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Sultan Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Gulwal,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Khazar Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Nazar Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Alizai,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Dustu Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Slemanzai,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Sraz Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Ahmadzai,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Khojak Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Jalalzai,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Kasar Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Ali Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Nizam Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Dinnar Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Sulaiman Khel,Sha Khel,,Central Pashto,pst,Largest Ghilji division; historically pastoral
+Afghanistan,Ghazni,South-East,Pashtun,Ghilji (Burhan),Akakhel,,,Central Pashto,pst,Not to be confused with the Aka Khel clan of the Afridi
+Afghanistan,Ghazni,South-East,Hazara,,Hazara,Jaghori,,Hazaragi,haz,
+Afghanistan,Ghazni,South-East,Hazara,,Hazara,Jaghatu,,Hazaragi,haz,
+Afghanistan,Ghazni,South-East,Hazara,,Hazara,Malistan,,Hazaragi,haz,
+Afghanistan,Ghazni,South-East,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Ghazni,South-East,Hindu / Sikh,,Hindki,,,Punjabi,pnb,Community much reduced
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Zadran,,,Central Pashto,pst,"Districts: Zadran, Shwak"
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Mangal,,,Central Pashto,pst,Districts: Lija Mangal
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Zazi,,,Central Pashto,pst,Also Jaji / Dzadzi; Jaji district
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Chamkani,Mada Khel,,Central Pashto,pst,Chamkani district; NPS classes them with the Ghilji
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Chamkani,Kamzai,,Central Pashto,pst,Chamkani district; NPS classes them with the Ghilji
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Chamkani,Babu Khel,,Central Pashto,pst,Chamkani district; NPS classes them with the Ghilji
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Chamkani,Darman Khel,,Central Pashto,pst,Chamkani district; NPS classes them with the Ghilji
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Chamkani,Sulaiman Khel,,Central Pashto,pst,Chamkani district; NPS classes them with the Ghilji
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Chamkani,Baghiar,,Central Pashto,pst,Chamkani district; NPS classes them with the Ghilji
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Chamkani,Hisarak,,Central Pashto,pst,Chamkani district; NPS classes them with the Ghilji
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Muqbil,,,Central Pashto,pst,
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Karlani,Bangash,,,Central Pashto,pst,Gardez
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Ghilji (Burhan),Ahmadzai,Jabbar Khel,,Central Pashto,pst,
+Afghanistan,Paktia,South-East (Loya Paktia),Pashtun,Ghilji (Burhan),Ali Khel,,,Central Pashto,pst,
+Afghanistan,Paktia,South-East (Loya Paktia),Tajik,,Tajik,,,Dari,prs,About 9 percent of the province
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Zadran,,,Central Pashto,pst,
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Tani,,,Central Pashto,pst,
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Gurbuz,,,Central Pashto,pst,
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Sabari,,,Central Pashto,pst,
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Mandozai,,,Central Pashto,pst,
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Ismail Khel,,,Central Pashto,pst,
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Jaji Maidan,,,Central Pashto,pst,
+Afghanistan,Khost,South-East (Loya Paktia),Pashtun,Karlani,Wazir,,,Central Pashto,pst,Cross-border with N Waziristan
+Afghanistan,Paktika,South-East (Loya Paktia),Pashtun,Ghilji (Burhan),Sulaiman Khel,,,Central Pashto,pst,
+Afghanistan,Paktika,South-East (Loya Paktia),Pashtun,Ghilji (Burhan),Kharoti,Nasher,,Central Pashto,pst,Urgun; traditional rivals of Sulaiman Khel
+Afghanistan,Paktika,South-East (Loya Paktia),Pashtun,Ghilji (Burhan),Ali Khel,,,Central Pashto,pst,
+Afghanistan,Paktika,South-East (Loya Paktia),Pashtun,Ghilji (Burhan),Akakhel,,,Central Pashto,pst,Katawaz
+Afghanistan,Paktika,South-East (Loya Paktia),Pashtun,Karlani,Zadran,,,Central Pashto,pst,
+Afghanistan,Paktika,South-East (Loya Paktia),Pashtun,Karlani,Wazir,,,Central Pashto,pst,Birmal
+Afghanistan,Paktika,South-East (Loya Paktia),Pashtun,Karlani,Dawar,,,Central Pashto,pst,
+Afghanistan,Logar,East / Central,Pashtun,Ghilji (Burhan),Ahmadzai,,,Central Pashto,pst,
+Afghanistan,Logar,East / Central,Pashtun,Karlani,Wardak,,,Central Pashto,pst,
+Afghanistan,Logar,East / Central,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Logar,East / Central,Hazara,,Hazara,,,Hazaragi,haz,
+Afghanistan,Maidan Wardak,Central,Pashtun,Karlani,Wardak,Mayar,,Central Pashto,pst,
+Afghanistan,Maidan Wardak,Central,Pashtun,Karlani,Wardak,Mirkhel,,Central Pashto,pst,
+Afghanistan,Maidan Wardak,Central,Pashtun,Karlani,Wardak,Nuri,,Central Pashto,pst,
+Afghanistan,Maidan Wardak,Central,Hazara,,Hazara,Behsud,,Hazaragi,haz,
+Afghanistan,Maidan Wardak,Central,Hazara,,Hazara,Sheikh Ali,,Hazaragi,haz,
+Afghanistan,Maidan Wardak,Central,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Shinwari,Ali Sher Khel,Khuga Khel,Northern Pashto,pbu,"Achin, Dur Baba, Nazyan"
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Shinwari,Ali Sher Khel,Ash Khel,Northern Pashto,pbu,"Achin, Dur Baba, Nazyan"
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Shinwari,Ali Sher Khel,Shekmal Khel,Northern Pashto,pbu,"Achin, Dur Baba, Nazyan"
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Shinwari,Sangu Khel,,Northern Pashto,pbu,"Achin, Dur Baba, Nazyan"
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Shinwari,Mandozai,,Northern Pashto,pbu,"Achin, Dur Baba, Nazyan"
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Shinwari,Sipah,,Northern Pashto,pbu,"Achin, Dur Baba, Nazyan"
+Afghanistan,Nangarhar,East,Pashtun,Karlani,Khugiani,Mohsinzai,,Northern Pashto,pbu,Khogyani district
+Afghanistan,Nangarhar,East,Pashtun,Karlani,Khugiani,Daulatzai,,Northern Pashto,pbu,Khogyani district
+Afghanistan,Nangarhar,East,Pashtun,Karlani,Khugiani,Maroofzai,,Northern Pashto,pbu,Khogyani district
+Afghanistan,Nangarhar,East,Pashtun,Karlani,Khugiani,Saibzai,,Northern Pashto,pbu,Khogyani district
+Afghanistan,Nangarhar,East,Pashtun,Karlani,Khugiani,Chopanzai,,Northern Pashto,pbu,Khogyani district
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Mohmand,,,Northern Pashto,pbu,"Goshta, Lalpur"
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Khalil,,,Northern Pashto,pbu,
+Afghanistan,Nangarhar,East,Pashtun,Sarbani,Kheshgi,,,Northern Pashto,pbu,
+Afghanistan,Nangarhar,East,Pashtun,Ghilji,Ahmadzai,,,Central Pashto,pst,
+Afghanistan,Nangarhar,East,Pashai,,Pashai,Darrai Nur,,Southeast Pashai,psi,
+Afghanistan,Nangarhar,East,Tirahi,,Tirahi,,,Tirahi,tra,Displaced from Tirah in KP by Afridi expansion - moribund
+Afghanistan,Nangarhar,East,Arab,,Arab,,,Dari,prs,Arabic largely lost
+Afghanistan,Nangarhar,East,Gujjar,,Gujjar,,,Gujari,gju,
+Afghanistan,Kunar,East,Pashtun,Sarbani,Safi,Gurbuz,,Northern Pashto,pbu,
+Afghanistan,Kunar,East,Pashtun,Sarbani,Safi,Masaud,,Northern Pashto,pbu,
+Afghanistan,Kunar,East,Pashtun,Sarbani,Safi,Wadir,,Northern Pashto,pbu,
+Afghanistan,Kunar,East,Pashtun,Sarbani,Safi,Kandahari,,Northern Pashto,pbu,
+Afghanistan,Kunar,East,Pashtun,Sarbani,Tarkani,,,Northern Pashto,pbu,
+Afghanistan,Kunar,East,Pashtun,Sarbani,Mohmand,,,Northern Pashto,pbu,
+Afghanistan,Kunar,East,Nuristani,,Kom,,,Kamviri,bsh,
+Afghanistan,Kunar,East,Pashai,,Pashai,,,Northeast Pashai,aee,
+Afghanistan,Kunar,East,Gawar,,Gawar,,,Gawar-Bati,gwt,Cross-border with Chitral
+Afghanistan,Kunar,East,Sau,,Savi,,,Savi,sdg,Endangered
+Afghanistan,Kunar,East,Shumasht,,Shumashti,,,Shumashti,sts,Severely endangered
+Afghanistan,Kunar,East,Grangali,,Grangali,,,Grangali (Gambiri),nli,Severely endangered
+Afghanistan,Kunar,East,Wotapuri,,Wotapuri,,,Wotapuri-Katarqalai,wsv,Possibly extinct
+Afghanistan,Kunar,East,Gujjar,,Gujjar,,,Gujari,gju,
+Afghanistan,Nuristan,East,Nuristani,,Kata,Kativiri,,Kamkata-viri,bsh,
+Afghanistan,Nuristan,East,Nuristani,,Kata,Kamviri,,Kamkata-viri,bsh,
+Afghanistan,Nuristan,East,Nuristani,,Kata,Mumviri,,Kamkata-viri,bsh,
+Afghanistan,Nuristan,East,Nuristani,,Vasi (Prasun),,,Prasuni,prn,Severely endangered - highest priority
+Afghanistan,Nuristan,East,Nuristani,,Ashkun,Wamai,,Ashkun,ask,
+Afghanistan,Nuristan,East,Nuristani,,Ashkun,Sanu,,Ashkun,ask,
+Afghanistan,Nuristan,East,Nuristani,,Ashkun,Titin,,Ashkun,ask,
+Afghanistan,Nuristan,East,Nuristani,,Waigali,Waigal,,Waigali (Kalasha-ala),wbk,
+Afghanistan,Nuristan,East,Nuristani,,Waigali,Zhonchigal,,Waigali (Kalasha-ala),wbk,
+Afghanistan,Nuristan,East,Nuristani,,Tregami,Gambir,,Tregami,trm,Severely endangered - highest priority
+Afghanistan,Nuristan,East,Nuristani,,Tregami,Katar,,Tregami,trm,Severely endangered - highest priority
+Afghanistan,Laghman,East,Pashai,,Pashai,Alishang,,Southwest Pashai,psh,
+Afghanistan,Laghman,East,Pashai,,Pashai,Alingar,,Southwest Pashai,psh,
+Afghanistan,Laghman,East,Pashtun,Sarbani,Safi,,,Northern Pashto,pbu,
+Afghanistan,Laghman,East,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,
+Afghanistan,Laghman,East,Nuristani,,Nuristani,,,Nuristani languages,bsh,
+Afghanistan,Laghman,East,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Laghman,East,Gujjar,,Gujjar,,,Gujari,gju,
+Afghanistan,Kapisa,East / Central,Pashai,,Pashai,Gulbahar,,Northwest Pashai,glh,
+Afghanistan,Kapisa,East / Central,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Kapisa,East / Central,Pashtun,Sarbani,Safi,,,Northern Pashto,pbu,"Tagab, Nijrab"
+Afghanistan,Kapisa,East / Central,Nuristani,,Nuristani,,,Nuristani languages,bsh,
+Afghanistan,Kabul,Central,Tajik,,Kabuli Tajik,,,Dari,prs,
+Afghanistan,Kabul,Central,Pashtun,Ghilji (Burhan),Ahmadzai,,,Central Pashto,pst,
+Afghanistan,Kabul,Central,Pashtun,Durrani (Zirak),Mohammadzai,,,Southern Pashto,pbt,
+Afghanistan,Kabul,Central,Hazara,,Hazara,,,Hazaragi,haz,"West Kabul, Dasht-e-Barchi"
+Afghanistan,Kabul,Central,Qizilbash,,Qizilbash,,,Dari,prs,
+Afghanistan,Kabul,Central,Uzbek,,Uzbek,,,Southern Uzbek,uzs,
+Afghanistan,Kabul,Central,Hindu / Sikh,,Hindki,,,Punjabi,pnb,
+Afghanistan,Kabul,Central,Sadat,,Sadat,,,Dari,prs,Religious lineage found across groups
+Afghanistan,Parwan,Central,Tajik,,Parwani Tajik,,,Dari,prs,
+Afghanistan,Parwan,Central,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,
+Afghanistan,Parwan,Central,Pashai,,Pashai,,,Northwest Pashai,glh,
+Afghanistan,Parwan,Central,Hazara,,Hazara,,,Hazaragi,haz,
+Afghanistan,Panjshir,Central,Tajik,,Panjshiri Tajik,,,Dari,prs,Overwhelming majority
+Afghanistan,Baghlan,North,Tajik,,Andarabi Tajik,,,Dari,prs,
+Afghanistan,Baghlan,North,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,Settled north under Abdur Rahman Khan's resettlement policy
+Afghanistan,Baghlan,North,Uzbek,,Uzbek,,,Southern Uzbek,uzs,
+Afghanistan,Baghlan,North,Hazara,,Hazara,Sheikh Ali,,Hazaragi,haz,
+Afghanistan,Baghlan,North,Tatar,,Tatar,,,Dari,prs,
+Afghanistan,Kunduz,North,Uzbek,,Uzbek,Qataghan,,Southern Uzbek,uzs,
+Afghanistan,Kunduz,North,Uzbek,,Uzbek,Ming,,Southern Uzbek,uzs,
+Afghanistan,Kunduz,North,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Kunduz,North,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,
+Afghanistan,Kunduz,North,Turkmen,,Turkmen,,,Turkmen,tuk,
+Afghanistan,Kunduz,North,Arab,,Arab,,,Dari,prs,
+Afghanistan,Kunduz,North,Pashai,,Pashai,,,Pashai,psi,
+Afghanistan,Takhar,North-East,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Takhar,North-East,Uzbek,,Uzbek,,,Southern Uzbek,uzs,
+Afghanistan,Takhar,North-East,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,
+Afghanistan,Takhar,North-East,Arab,,Arab,,,Dari,prs,
+Afghanistan,Badakhshan,North-East,Tajik,,Badakhshi Tajik,,,Dari,prs,
+Afghanistan,Badakhshan,North-East,Pamiri,,Shughni,Shughnan,,Shughni,sgh,
+Afghanistan,Badakhshan,North-East,Pamiri,,Shughni,Roshan,,Shughni,sgh,
+Afghanistan,Badakhshan,North-East,Pamiri,,Rushani,,,Rushani,rsh,Endangered
+Afghanistan,Badakhshan,North-East,Pamiri,,Ishkashimi,,,Ishkashimi,isk,Severely endangered
+Afghanistan,Badakhshan,North-East,Pamiri,,Sanglechi,,,Sanglechi,sgy,Severely endangered
+Afghanistan,Badakhshan,North-East,Pamiri,,Munji,Munjan valley,,Munji,mnj,Severely endangered; closest relative of Yidgha in Chitral
+Afghanistan,Badakhshan,North-East,Wakhi,,Wakhi,Wakhan corridor,,Wakhi,wbl,
+Afghanistan,Badakhshan,North-East,Kyrgyz,,Kyrgyz,Great Pamir,,Kyrgyz,kir,
+Afghanistan,Badakhshan,North-East,Kyrgyz,,Kyrgyz,Little Pamir,,Kyrgyz,kir,
+Afghanistan,Badakhshan,North-East,Uzbek,,Uzbek,,,Southern Uzbek,uzs,
+Afghanistan,Balkh,North,Uzbek,,Uzbek,Qungrat,,Southern Uzbek,uzs,
+Afghanistan,Balkh,North,Uzbek,,Uzbek,Lakai,,Southern Uzbek,uzs,
+Afghanistan,Balkh,North,Uzbek,,Uzbek,Qarluq,,Southern Uzbek,uzs,
+Afghanistan,Balkh,North,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Balkh,North,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,
+Afghanistan,Balkh,North,Hazara,,Hazara,,,Hazaragi,haz,
+Afghanistan,Balkh,North,Turkmen,,Turkmen,Ersari,,Turkmen,tuk,
+Afghanistan,Balkh,North,Arab,,Arab,Balkh Arab,,Tajiki Arabic,abh,Nearly all shifted to Dari or Uzbek
+Afghanistan,Samangan,North,Uzbek,,Uzbek,,,Southern Uzbek,uzs,
+Afghanistan,Samangan,North,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Samangan,North,Hazara,,Hazara,,,Hazaragi,haz,
+Afghanistan,Samangan,North,Arab,,Arab,,,Dari,prs,
+Afghanistan,Jowzjan,North,Uzbek,,Uzbek,,,Southern Uzbek,uzs,
+Afghanistan,Jowzjan,North,Turkmen,,Turkmen,Ersari,,Turkmen,tuk,
+Afghanistan,Jowzjan,North,Turkmen,,Turkmen,Salor,,Turkmen,tuk,
+Afghanistan,Jowzjan,North,Arab,,Arab,Jowzjan Arab,,Tajiki Arabic,abh,
+Afghanistan,Jowzjan,North,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Jowzjan,North,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,
+Afghanistan,Faryab,North-West,Uzbek,,Uzbek,Ming,,Southern Uzbek,uzs,
+Afghanistan,Faryab,North-West,Turkmen,,Turkmen,Ersari,,Turkmen,tuk,
+Afghanistan,Faryab,North-West,Turkmen,,Turkmen,Saryk,,Turkmen,tuk,
+Afghanistan,Faryab,North-West,Turkmen,,Turkmen,Alili,,Turkmen,tuk,
+Afghanistan,Faryab,North-West,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Faryab,North-West,Pashtun,Ghilji,Ghilji,,,Central Pashto,pst,
+Afghanistan,Faryab,North-West,Aimaq,,Aimaq,,,Aimaq,aiq,
+Afghanistan,Faryab,North-West,Arab,,Arab,,,Dari,prs,
+Afghanistan,Sar-e-Pol,North,Uzbek,,Uzbek,,,Southern Uzbek,uzs,
+Afghanistan,Sar-e-Pol,North,Hazara,,Hazara,,,Hazaragi,haz,
+Afghanistan,Sar-e-Pol,North,Tajik,,Tajik,,,Dari,prs,
+Afghanistan,Sar-e-Pol,North,Aimaq,,Aimaq,,,Aimaq,aiq,
+Afghanistan,Sar-e-Pol,North,Arab,,Arab,,,Dari,prs,

@@ -91,7 +91,7 @@ def me(request):
     return Response(
         {
             "user": UserSerializer(request.user).data,
-            "profile": ProfileSerializer(profile).data,
+            "profile": ProfileSerializer(profile, context={"request": request}).data,
         },
     )
 
@@ -103,9 +103,36 @@ def profile(request):
     from apps.ref.services import capture_suggestions
 
     instance, _ = Profile.objects.get_or_create(user=request.user)
-    serializer = ProfileSerializer(instance, data=request.data, partial=True)
+    serializer = ProfileSerializer(
+        instance, data=request.data, partial=True, context={"request": request},
+    )
     serializer.is_valid(raise_exception=True)
     serializer.save()
     capture_suggestions(instance)
     # capture may have canonicalized spellings in place — return the final state
-    return Response(ProfileSerializer(instance).data)
+    return Response(ProfileSerializer(instance, context={"request": request}).data)
+
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def profile_photo(request):
+    """Store the profile photo as a database blob so it outlives the browser
+    and every redeploy."""
+    from apps.corpus.images import store_image
+
+    upload = request.FILES.get("photo")
+    if upload is None:
+        return Response({"error": "photo file is required"}, status=400)
+    if not (upload.content_type or "").startswith("image/"):
+        return Response({"error": "that needs to be an image"}, status=400)
+    try:
+        blob = store_image(upload.read())
+    except Exception:
+        return Response({"error": "that image can't be read"}, status=400)
+
+    instance, _ = Profile.objects.get_or_create(user=request.user)
+    instance.photo_blob = blob
+    instance.save(update_fields=["photo_blob", "updated_at"])
+    return Response(
+        ProfileSerializer(instance, context={"request": request}).data, status=201,
+    )

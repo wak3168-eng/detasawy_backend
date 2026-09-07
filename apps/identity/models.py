@@ -49,10 +49,24 @@ class Profile(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile"
     )
     country = models.JSONField(null=True, blank=True)
+    residence = models.JSONField(
+        null=True,
+        blank=True,
+        help_text="Diaspora only: the country lived in now; origin stays in "
+        "country/province/district.",
+    )
     province = models.JSONField(null=True, blank=True)
     district = models.JSONField(null=True, blank=True)
     tehsil = models.JSONField(null=True, blank=True)
     city = models.CharField(max_length=120, blank=True)
+    photo_blob = models.ForeignKey(
+        "corpus.MediaBlob",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="Profile photo, stored in the database so it survives redeploys.",
+    )
     tribe_path = models.JSONField(default=list, blank=True)
     language = models.CharField(max_length=120, blank=True)
     completed_at = models.DateTimeField(null=True, blank=True)

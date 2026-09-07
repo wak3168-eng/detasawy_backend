@@ -17,6 +17,7 @@ class Country(models.Model):
 class Province(models.Model):
     id = models.SlugField(primary_key=True, max_length=80)
     name = models.CharField(max_length=120)
+    pashto = models.CharField(max_length=120, blank=True)
     country = models.ForeignKey(
         Country, on_delete=models.CASCADE, related_name="provinces"
     )
@@ -31,6 +32,7 @@ class Province(models.Model):
 class District(models.Model):
     id = models.SlugField(primary_key=True, max_length=120)
     name = models.CharField(max_length=120)
+    pashto = models.CharField(max_length=120, blank=True)
     province = models.ForeignKey(
         Province, on_delete=models.CASCADE, related_name="districts"
     )
@@ -46,6 +48,7 @@ class District(models.Model):
 class Tehsil(models.Model):
     id = models.SlugField(primary_key=True, max_length=160)
     name = models.CharField(max_length=120)
+    pashto = models.CharField(max_length=120, blank=True)
     district = models.ForeignKey(
         District, on_delete=models.CASCADE, related_name="tehsils"
     )
@@ -154,6 +157,28 @@ class Suggestion(models.Model):
 
     def __str__(self):
         return f"{self.kind}: {self.name}"
+
+
+class TribeProvince(models.Model):
+    """Presence link for countries where tribes map to provinces (Afghanistan
+    has no district-level tribal source yet)."""
+
+    tribe = models.ForeignKey(
+        Tribe, on_delete=models.CASCADE, related_name="province_links"
+    )
+    province = models.ForeignKey(
+        Province, on_delete=models.CASCADE, related_name="tribe_links"
+    )
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["tribe", "province"], name="unique_tribe_province"
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.tribe} · {self.province}"
 
 
 class TribeDistrict(models.Model):

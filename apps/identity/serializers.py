@@ -55,11 +55,13 @@ class ProfileSerializer(serializers.ModelSerializer):
     completedAt = serializers.DateTimeField(
         source="completed_at", required=False, allow_null=True
     )
+    photoUrl = serializers.SerializerMethodField()
 
     class Meta:
         model = Profile
         fields = [
             "country",
+            "residence",
             "province",
             "district",
             "tehsil",
@@ -67,4 +69,12 @@ class ProfileSerializer(serializers.ModelSerializer):
             "tribePath",
             "language",
             "completedAt",
+            "photoUrl",
         ]
+
+    def get_photoUrl(self, obj):  # noqa: N802 — matches the JSON field name
+        if not obj.photo_blob_id:
+            return None
+        path = f"/api/blob/{obj.photo_blob.sha256}"
+        request = self.context.get("request")
+        return request.build_absolute_uri(path) if request else path

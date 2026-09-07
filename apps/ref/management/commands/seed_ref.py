@@ -73,6 +73,7 @@ class Command(BaseCommand):
             self.stdout.write(f"languages ensured: {new_languages} added")
 
         if Country.objects.exists() and not options["force"]:
+            self._enrich()
             self.stdout.write("ref data already present — skipping (use --force to reseed)")
             return
 
@@ -129,6 +130,7 @@ class Command(BaseCommand):
             for (tribe_id, district_id), role in link_roles.items()
         )
 
+        self._enrich()
         self.stdout.write(
             self.style.SUCCESS(
                 f"seeded: {Country.objects.count()} countries, "
@@ -139,3 +141,17 @@ class Command(BaseCommand):
                 f"{TribeDistrict.objects.count()} links",
             ),
         )
+
+    def _enrich(self):
+        from apps.ref.seed_extra import (
+            ensure_afghanistan_tribes,
+            ensure_pashto_names,
+        )
+
+        renamed = ensure_pashto_names()
+        af_added, af_links = ensure_afghanistan_tribes(DATA_DIR)
+        if renamed or af_added or af_links:
+            self.stdout.write(
+                f"enrichment: {renamed} Pashto names set, "
+                f"{af_added} AF tribes added, {af_links} province links",
+            )

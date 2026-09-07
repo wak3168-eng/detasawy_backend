@@ -11,6 +11,7 @@ from apps.ref.models import (
     Suggestion,
     Tehsil,
     Tribe,
+    TribeProvince,
 )
 from apps.ref.normalize import (
     names_equivalent,
@@ -124,13 +125,7 @@ def _add_suggestion(user, kind, entry, parent_id, parent_name):
             "suggested_by": user,
         },
     )
-    if created:
-        if kind == "tribe" and suggestion.merge_into is None:
-            near = _fuzzy_candidates(kind, normalized, parent_id or "", limit=1)
-            if near:
-                suggestion.merge_into = near[0]
-                suggestion.save(update_fields=["merge_into"])
-    else:
+    if not created:
         Suggestion.objects.filter(
             kind=kind,
             normalized_name=normalized,
@@ -139,7 +134,30 @@ def _add_suggestion(user, kind, entry, parent_id, parent_name):
         ).exclude(suggested_by=user).update(
             times_suggested=F("times_suggested") + 1,
         )
-    return (1 if created else 0), None
+        if suggestion.status == "approved" and suggestion.resolved_ref_id:
+            # someone already published this spelling — reuse it
+            entry["id"] = suggestion.resolved_ref_id
+            entry["name"] = suggestion.name
+            entry.pop("pending", None)
+            return 0, suggestion
+        return 0, None
+
+    if kind == "tribe" and suggestion.merge_into is None:
+        near = _fuzzy_candidates(kind, normalized, parent_id or "", limit=1)
+        if near:
+            suggestion.merge_into = near[0]
+            suggestion.save(update_fields=["merge_into"])
+
+    # publish immediately — the review queue cleans up afterwards, it never
+    # gates: the entry is live for everyone the moment it is submitted
+    try:
+        approve_suggestion(suggestion, None)
+    except Exception:
+        return 1, None  # stays pending for a human
+    entry["id"] = suggestion.resolved_ref_id
+    entry["name"] = suggestion.name
+    entry.pop("pending", None)
+    return 1, suggestion
 
 
 def capture_suggestions(profile: Profile) -> int:
@@ -194,19 +212,27 @@ def capture_suggestions(profile: Profile) -> int:
     return created
 
 
-def _repoint(kind, suggestion, ref_id, ref_name):
-    """Rewrite every profile still holding the pending entry."""
+def _repoint(kind, suggestion, ref_id, ref_name, old_id=None):
+    """Rewrite every profile holding the pending entry — or, when a published
+    row is being merged away, the old row's id."""
     normalized = suggestion.normalized_name
+
+    def hits(entry):
+        if not isinstance(entry, dict):
+            return False
+        if old_id and entry.get("id") == old_id:
+            return True
+        return bool(
+            entry.get("pending")
+            and normalize_name(entry.get("name") or "") == normalized,
+        )
+
     updated = 0
     for profile in Profile.objects.exclude(completed_at=None):
         changed = False
         if kind == "tribe":
             for node in profile.tribe_path or []:
-                if (
-                    isinstance(node, dict)
-                    and node.get("pending")
-                    and normalize_name(node.get("name") or "") == normalized
-                ):
+                if hits(node):
                     node["id"] = ref_id
                     node["name"] = ref_name
                     node.pop("pending", None)
@@ -217,11 +243,7 @@ def _repoint(kind, suggestion, ref_id, ref_name):
                 changed = True
         else:
             entry = getattr(profile, kind)
-            if (
-                isinstance(entry, dict)
-                and entry.get("pending")
-                and normalize_name(entry.get("name") or "") == normalized
-            ):
+            if hits(entry):
                 setattr(
                     profile, kind, {"id": ref_id, "name": ref_name},
                 )
@@ -242,6 +264,8 @@ def _resolve(suggestion, reviewer, status, ref_id):
 
 
 def approve_suggestion(suggestion: Suggestion, reviewer) -> str:
+    if suggestion.status != "pending":
+        raise ValueError("already resolved")
     kind = suggestion.kind
     name = suggestion.name
     if kind == "tribe":
@@ -300,25 +324,101 @@ def approve_suggestion(suggestion: Suggestion, reviewer) -> str:
     return row.id
 
 
+def _is_live(suggestion):
+    """Auto-published: the row exists but no human has looked at it yet."""
+    return (
+        suggestion.status == "approved"
+        and bool(suggestion.resolved_ref_id)
+        and suggestion.reviewed_by_id is None
+    )
+
+
 def merge_suggestion(suggestion: Suggestion, reviewer) -> str:
     if suggestion.kind != "tribe":
         raise ValueError("merge is only supported for tribe suggestions")
     target = suggestion.merge_into
     if target is None:
         raise ValueError("set 'merge into' on the suggestion first")
+
+    old_row = None
+    if _is_live(suggestion):
+        old_row = Tribe.objects.filter(id=suggestion.resolved_ref_id).first()
+        if old_row is not None and old_row.id == target.id:
+            raise ValueError("cannot merge an entry into itself")
+    elif suggestion.status != "pending":
+        raise ValueError("already resolved")
+
     known = {normalize_name(target.name)} | {
         normalize_name(a) for a in (target.aliases or [])
     }
     if suggestion.normalized_name not in known:
         target.aliases = [*(target.aliases or []), suggestion.name]
         target.save(update_fields=["aliases"])
-    _repoint("tribe", suggestion, target.id, target.name)
+    _repoint(
+        "tribe", suggestion, target.id, target.name,
+        old_id=old_row.id if old_row else None,
+    )
+    if old_row is not None:
+        old_row.children.update(parent=target)
+        for link in old_row.province_links.all():
+            TribeProvince.objects.get_or_create(
+                tribe=target, province=link.province,
+            )
+        old_row.delete()
     _resolve(suggestion, reviewer, "merged", target.id)
     return target.id
 
 
+def keep_suggestion(suggestion: Suggestion, reviewer):
+    """Endorse an auto-published entry — it stays, now human-reviewed."""
+    if not _is_live(suggestion):
+        raise ValueError("only live entries can be kept")
+    _resolve(suggestion, reviewer, "approved", suggestion.resolved_ref_id)
+
+
+REF_MODELS = {
+    "tribe": Tribe,
+    "district": District,
+    "tehsil": Tehsil,
+    "province": Province,
+    "language": Language,
+}
+
+
 def reject_suggestion(suggestion: Suggestion, reviewer):
+    if _is_live(suggestion):
+        row = REF_MODELS[suggestion.kind].objects.filter(
+            id=suggestion.resolved_ref_id,
+        ).first()
+        if row is not None:
+            if suggestion.kind == "tribe" and row.children.exists():
+                raise ValueError("it has sub-entries — merge it instead")
+            _unpublish(suggestion, row.id)
+            row.delete()
+    elif suggestion.status != "pending":
+        raise ValueError("already resolved")
     _resolve(suggestion, reviewer, "rejected", "")
+
+
+def _unpublish(suggestion, old_id):
+    """Put profiles that used a removed entry back to a pending spelling."""
+    kind = suggestion.kind
+    for profile in Profile.objects.exclude(completed_at=None):
+        changed = False
+        if kind == "tribe":
+            for node in profile.tribe_path or []:
+                if isinstance(node, dict) and node.get("id") == old_id:
+                    node.pop("id", None)
+                    node["pending"] = True
+                    changed = True
+        elif kind != "language":
+            entry = getattr(profile, kind)
+            if isinstance(entry, dict) and entry.get("id") == old_id:
+                setattr(profile, kind, {"name": entry.get("name"), "pending": True})
+                changed = True
+        if changed:
+            field = "tribe_path" if kind == "tribe" else kind
+            profile.save(update_fields=[field, "updated_at"])
 
 
 def sibling_candidates(suggestion: Suggestion, limit: int = 3):

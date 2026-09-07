@@ -2,7 +2,13 @@ import hashlib
 import re
 import unicodedata
 
-CHAR_MAP = {"ك": "ک", "ي": "ی", "ى": "ی", "ة": "ه"}
+CHAR_MAP = {
+    "ك": "ک",  # Arabic kaf
+    "گ": "ګ",  # Persian gaf → Pashto gaf
+    "ي": "ی",  # Arabic ya
+    "ى": "ی",  # alef maksura
+    "ة": "ه",  # ta marbuta
+}
 
 
 def normalize_name(value: str) -> str:

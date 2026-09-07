@@ -10,6 +10,7 @@ from apps.ref.models import (
     Tehsil,
     Tribe,
     TribeDistrict,
+    TribeProvince,
 )
 from apps.ref.serializers import RefOptionSerializer
 
@@ -47,7 +48,7 @@ def provinces(request):
         return Response({"error": "country is required"}, status=400)
     items = Province.objects.filter(country_id=country)
     ordered = sorted(items, key=lambda p: (p.id != "pk-kp", p.name))
-    return cached([option(id=p.id, name=p.name) for p in ordered])
+    return cached([option(id=p.id, name=p.name, ps=p.pashto) for p in ordered])
 
 
 @extend_schema(
@@ -67,6 +68,7 @@ def districts(request):
             option(
                 id=d.id,
                 name=d.name,
+                ps=d.pashto,
                 language=d.language,
                 hasTehsils=d.has_tehsils,
             )
@@ -85,7 +87,7 @@ def tehsils(request):
     if not district:
         return Response({"error": "district is required"}, status=400)
     items = Tehsil.objects.filter(district_id=district)
-    return cached([option(id=t.id, name=t.name) for t in items])
+    return cached([option(id=t.id, name=t.name, ps=t.pashto) for t in items])
 
 
 @extend_schema(responses=RefOptionSerializer(many=True))
@@ -101,6 +103,7 @@ def languages(request):
 @extend_schema(
     parameters=[
         OpenApiParameter("district", str, required=False),
+        OpenApiParameter("province", str, required=False),
         OpenApiParameter("parent", str, required=False),
     ],
     responses=RefOptionSerializer(many=True),
@@ -109,17 +112,28 @@ def languages(request):
 def tribes(request):
     parent = request.GET.get("parent")
     district = request.GET.get("district")
+    province = request.GET.get("province")
     has_children = Exists(Tribe.objects.filter(parent=OuterRef("pk")))
 
     if parent:
         items = Tribe.objects.filter(parent_id=parent).annotate(kids=has_children)
         return cached([tribe_option(t, t.kids) for t in items])
 
-    roots = Tribe.objects.filter(level=1).annotate(kids=has_children)
-    role_rank = {"dominant": 0, "present": 1}
+    roots = Tribe.objects.filter(parent__isnull=True).annotate(kids=has_children)
     ranks = {}
     if district:
+        role_rank = {"dominant": 0, "present": 1}
         links = TribeDistrict.objects.filter(district_id=district)
         ranks = {link.tribe_id: role_rank[link.role] for link in links}
+    elif province:
+        # AF: presence links live at tribe level — surface their root ancestors
+        linked = TribeProvince.objects.filter(
+            province_id=province,
+        ).select_related("tribe")
+        for link in linked:
+            node = link.tribe
+            while node.parent is not None:
+                node = node.parent
+            ranks.setdefault(node.id, 1)
     ordered = sorted(roots, key=lambda t: (ranks.get(t.id, 2), t.name))
     return cached([tribe_option(t, t.kids) for t in ordered])

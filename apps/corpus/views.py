@@ -10,6 +10,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
 from apps.corpus.models import Contribution, MediaBlob, Prompt
+from apps.corpus.wordcluster import cluster
 from apps.identity.models import Profile
 from apps.ref.normalize import normalize_name
 
@@ -133,10 +134,25 @@ def blob(request, sha):
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def prompt_words(request, pk):
-    rows = Contribution.objects.filter(prompt_id=pk)
-    grouped = defaultdict(lambda: {"count": 0, "display": defaultdict(int), "cells": defaultdict(int)})
+    rows = list(Contribution.objects.filter(prompt_id=pk))
+
+    # spellings of one word travel together; different words stay apart
+    clusters = cluster(row.text_norm for row in rows)
+    key_of = {}
+    for group in clusters:
+        key = min(group)
+        for form in group:
+            key_of[form] = key
+
+    grouped = defaultdict(
+        lambda: {
+            "count": 0,
+            "display": defaultdict(int),
+            "cells": defaultdict(int),
+        },
+    )
     for row in rows:
-        entry = grouped[row.text_norm]
+        entry = grouped[key_of.get(row.text_norm, row.text_norm)]
         entry["count"] += 1
         entry["display"][row.text_raw] += 1
         district = (row.district or {}).get("name") or "—"
@@ -147,11 +163,15 @@ def prompt_words(request, pk):
 
     data = []
     for entry in grouped.values():
-        display = max(entry["display"], key=entry["display"].get)
+        spellings = sorted(entry["display"].items(), key=lambda kv: -kv[1])
         data.append(
             {
-                "word": display,
+                "word": spellings[0][0],
                 "count": entry["count"],
+                # every other way people wrote the same word, most used first
+                "variants": [
+                    {"word": word, "count": n} for word, n in spellings[1:]
+                ],
                 "rows": [
                     {"district": d, "tribe": t, "clan": c or None, "count": n}
                     for (d, t, c), n in sorted(

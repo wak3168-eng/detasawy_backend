@@ -25,6 +25,7 @@ from apps.portal.models import Campaign
 from apps.ref.models import Language, Suggestion, Tribe
 from apps.ref.services import (
     approve_suggestion,
+    keep_suggestion,
     merge_suggestion,
     reject_suggestion,
     sibling_candidates,
@@ -32,6 +33,11 @@ from apps.ref.services import (
 
 
 def serialize_suggestion(suggestion):
+    live = (
+        suggestion.status == "approved"
+        and bool(suggestion.resolved_ref_id)
+        and suggestion.reviewed_by_id is None
+    )
     return {
         "id": suggestion.id,
         "kind": suggestion.kind,
@@ -41,6 +47,7 @@ def serialize_suggestion(suggestion):
         "timesSuggested": suggestion.times_suggested,
         "suggestedBy": suggestion.suggested_by.email if suggestion.suggested_by else None,
         "status": suggestion.status,
+        "live": live,
         "resolvedRefId": suggestion.resolved_ref_id or None,
         "createdAt": suggestion.created_at.isoformat(),
         "candidates": sibling_candidates(suggestion),
@@ -102,8 +109,19 @@ def overview(request):
 @api_view(["GET"])
 @permission_classes([IsReviewer])
 def suggestions(request):
-    status = request.GET.get("status", "pending")
-    rows = Suggestion.objects.filter(status=status).order_by("-times_suggested", "-created_at")[:50]
+    status = request.GET.get("status", "review")
+    if status in ("review", "pending"):
+        # everything a human still needs to look at: legacy pending entries
+        # plus auto-published ones nobody has reviewed
+        from django.db.models import Q
+
+        rows = Suggestion.objects.filter(
+            Q(status="pending")
+            | Q(status="approved", reviewed_by__isnull=True, resolved_ref_id__gt=""),
+        )
+    else:
+        rows = Suggestion.objects.filter(status=status)
+    rows = rows.order_by("-times_suggested", "-created_at")[:50]
     return Response([serialize_suggestion(s) for s in rows])
 
 
@@ -114,13 +132,13 @@ def suggestion_action(request, pk):
         suggestion = Suggestion.objects.get(pk=pk)
     except Suggestion.DoesNotExist:
         return Response({"error": "not found"}, status=404)
-    if suggestion.status != "pending":
-        return Response({"error": "already resolved"}, status=400)
 
     action = request.data.get("action")
     try:
         if action == "approve":
             approve_suggestion(suggestion, request.user)
+        elif action == "keep":
+            keep_suggestion(suggestion, request.user)
         elif action == "reject":
             reject_suggestion(suggestion, request.user)
         elif action == "merge":
@@ -128,7 +146,10 @@ def suggestion_action(request, pk):
             suggestion.merge_into = Tribe.objects.filter(id=target_id).first()
             merge_suggestion(suggestion, request.user)
         else:
-            return Response({"error": "action must be approve, reject or merge"}, status=400)
+            return Response(
+                {"error": "action must be approve, keep, reject or merge"},
+                status=400,
+            )
     except ValueError as error:
         return Response({"error": str(error)}, status=400)
 
