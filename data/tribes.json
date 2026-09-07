@@ -1,0 +1,6597 @@
+{
+  "levelNames": [
+    "confederacy",
+    "tribe",
+    "clan",
+    "division",
+    "sub_division",
+    "section",
+    "minor_fraction"
+  ],
+  "nodes": [
+    {
+      "id": "pk-kp-karlani-1",
+      "name": "Karlani",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "کرلاڼي",
+      "aliases": [
+        "Karlanri,Karrani"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2",
+      "name": "Afridi",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "اپريدی",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3",
+      "name": "Kuki Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-abdal-khel-4",
+      "name": "Abdal Khel",
+      "parentId": "pk-kp-kuki-khel-3",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zarghun-khel-5",
+      "name": "Zarghun Khel",
+      "parentId": "pk-kp-kuki-khel-3",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mir-ahmad-khel-6",
+      "name": "Mir Ahmad Khel",
+      "parentId": "pk-kp-kuki-khel-3",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ashu-khel-7",
+      "name": "Ashu Khel",
+      "parentId": "pk-kp-kuki-khel-3",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-qambar-khel-8",
+      "name": "Qambar Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [
+        "Kambar Khel,Kamber Khel"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bar-qambar-khel-9",
+      "name": "Bar Qambar Khel",
+      "parentId": "pk-kp-qambar-khel-8",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sheikhmal-khel-10",
+      "name": "Sheikhmal Khel",
+      "parentId": "pk-kp-bar-qambar-khel-9",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-piral-khel-11",
+      "name": "Piral Khel",
+      "parentId": "pk-kp-sheikhmal-khel-10",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wandgarai-12",
+      "name": "Wandgarai",
+      "parentId": "pk-kp-bar-qambar-khel-9",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dray-plara-13",
+      "name": "Dray Plara",
+      "parentId": "pk-kp-bar-qambar-khel-9",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-lar-qambar-khel-14",
+      "name": "Lar Qambar Khel",
+      "parentId": "pk-kp-qambar-khel-8",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [
+        "Kuz Qambar Khel"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shalobar-qambar-khel-15",
+      "name": "Shalobar Qambar Khel",
+      "parentId": "pk-kp-qambar-khel-8",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kao-qambar-khel-16",
+      "name": "Kao Qambar Khel",
+      "parentId": "pk-kp-qambar-khel-8",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wattar-khel-17",
+      "name": "Wattar Khel",
+      "parentId": "pk-kp-qambar-khel-8",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malikdin-khel-18",
+      "name": "Malikdin Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kamar-khel-19",
+      "name": "Kamar Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [
+        "Kamrai,Kamar Din Khel"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sipah-20",
+      "name": "Sipah",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21",
+      "name": "Urmuz Khel",
+      "parentId": "pk-kp-sipah-20",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-landi-khel-22",
+      "name": "Landi Khel",
+      "parentId": "pk-kp-sipah-20",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23",
+      "name": "Zakka Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nasruddin-24",
+      "name": "Nasruddin",
+      "parentId": "pk-kp-zakka-khel-23",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khusrogi-25",
+      "name": "Khusrogi",
+      "parentId": "pk-kp-nasruddin-24",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dreplara-26",
+      "name": "Dreplara",
+      "parentId": "pk-kp-khusrogi-25",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dado-khel-27",
+      "name": "Dado Khel",
+      "parentId": "pk-kp-dreplara-26",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28",
+      "name": "Aka Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29",
+      "name": "Adam Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-orakzai-30",
+      "name": "Orakzai",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "اورکزی",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daulatzai-31",
+      "name": "Daulatzai",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-utman-khel-32",
+      "name": "Utman Khel",
+      "parentId": "pk-kp-daulatzai-31",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mishti-33",
+      "name": "Mishti",
+      "parentId": "pk-kp-daulatzai-31",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-lashkarzai-34",
+      "name": "Lashkarzai",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mishti-35",
+      "name": "Mishti",
+      "parentId": "pk-kp-lashkarzai-34",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-masuzai-36",
+      "name": "Masuzai",
+      "parentId": "pk-kp-lashkarzai-34",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bar-muhammad-khel-37",
+      "name": "Bar Muhammad Khel",
+      "parentId": "pk-kp-lashkarzai-34",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-muhammad-khel-38",
+      "name": "Muhammad Khel",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ismailzai-39",
+      "name": "Ismailzai",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sturi-khel-40",
+      "name": "Sturi Khel",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ali-khel-41",
+      "name": "Ali Khel",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mamuzai-42",
+      "name": "Mamuzai",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bizoti-43",
+      "name": "Bizoti",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-alisherzai-44",
+      "name": "Alisherzai",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malla-khel-45",
+      "name": "Malla Khel",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-rabia-khel-46",
+      "name": "Rabia Khel",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sheikhan-47",
+      "name": "Sheikhan",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-utman-khel-48",
+      "name": "Utman Khel",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-massuzai-49",
+      "name": "Massuzai",
+      "parentId": "pk-kp-orakzai-30",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bangash-50",
+      "name": "Bangash",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "بنګښ",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-baizai-51",
+      "name": "Baizai",
+      "parentId": "pk-kp-bangash-50",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-miranzai-52",
+      "name": "Miranzai",
+      "parentId": "pk-kp-bangash-50",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-samilzai-53",
+      "name": "Samilzai",
+      "parentId": "pk-kp-bangash-50",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gari-54",
+      "name": "Gari",
+      "parentId": "pk-kp-bangash-50",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-alizai-55",
+      "name": "Alizai",
+      "parentId": "pk-kp-bangash-50",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-muhammad-khel-56",
+      "name": "Muhammad Khel",
+      "parentId": "pk-kp-bangash-50",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-turi-57",
+      "name": "Turi",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "توری",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hamza-khel-58",
+      "name": "Hamza Khel",
+      "parentId": "pk-kp-turi-57",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mastu-khel-59",
+      "name": "Mastu Khel",
+      "parentId": "pk-kp-turi-57",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gundi-khel-60",
+      "name": "Gundi Khel",
+      "parentId": "pk-kp-turi-57",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-alizai-61",
+      "name": "Alizai",
+      "parentId": "pk-kp-turi-57",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dopazai-62",
+      "name": "Dopazai",
+      "parentId": "pk-kp-turi-57",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sarghalli-63",
+      "name": "Sarghalli",
+      "parentId": "pk-kp-turi-57",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khattak-64",
+      "name": "Khattak",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "خټک",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-akora-khattak-65",
+      "name": "Akora Khattak",
+      "parentId": "pk-kp-khattak-64",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [
+        "Akorai"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tari-khel-66",
+      "name": "Tari Khel",
+      "parentId": "pk-kp-akora-khattak-65",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khwaja-khel-67",
+      "name": "Khwaja Khel",
+      "parentId": "pk-kp-akora-khattak-65",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-teri-khattak-68",
+      "name": "Teri Khattak",
+      "parentId": "pk-kp-khattak-64",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-barak-69",
+      "name": "Barak",
+      "parentId": "pk-kp-teri-khattak-68",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bolaq-70",
+      "name": "Bolaq",
+      "parentId": "pk-kp-teri-khattak-68",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bhangi-khel-71",
+      "name": "Bhangi Khel",
+      "parentId": "pk-kp-khattak-64",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sagri-72",
+      "name": "Sagri",
+      "parentId": "pk-kp-khattak-64",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bolaq-73",
+      "name": "Bolaq",
+      "parentId": "pk-kp-khattak-64",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wazir-74",
+      "name": "Wazir",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "وزیر",
+      "aliases": [
+        "Darwesh Khel"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ahmadzai-75",
+      "name": "Ahmadzai",
+      "parentId": "pk-kp-wazir-74",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wali-khel-76",
+      "name": "Wali Khel",
+      "parentId": "pk-kp-ahmadzai-75",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zilli-khel-77",
+      "name": "Zilli Khel",
+      "parentId": "pk-kp-ahmadzai-75",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bomi-khel-78",
+      "name": "Bomi Khel",
+      "parentId": "pk-kp-ahmadzai-75",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-utmanzai-79",
+      "name": "Utmanzai",
+      "parentId": "pk-kp-wazir-74",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bakka-khel-80",
+      "name": "Bakka Khel",
+      "parentId": "pk-kp-utmanzai-79",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-jani-khel-81",
+      "name": "Jani Khel",
+      "parentId": "pk-kp-utmanzai-79",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mada-khel-82",
+      "name": "Mada Khel",
+      "parentId": "pk-kp-utmanzai-79",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tori-khel-83",
+      "name": "Tori Khel",
+      "parentId": "pk-kp-utmanzai-79",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-muhammad-khel-84",
+      "name": "Muhammad Khel",
+      "parentId": "pk-kp-utmanzai-79",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kabul-khel-85",
+      "name": "Kabul Khel",
+      "parentId": "pk-kp-utmanzai-79",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hathi-khel-86",
+      "name": "Hathi Khel",
+      "parentId": "pk-kp-utmanzai-79",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mahsud-87",
+      "name": "Mahsud",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "محسود",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-alizai-88",
+      "name": "Alizai",
+      "parentId": "pk-kp-mahsud-87",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-manzai-89",
+      "name": "Manzai",
+      "parentId": "pk-kp-alizai-88",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shabi-khel-90",
+      "name": "Shabi Khel",
+      "parentId": "pk-kp-alizai-88",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nana-khel-91",
+      "name": "Nana Khel",
+      "parentId": "pk-kp-alizai-88",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bahlolzai-92",
+      "name": "Bahlolzai",
+      "parentId": "pk-kp-mahsud-87",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aimal-khel-93",
+      "name": "Aimal Khel",
+      "parentId": "pk-kp-bahlolzai-92",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shingi-94",
+      "name": "Shingi",
+      "parentId": "pk-kp-bahlolzai-92",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-abdullai-95",
+      "name": "Abdullai",
+      "parentId": "pk-kp-bahlolzai-92",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shaman-khel-96",
+      "name": "Shaman Khel",
+      "parentId": "pk-kp-mahsud-87",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khalli-khel-97",
+      "name": "Khalli Khel",
+      "parentId": "pk-kp-shaman-khel-96",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-charmangi-98",
+      "name": "Charmangi",
+      "parentId": "pk-kp-shaman-khel-96",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dawar-99",
+      "name": "Dawar",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "داوړ",
+      "aliases": [
+        "Daur"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tappizad-100",
+      "name": "Tappizad",
+      "parentId": "pk-kp-dawar-99",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malizad-101",
+      "name": "Malizad",
+      "parentId": "pk-kp-dawar-99",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zadran-102",
+      "name": "Zadran",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Jadran,Dzadran"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mangal-103",
+      "name": "Mangal",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zazi-104",
+      "name": "Zazi",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Jaji,Dzadzi"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chamkani-105",
+      "name": "Chamkani",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khogyani-106",
+      "name": "Khogyani",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Khugiani"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mohsinzai-107",
+      "name": "Mohsinzai",
+      "parentId": "pk-kp-khogyani-106",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daulatzai-108",
+      "name": "Daulatzai",
+      "parentId": "pk-kp-khogyani-106",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-maroofzai-109",
+      "name": "Maroofzai",
+      "parentId": "pk-kp-khogyani-106",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-saibzai-110",
+      "name": "Saibzai",
+      "parentId": "pk-kp-khogyani-106",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chopanzai-111",
+      "name": "Chopanzai",
+      "parentId": "pk-kp-khogyani-106",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wardak-112",
+      "name": "Wardak",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-banuchi-113",
+      "name": "Banuchi",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Bannuchi"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-surani-114",
+      "name": "Surani",
+      "parentId": "pk-kp-banuchi-113",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-miri-115",
+      "name": "Miri",
+      "parentId": "pk-kp-banuchi-113",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sam-bakka-khel-116",
+      "name": "Sam Bakka Khel",
+      "parentId": "pk-kp-banuchi-113",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mughal-khel-117",
+      "name": "Mughal Khel",
+      "parentId": "pk-kp-banuchi-113",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ormur-118",
+      "name": "Ormur",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Burki,Baraki"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dilazak-119",
+      "name": "Dilazak",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gurbuz-120",
+      "name": "Gurbuz",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tani-121",
+      "name": "Tani",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-muqbil-122",
+      "name": "Muqbil",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sabari-123",
+      "name": "Sabari",
+      "parentId": "pk-kp-karlani-1",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Sabri"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sarbani-124",
+      "name": "Sarbani",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "سربڼي",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-yusufzai-125",
+      "name": "Yusufzai",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "یوسفزی",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-isazai-126",
+      "name": "Isazai",
+      "parentId": "pk-kp-yusufzai-125",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hasanzai-127",
+      "name": "Hasanzai",
+      "parentId": "pk-kp-isazai-126",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-akazai-128",
+      "name": "Akazai",
+      "parentId": "pk-kp-isazai-126",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mada-khel-129",
+      "name": "Mada Khel",
+      "parentId": "pk-kp-isazai-126",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chagarzai-130",
+      "name": "Chagarzai",
+      "parentId": "pk-kp-isazai-126",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-iliaszai-131",
+      "name": "Iliaszai",
+      "parentId": "pk-kp-yusufzai-125",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [
+        "Bunerwal"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-salarzai-132",
+      "name": "Salarzai",
+      "parentId": "pk-kp-iliaszai-131",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nurizai-133",
+      "name": "Nurizai",
+      "parentId": "pk-kp-iliaszai-131",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gadaizai-134",
+      "name": "Gadaizai",
+      "parentId": "pk-kp-iliaszai-131",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ashazai-135",
+      "name": "Ashazai",
+      "parentId": "pk-kp-iliaszai-131",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nasuzai-136",
+      "name": "Nasuzai",
+      "parentId": "pk-kp-iliaszai-131",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chagarzai-137",
+      "name": "Chagarzai",
+      "parentId": "pk-kp-iliaszai-131",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malizai-138",
+      "name": "Malizai",
+      "parentId": "pk-kp-yusufzai-125",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sesada-139",
+      "name": "Sesada",
+      "parentId": "pk-kp-malizai-138",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sultan-khel-140",
+      "name": "Sultan Khel",
+      "parentId": "pk-kp-sesada-139",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-painda-khel-141",
+      "name": "Painda Khel",
+      "parentId": "pk-kp-sesada-139",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nasruddin-khel-142",
+      "name": "Nasruddin Khel",
+      "parentId": "pk-kp-sesada-139",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chagarzai-143",
+      "name": "Chagarzai",
+      "parentId": "pk-kp-malizai-138",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daulatzai-144",
+      "name": "Daulatzai",
+      "parentId": "pk-kp-malizai-138",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nurizai-145",
+      "name": "Nurizai",
+      "parentId": "pk-kp-malizai-138",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-akozai-146",
+      "name": "Akozai",
+      "parentId": "pk-kp-yusufzai-125",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-baizai-147",
+      "name": "Baizai",
+      "parentId": "pk-kp-akozai-146",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bar-sulizai-148",
+      "name": "Bar Sulizai",
+      "parentId": "pk-kp-baizai-147",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-azi-khel-149",
+      "name": "Azi Khel",
+      "parentId": "pk-kp-bar-sulizai-148",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-jinki-khel-150",
+      "name": "Jinki Khel",
+      "parentId": "pk-kp-bar-sulizai-148",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-maturizai-151",
+      "name": "Maturizai",
+      "parentId": "pk-kp-bar-sulizai-148",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuz-sulizai-152",
+      "name": "Kuz Sulizai",
+      "parentId": "pk-kp-baizai-147",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aba-khel-153",
+      "name": "Aba Khel",
+      "parentId": "pk-kp-kuz-sulizai-152",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khan-khel-154",
+      "name": "Khan Khel",
+      "parentId": "pk-kp-kuz-sulizai-152",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-musa-khel-155",
+      "name": "Musa Khel",
+      "parentId": "pk-kp-kuz-sulizai-152",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-babuzai-156",
+      "name": "Babuzai",
+      "parentId": "pk-kp-baizai-147",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khwazazai-157",
+      "name": "Khwazazai",
+      "parentId": "pk-kp-akozai-146",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adinzai-158",
+      "name": "Adinzai",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nekpi-khel-159",
+      "name": "Nekpi Khel",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shamozai-160",
+      "name": "Shamozai",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shamizai-161",
+      "name": "Shamizai",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khadakzai-162",
+      "name": "Khadakzai",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-abazai-163",
+      "name": "Abazai",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malizai-164",
+      "name": "Malizai",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sebujni-165",
+      "name": "Sebujni",
+      "parentId": "pk-kp-khwazazai-157",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ranizai-166",
+      "name": "Ranizai",
+      "parentId": "pk-kp-akozai-146",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bar-ranizai-167",
+      "name": "Bar Ranizai",
+      "parentId": "pk-kp-ranizai-166",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sam-ranizai-168",
+      "name": "Sam Ranizai",
+      "parentId": "pk-kp-ranizai-166",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mandanr-169",
+      "name": "Mandanr",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "مندړ",
+      "aliases": [
+        "Mandan"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-utmanzai-170",
+      "name": "Utmanzai",
+      "parentId": "pk-kp-mandanr-169",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-saduzai-171",
+      "name": "Saduzai",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khudu-khel-172",
+      "name": "Khudu Khel",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-amazai-173",
+      "name": "Amazai",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kamalzai-174",
+      "name": "Kamalzai",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kanazai-175",
+      "name": "Kanazai",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khanazai-176",
+      "name": "Khanazai",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-akazai-177",
+      "name": "Akazai",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-alazai-178",
+      "name": "Alazai",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ghulam-khel-179",
+      "name": "Ghulam Khel",
+      "parentId": "pk-kp-utmanzai-170",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-razar-180",
+      "name": "Razar",
+      "parentId": "pk-kp-mandanr-169",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ako-khel-181",
+      "name": "Ako Khel",
+      "parentId": "pk-kp-razar-180",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-manizai-182",
+      "name": "Manizai",
+      "parentId": "pk-kp-razar-180",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mamuzai-183",
+      "name": "Mamuzai",
+      "parentId": "pk-kp-razar-180",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khidarzai-184",
+      "name": "Khidarzai",
+      "parentId": "pk-kp-razar-180",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malizai-185",
+      "name": "Malizai",
+      "parentId": "pk-kp-razar-180",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khadakzai-186",
+      "name": "Khadakzai",
+      "parentId": "pk-kp-mandanr-169",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aba-khel-187",
+      "name": "Aba Khel",
+      "parentId": "pk-kp-mandanr-169",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mohmand-188",
+      "name": "Mohmand",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "مومند",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tarakzai-189",
+      "name": "Tarakzai",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dadu-khel-190",
+      "name": "Dadu Khel",
+      "parentId": "pk-kp-tarakzai-189",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dalkha-kor-191",
+      "name": "Dalkha Kor",
+      "parentId": "pk-kp-dadu-khel-190",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-asaf-khel-192",
+      "name": "Asaf Khel",
+      "parentId": "pk-kp-dalkha-kor-191",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-muradi-khel-193",
+      "name": "Muradi Khel",
+      "parentId": "pk-kp-dalkha-kor-191",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shah-mansur-khel-194",
+      "name": "Shah Mansur Khel",
+      "parentId": "pk-kp-dadu-khel-190",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kasim-khel-195",
+      "name": "Kasim Khel",
+      "parentId": "pk-kp-tarakzai-189",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khalil-khel-196",
+      "name": "Khalil Khel",
+      "parentId": "pk-kp-kasim-khel-195",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kani-khel-197",
+      "name": "Kani Khel",
+      "parentId": "pk-kp-kasim-khel-195",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-halimzai-198",
+      "name": "Halimzai",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gandab-halimzai-199",
+      "name": "Gandab Halimzai",
+      "parentId": "pk-kp-halimzai-198",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hamza-khel-200",
+      "name": "Hamza Khel",
+      "parentId": "pk-kp-gandab-halimzai-199",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kadai-kor-201",
+      "name": "Kadai Kor",
+      "parentId": "pk-kp-gandab-halimzai-199",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wali-beg-kor-202",
+      "name": "Wali Beg Kor",
+      "parentId": "pk-kp-gandab-halimzai-199",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kamali-halimzai-203",
+      "name": "Kamali Halimzai",
+      "parentId": "pk-kp-halimzai-198",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ibrahim-khel-204",
+      "name": "Ibrahim Khel",
+      "parentId": "pk-kp-kamali-halimzai-203",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hamza-khel-205",
+      "name": "Hamza Khel",
+      "parentId": "pk-kp-kamali-halimzai-203",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-busha-khel-206",
+      "name": "Busha Khel",
+      "parentId": "pk-kp-kamali-halimzai-203",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-baezai-207",
+      "name": "Baezai",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sepah-208",
+      "name": "Sepah",
+      "parentId": "pk-kp-baezai-207",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-musa-khel-209",
+      "name": "Musa Khel",
+      "parentId": "pk-kp-sepah-208",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bara-khel-210",
+      "name": "Bara Khel",
+      "parentId": "pk-kp-sepah-208",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-miro-khel-211",
+      "name": "Miro Khel",
+      "parentId": "pk-kp-sepah-208",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-usman-khel-212",
+      "name": "Usman Khel",
+      "parentId": "pk-kp-baezai-207",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khwaezai-213",
+      "name": "Khwaezai",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dawat-khel-214",
+      "name": "Dawat Khel",
+      "parentId": "pk-kp-khwaezai-213",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-maimana-khel-215",
+      "name": "Maimana Khel",
+      "parentId": "pk-kp-khwaezai-213",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khadi-khel-216",
+      "name": "Khadi Khel",
+      "parentId": "pk-kp-khwaezai-213",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-burhan-khel-217",
+      "name": "Burhan Khel",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-muhammad-khan-kor-218",
+      "name": "Muhammad Khan Kor",
+      "parentId": "pk-kp-burhan-khel-217",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khrappawal-219",
+      "name": "Khrappawal",
+      "parentId": "pk-kp-burhan-khel-217",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-isa-khel-220",
+      "name": "Isa Khel",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kandai-221",
+      "name": "Kandai",
+      "parentId": "pk-kp-isa-khel-220",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-yusaf-khel-222",
+      "name": "Yusaf Khel",
+      "parentId": "pk-kp-isa-khel-220",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-utmanzai-223",
+      "name": "Utmanzai",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dawezai-224",
+      "name": "Dawezai",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuchi-225",
+      "name": "Kuchi",
+      "parentId": "pk-kp-dawezai-224",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-udredunkai-226",
+      "name": "Udredunkai",
+      "parentId": "pk-kp-dawezai-224",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kukkozai-227",
+      "name": "Kukkozai",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-baezai-228",
+      "name": "Baezai",
+      "parentId": "pk-kp-kukkozai-227",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ahmadzai-229",
+      "name": "Ahmadzai",
+      "parentId": "pk-kp-kukkozai-227",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-naraizai-230",
+      "name": "Naraizai",
+      "parentId": "pk-kp-kukkozai-227",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-safi-231",
+      "name": "Safi",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gurbuz-232",
+      "name": "Gurbuz",
+      "parentId": "pk-kp-safi-231",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-masaud-233",
+      "name": "Masaud",
+      "parentId": "pk-kp-safi-231",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wadir-234",
+      "name": "Wadir",
+      "parentId": "pk-kp-safi-231",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kandahari-235",
+      "name": "Kandahari",
+      "parentId": "pk-kp-safi-231",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mullagori-236",
+      "name": "Mullagori",
+      "parentId": "pk-kp-mohmand-188",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daulat-khel-237",
+      "name": "Daulat Khel",
+      "parentId": "pk-kp-mullagori-236",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-par-khel-238",
+      "name": "Par Khel",
+      "parentId": "pk-kp-mullagori-236",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tar-khel-239",
+      "name": "Tar Khel",
+      "parentId": "pk-kp-mullagori-236",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tarkani-240",
+      "name": "Tarkani",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Tarklanri,Tarkalani"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mamund-241",
+      "name": "Mamund",
+      "parentId": "pk-kp-tarkani-240",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wara-242",
+      "name": "Wara",
+      "parentId": "pk-kp-mamund-241",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [
+        "Wur"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-baramkazai-243",
+      "name": "Baramkazai",
+      "parentId": "pk-kp-wara-242",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-burozai-244",
+      "name": "Burozai",
+      "parentId": "pk-kp-wara-242",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-badalzai-245",
+      "name": "Badalzai",
+      "parentId": "pk-kp-wara-242",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daryazai-246",
+      "name": "Daryazai",
+      "parentId": "pk-kp-wara-242",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-uraizai-247",
+      "name": "Uraizai",
+      "parentId": "pk-kp-wara-242",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bar-makazai-248",
+      "name": "Bar Makazai",
+      "parentId": "pk-kp-wara-242",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kakazai-249",
+      "name": "Kakazai",
+      "parentId": "pk-kp-mamund-241",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daulat-khel-250",
+      "name": "Daulat Khel",
+      "parentId": "pk-kp-kakazai-249",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khalozai-251",
+      "name": "Khalozai",
+      "parentId": "pk-kp-kakazai-249",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mahmud-khel-252",
+      "name": "Mahmud Khel",
+      "parentId": "pk-kp-kakazai-249",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-umar-khel-253",
+      "name": "Umar Khel",
+      "parentId": "pk-kp-kakazai-249",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-yusaf-khel-254",
+      "name": "Yusaf Khel",
+      "parentId": "pk-kp-kakazai-249",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mahsud-khel-255",
+      "name": "Mahsud Khel",
+      "parentId": "pk-kp-kakazai-249",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-salarzai-256",
+      "name": "Salarzai",
+      "parentId": "pk-kp-tarkani-240",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ibrahim-khel-257",
+      "name": "Ibrahim Khel",
+      "parentId": "pk-kp-salarzai-256",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-husain-khel-258",
+      "name": "Husain Khel",
+      "parentId": "pk-kp-salarzai-256",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ilal-khel-259",
+      "name": "Ilal Khel",
+      "parentId": "pk-kp-salarzai-256",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-katkai-khel-260",
+      "name": "Katkai Khel",
+      "parentId": "pk-kp-salarzai-256",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-madak-261",
+      "name": "Madak",
+      "parentId": "pk-kp-salarzai-256",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sadin-262",
+      "name": "Sadin",
+      "parentId": "pk-kp-salarzai-256",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hat-khel-263",
+      "name": "Hat Khel",
+      "parentId": "pk-kp-salarzai-256",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-isazai-264",
+      "name": "Isazai",
+      "parentId": "pk-kp-tarkani-240",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-musa-khel-265",
+      "name": "Musa Khel",
+      "parentId": "pk-kp-isazai-264",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mast-khel-266",
+      "name": "Mast Khel",
+      "parentId": "pk-kp-isazai-264",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sherkhel-267",
+      "name": "Sherkhel",
+      "parentId": "pk-kp-isazai-264",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mandezai-268",
+      "name": "Mandezai",
+      "parentId": "pk-kp-isazai-264",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khwazozai-269",
+      "name": "Khwazozai",
+      "parentId": "pk-kp-isazai-264",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-serzai-270",
+      "name": "Serzai",
+      "parentId": "pk-kp-isazai-264",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ismailzai-271",
+      "name": "Ismailzai",
+      "parentId": "pk-kp-tarkani-240",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [
+        "Samilzai"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nur-khel-272",
+      "name": "Nur Khel",
+      "parentId": "pk-kp-ismailzai-271",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kalut-khel-273",
+      "name": "Kalut Khel",
+      "parentId": "pk-kp-ismailzai-271",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-jabi-khel-274",
+      "name": "Jabi Khel",
+      "parentId": "pk-kp-ismailzai-271",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-katorzai-275",
+      "name": "Katorzai",
+      "parentId": "pk-kp-ismailzai-271",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sed-khel-276",
+      "name": "Sed Khel",
+      "parentId": "pk-kp-ismailzai-271",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-atrap-khel-277",
+      "name": "Atrap Khel",
+      "parentId": "pk-kp-ismailzai-271",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-utman-khel-278",
+      "name": "Utman Khel",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ismailzai-279",
+      "name": "Ismailzai",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-alizai-280",
+      "name": "Alizai",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mandal-281",
+      "name": "Mandal",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sanizai-282",
+      "name": "Sanizai",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gorai-283",
+      "name": "Gorai",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mutakai-284",
+      "name": "Mutakai",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bimbarai-285",
+      "name": "Bimbarai",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-peghozai-286",
+      "name": "Peghozai",
+      "parentId": "pk-kp-utman-khel-278",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shinwari-287",
+      "name": "Shinwari",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "شینواری",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mandozai-288",
+      "name": "Mandozai",
+      "parentId": "pk-kp-shinwari-287",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sangu-khel-289",
+      "name": "Sangu Khel",
+      "parentId": "pk-kp-shinwari-287",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ali-sher-khel-290",
+      "name": "Ali Sher Khel",
+      "parentId": "pk-kp-shinwari-287",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sipah-291",
+      "name": "Sipah",
+      "parentId": "pk-kp-shinwari-287",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khuga-khel-292",
+      "name": "Khuga Khel",
+      "parentId": "pk-kp-shinwari-287",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ghoryakhel-293",
+      "name": "Ghoryakhel",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khalil-294",
+      "name": "Khalil",
+      "parentId": "pk-kp-ghoryakhel-293",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daudzai-295",
+      "name": "Daudzai",
+      "parentId": "pk-kp-ghoryakhel-293",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-muhammadzai-296",
+      "name": "Muhammadzai",
+      "parentId": "pk-kp-ghoryakhel-293",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chamkani-297",
+      "name": "Chamkani",
+      "parentId": "pk-kp-ghoryakhel-293",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zeerani-298",
+      "name": "Zeerani",
+      "parentId": "pk-kp-ghoryakhel-293",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gigyani-299",
+      "name": "Gigyani",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Gugiani"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kheshgi-300",
+      "name": "Kheshgi",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gadun-301",
+      "name": "Gadun",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Jadun,Jaduns"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mansur-302",
+      "name": "Mansur",
+      "parentId": "pk-kp-gadun-301",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daulazai-303",
+      "name": "Daulazai",
+      "parentId": "pk-kp-mansur-302",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khadaezai-304",
+      "name": "Khadaezai",
+      "parentId": "pk-kp-mansur-302",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-musazai-305",
+      "name": "Musazai",
+      "parentId": "pk-kp-mansur-302",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-salar-306",
+      "name": "Salar",
+      "parentId": "pk-kp-gadun-301",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-utazai-307",
+      "name": "Utazai",
+      "parentId": "pk-kp-salar-306",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sulemanzai-308",
+      "name": "Sulemanzai",
+      "parentId": "pk-kp-salar-306",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-matkhwazai-309",
+      "name": "Matkhwazai",
+      "parentId": "pk-kp-salar-306",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tareen-310",
+      "name": "Tareen",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mishwani-311",
+      "name": "Mishwani",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Mushwani"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-barech-312",
+      "name": "Barech",
+      "parentId": "pk-kp-sarbani-124",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bettani-313",
+      "name": "Bettani",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "بېټني",
+      "aliases": [
+        "Baittani"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bhittani-314",
+      "name": "Bhittani",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tatta-315",
+      "name": "Tatta",
+      "parentId": "pk-kp-bhittani-314",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-umar-khel-316",
+      "name": "Umar Khel",
+      "parentId": "pk-kp-tatta-315",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aba-khel-317",
+      "name": "Aba Khel",
+      "parentId": "pk-kp-tatta-315",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-naimat-khel-318",
+      "name": "Naimat Khel",
+      "parentId": "pk-kp-tatta-315",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khaishi-319",
+      "name": "Khaishi",
+      "parentId": "pk-kp-tatta-315",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-danna-320",
+      "name": "Danna",
+      "parentId": "pk-kp-bhittani-314",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ali-khel-321",
+      "name": "Ali Khel",
+      "parentId": "pk-kp-danna-320",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-rattanzai-322",
+      "name": "Rattanzai",
+      "parentId": "pk-kp-danna-320",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wargara-323",
+      "name": "Wargara",
+      "parentId": "pk-kp-danna-320",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bobi-324",
+      "name": "Bobi",
+      "parentId": "pk-kp-danna-320",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-waroki-325",
+      "name": "Waroki",
+      "parentId": "pk-kp-danna-320",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dadi-khel-326",
+      "name": "Dadi Khel",
+      "parentId": "pk-kp-danna-320",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wraspun-327",
+      "name": "Wraspun",
+      "parentId": "pk-kp-bhittani-314",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mazyani-328",
+      "name": "Mazyani",
+      "parentId": "pk-kp-wraspun-327",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tari-329",
+      "name": "Tari",
+      "parentId": "pk-kp-wraspun-327",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chapli-330",
+      "name": "Chapli",
+      "parentId": "pk-kp-wraspun-327",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shakhi-331",
+      "name": "Shakhi",
+      "parentId": "pk-kp-wraspun-327",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-marwat-332",
+      "name": "Marwat",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-musa-khel-333",
+      "name": "Musa Khel",
+      "parentId": "pk-kp-marwat-332",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bahram-334",
+      "name": "Bahram",
+      "parentId": "pk-kp-marwat-332",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-achu-khel-335",
+      "name": "Achu Khel",
+      "parentId": "pk-kp-marwat-332",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-khudru-khel-336",
+      "name": "Khudru Khel",
+      "parentId": "pk-kp-marwat-332",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tappi-337",
+      "name": "Tappi",
+      "parentId": "pk-kp-marwat-332",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ghazni-khel-338",
+      "name": "Ghazni Khel",
+      "parentId": "pk-kp-marwat-332",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-niazi-339",
+      "name": "Niazi",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-isa-khel-340",
+      "name": "Isa Khel",
+      "parentId": "pk-kp-niazi-339",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sarhang-341",
+      "name": "Sarhang",
+      "parentId": "pk-kp-niazi-339",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-jamal-khel-342",
+      "name": "Jamal Khel",
+      "parentId": "pk-kp-niazi-339",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-lohani-343",
+      "name": "Lohani",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Lodi"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-daulat-khel-344",
+      "name": "Daulat Khel",
+      "parentId": "pk-kp-lohani-343",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mian-khel-345",
+      "name": "Mian Khel",
+      "parentId": "pk-kp-lohani-343",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tator-346",
+      "name": "Tator",
+      "parentId": "pk-kp-lohani-343",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-marwat-347",
+      "name": "Marwat",
+      "parentId": "pk-kp-lohani-343",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-nuhani-348",
+      "name": "Nuhani",
+      "parentId": "pk-kp-lohani-343",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gandapur-349",
+      "name": "Gandapur",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sherani-350",
+      "name": "Sherani",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Shirani"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hassan-khel-351",
+      "name": "Hassan Khel",
+      "parentId": "pk-kp-sherani-350",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chuhar-khel-352",
+      "name": "Chuhar Khel",
+      "parentId": "pk-kp-sherani-350",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-oba-khel-353",
+      "name": "Oba Khel",
+      "parentId": "pk-kp-sherani-350",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ustarana-354",
+      "name": "Ustarana",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Ustrana"
+      ],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kundi-355",
+      "name": "Kundi",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-babar-356",
+      "name": "Babar",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-miani-357",
+      "name": "Miani",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tanoli-358",
+      "name": "Tanoli",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-pallal-359",
+      "name": "Pallal",
+      "parentId": "pk-kp-tanoli-358",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hindwal-360",
+      "name": "Hindwal",
+      "parentId": "pk-kp-tanoli-358",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ghilji-361",
+      "name": "Ghilji",
+      "parentId": "pk-kp-bettani-313",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ghurghusht-362",
+      "name": "Ghurghusht",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "غرغښت",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kakar-363",
+      "name": "Kakar",
+      "parentId": "pk-kp-ghurghusht-362",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sanzar-khel-364",
+      "name": "Sanzar Khel",
+      "parentId": "pk-kp-kakar-363",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-targhari-365",
+      "name": "Targhari",
+      "parentId": "pk-kp-kakar-363",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-panni-366",
+      "name": "Panni",
+      "parentId": "pk-kp-ghurghusht-362",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-musa-khel-367",
+      "name": "Musa Khel",
+      "parentId": "pk-kp-ghurghusht-362",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mandokhel-368",
+      "name": "Mandokhel",
+      "parentId": "pk-kp-ghurghusht-362",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-babi-369",
+      "name": "Babi",
+      "parentId": "pk-kp-ghurghusht-362",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dawi-370",
+      "name": "Dawi",
+      "parentId": "pk-kp-ghurghusht-362",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-non-pashtun-communities-of-kp-371",
+      "name": "Non-Pashtun communities of KP",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chitral-upper-kunar-372",
+      "name": "Chitral / upper Kunar",
+      "parentId": "pk-kp-non-pashtun-communities-of-kp-371",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kho-373",
+      "name": "Kho",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kalasha-374",
+      "name": "Kalasha",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-palula-375",
+      "name": "Palula",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dameli-376",
+      "name": "Dameli",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gawarbati-377",
+      "name": "Gawarbati",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-yidgha-378",
+      "name": "Yidgha",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-wakhi-379",
+      "name": "Wakhi",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-madaglashti-380",
+      "name": "Madaglashti",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kativiri-nuristani-settlers-381",
+      "name": "Kativiri / Nuristani settlers",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kirghiz-382",
+      "name": "Kirghiz",
+      "parentId": "pk-kp-chitral-upper-kunar-372",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-swat-dir-kohistan-383",
+      "name": "Swat & Dir Kohistan",
+      "parentId": "pk-kp-non-pashtun-communities-of-kp-371",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-torwali-384",
+      "name": "Torwali",
+      "parentId": "pk-kp-swat-dir-kohistan-383",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gawri-385",
+      "name": "Gawri",
+      "parentId": "pk-kp-swat-dir-kohistan-383",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ushojo-386",
+      "name": "Ushojo",
+      "parentId": "pk-kp-swat-dir-kohistan-383",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gujjar-387",
+      "name": "Gujjar",
+      "parentId": "pk-kp-swat-dir-kohistan-383",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-indus-kohistan-388",
+      "name": "Indus Kohistan",
+      "parentId": "pk-kp-non-pashtun-communities-of-kp-371",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-indus-kohistani-389",
+      "name": "Indus Kohistani",
+      "parentId": "pk-kp-indus-kohistan-388",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-shina-kolai-palas-390",
+      "name": "Shina (Kolai-Palas)",
+      "parentId": "pk-kp-indus-kohistan-388",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bateri-391",
+      "name": "Bateri",
+      "parentId": "pk-kp-indus-kohistan-388",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-chilisso-392",
+      "name": "Chilisso",
+      "parentId": "pk-kp-indus-kohistan-388",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gowro-393",
+      "name": "Gowro",
+      "parentId": "pk-kp-indus-kohistan-388",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hazara-division-394",
+      "name": "Hazara division",
+      "parentId": "pk-kp-non-pashtun-communities-of-kp-371",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-swati-395",
+      "name": "Swati",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mitravi-396",
+      "name": "Mitravi",
+      "parentId": "pk-kp-swati-395",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gibari-397",
+      "name": "Gibari",
+      "parentId": "pk-kp-swati-395",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-arghushal-398",
+      "name": "Arghushal",
+      "parentId": "pk-kp-swati-395",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tanoli-399",
+      "name": "Tanoli",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-jadoon-400",
+      "name": "Jadoon",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dhund-abbasi-401",
+      "name": "Dhund Abbasi",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-karlal-402",
+      "name": "Karlal",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-awan-403",
+      "name": "Awan",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-tareen-404",
+      "name": "Tareen",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gujjar-405",
+      "name": "Gujjar",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-syed-406",
+      "name": "Syed",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-turk-407",
+      "name": "Turk",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-qureshi-408",
+      "name": "Qureshi",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-mishwani-409",
+      "name": "Mishwani",
+      "parentId": "pk-kp-hazara-division-394",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-peshawar-valley-urban-kp-410",
+      "name": "Peshawar valley & urban KP",
+      "parentId": "pk-kp-non-pashtun-communities-of-kp-371",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-hindkowan-411",
+      "name": "Hindkowan",
+      "parentId": "pk-kp-peshawar-valley-urban-kp-410",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kashmiri-412",
+      "name": "Kashmiri",
+      "parentId": "pk-kp-peshawar-valley-urban-kp-410",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-persianate-qizilbash-413",
+      "name": "Persianate / Qizilbash",
+      "parentId": "pk-kp-peshawar-valley-urban-kp-410",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-southern-kp-414",
+      "name": "Southern KP",
+      "parentId": "pk-kp-non-pashtun-communities-of-kp-371",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-saraiki-speaking-communities-415",
+      "name": "Saraiki-speaking communities",
+      "parentId": "pk-kp-southern-kp-414",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-jat-416",
+      "name": "Jat",
+      "parentId": "pk-kp-southern-kp-414",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-baloch-417",
+      "name": "Baloch",
+      "parentId": "pk-kp-southern-kp-414",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-cross-cutting-418",
+      "name": "Cross-cutting",
+      "parentId": "pk-kp-non-pashtun-communities-of-kp-371",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-ormur-burki-419",
+      "name": "Ormur / Burki",
+      "parentId": "pk-kp-cross-cutting-418",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-gujjar-province-wide-420",
+      "name": "Gujjar (province-wide)",
+      "parentId": "pk-kp-cross-cutting-418",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-bakarwal-421",
+      "name": "Bakarwal",
+      "parentId": "pk-kp-cross-cutting-418",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sheikh-paracha-kaka-khel-422",
+      "name": "Sheikh / Paracha / Kaka Khel",
+      "parentId": "pk-kp-cross-cutting-418",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "af-sarbani-423",
+      "name": "Sarbani",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "سربڼي",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-durrani-424",
+      "name": "Durrani",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "درانی",
+      "aliases": [
+        "Abdali"
+      ],
+      "country": "AF"
+    },
+    {
+      "id": "af-zirak-425",
+      "name": "Zirak",
+      "parentId": "af-durrani-424",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-popalzai-426",
+      "name": "Popalzai",
+      "parentId": "af-zirak-425",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sadozai-427",
+      "name": "Sadozai",
+      "parentId": "af-popalzai-426",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-bamizai-428",
+      "name": "Bamizai",
+      "parentId": "af-popalzai-426",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-khaljai-429",
+      "name": "Khaljai",
+      "parentId": "af-popalzai-426",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-barakzai-430",
+      "name": "Barakzai",
+      "parentId": "af-zirak-425",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-muhammadzai-431",
+      "name": "Muhammadzai",
+      "parentId": "af-barakzai-430",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-achakzai-by-some-counts-432",
+      "name": "Achakzai (by some counts)",
+      "parentId": "af-barakzai-430",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-alikozai-433",
+      "name": "Alikozai",
+      "parentId": "af-zirak-425",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-achakzai-434",
+      "name": "Achakzai",
+      "parentId": "af-zirak-425",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-panjpai-435",
+      "name": "Panjpai",
+      "parentId": "af-durrani-424",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-nurzai-436",
+      "name": "Nurzai",
+      "parentId": "af-panjpai-435",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-alizai-437",
+      "name": "Alizai",
+      "parentId": "af-panjpai-435",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ishaqzai-438",
+      "name": "Ishaqzai",
+      "parentId": "af-panjpai-435",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-khugiani-panjpai-439",
+      "name": "Khugiani (Panjpai)",
+      "parentId": "af-panjpai-435",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-maku-440",
+      "name": "Maku",
+      "parentId": "af-panjpai-435",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-mohmand-441",
+      "name": "Mohmand",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-shinwari-442",
+      "name": "Shinwari",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ali-sher-khel-443",
+      "name": "Ali Sher Khel",
+      "parentId": "af-shinwari-442",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sangu-khel-444",
+      "name": "Sangu Khel",
+      "parentId": "af-shinwari-442",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-mandozai-445",
+      "name": "Mandozai",
+      "parentId": "af-shinwari-442",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sipah-446",
+      "name": "Sipah",
+      "parentId": "af-shinwari-442",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-safi-447",
+      "name": "Safi",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-gurbuz-448",
+      "name": "Gurbuz",
+      "parentId": "af-safi-447",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-masaud-449",
+      "name": "Masaud",
+      "parentId": "af-safi-447",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-wadir-450",
+      "name": "Wadir",
+      "parentId": "af-safi-447",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kandahari-451",
+      "name": "Kandahari",
+      "parentId": "af-safi-447",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-tarkani-452",
+      "name": "Tarkani",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-khalil-453",
+      "name": "Khalil",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kheshgi-454",
+      "name": "Kheshgi",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-barech-455",
+      "name": "Barech",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-yusufzai-456",
+      "name": "Yusufzai",
+      "parentId": "af-sarbani-423",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-bettani-457",
+      "name": "Bettani",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "بېټني",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ghilji-458",
+      "name": "Ghilji",
+      "parentId": "af-bettani-457",
+      "level": 1,
+      "levelName": "tribe",
+      "pashto": "غلجي",
+      "aliases": [
+        "Ghilzai,Khilji"
+      ],
+      "country": "AF"
+    },
+    {
+      "id": "af-turan-459",
+      "name": "Turan",
+      "parentId": "af-ghilji-458",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-hotak-460",
+      "name": "Hotak",
+      "parentId": "af-turan-459",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-tokhi-461",
+      "name": "Tokhi",
+      "parentId": "af-turan-459",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-nasar-462",
+      "name": "Nasar",
+      "parentId": "af-turan-459",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-andar-463",
+      "name": "Andar",
+      "parentId": "af-turan-459",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-taraki-464",
+      "name": "Taraki",
+      "parentId": "af-turan-459",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-burhan-465",
+      "name": "Burhan",
+      "parentId": "af-ghilji-458",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sulaiman-khel-466",
+      "name": "Sulaiman Khel",
+      "parentId": "af-burhan-465",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ahmadzai-467",
+      "name": "Ahmadzai",
+      "parentId": "af-burhan-465",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-jabbar-khel-468",
+      "name": "Jabbar Khel",
+      "parentId": "af-ahmadzai-467",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ali-khel-469",
+      "name": "Ali Khel",
+      "parentId": "af-burhan-465",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kharoti-470",
+      "name": "Kharoti",
+      "parentId": "af-burhan-465",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sahak-471",
+      "name": "Sahak",
+      "parentId": "af-burhan-465",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-lodi-472",
+      "name": "Lodi",
+      "parentId": "af-bettani-457",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-niazi-473",
+      "name": "Niazi",
+      "parentId": "af-bettani-457",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-karlani-474",
+      "name": "Karlani",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "کرلاڼي",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-zadran-475",
+      "name": "Zadran",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Jadran,Dzadran"
+      ],
+      "country": "AF"
+    },
+    {
+      "id": "af-mangal-476",
+      "name": "Mangal",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-zazi-477",
+      "name": "Zazi",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [
+        "Jaji,Dzadzi"
+      ],
+      "country": "AF"
+    },
+    {
+      "id": "af-tani-478",
+      "name": "Tani",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-gurbuz-479",
+      "name": "Gurbuz",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sabari-480",
+      "name": "Sabari",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-mandozai-481",
+      "name": "Mandozai",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ismail-khel-482",
+      "name": "Ismail Khel",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-chamkani-483",
+      "name": "Chamkani",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-muqbil-484",
+      "name": "Muqbil",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-wardak-485",
+      "name": "Wardak",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-mayar-486",
+      "name": "Mayar",
+      "parentId": "af-wardak-485",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-mirkhel-487",
+      "name": "Mirkhel",
+      "parentId": "af-wardak-485",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-nuri-488",
+      "name": "Nuri",
+      "parentId": "af-wardak-485",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-khugiani-489",
+      "name": "Khugiani",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-mohsinzai-490",
+      "name": "Mohsinzai",
+      "parentId": "af-khugiani-489",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-daulatzai-491",
+      "name": "Daulatzai",
+      "parentId": "af-khugiani-489",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-maroofzai-492",
+      "name": "Maroofzai",
+      "parentId": "af-khugiani-489",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-saibzai-493",
+      "name": "Saibzai",
+      "parentId": "af-khugiani-489",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-chopanzai-494",
+      "name": "Chopanzai",
+      "parentId": "af-khugiani-489",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-turi-495",
+      "name": "Turi",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-jaji-maidan-496",
+      "name": "Jaji Maidan",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-afridi-497",
+      "name": "Afridi",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-orakzai-498",
+      "name": "Orakzai",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-bangash-499",
+      "name": "Bangash",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-wazir-500",
+      "name": "Wazir",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-dawar-501",
+      "name": "Dawar",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-utman-khel-502",
+      "name": "Utman Khel",
+      "parentId": "af-karlani-474",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ghurghusht-503",
+      "name": "Ghurghusht",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "pashto": "غرغښت",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kakar-504",
+      "name": "Kakar",
+      "parentId": "af-ghurghusht-503",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-panni-505",
+      "name": "Panni",
+      "parentId": "af-ghurghusht-503",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-babi-506",
+      "name": "Babi",
+      "parentId": "af-ghurghusht-503",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-mandokhel-507",
+      "name": "Mandokhel",
+      "parentId": "af-ghurghusht-503",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-musa-khel-508",
+      "name": "Musa Khel",
+      "parentId": "af-ghurghusht-503",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-non-pashtun-peoples-of-afghanistan-509",
+      "name": "Non-Pashtun peoples of Afghanistan",
+      "parentId": null,
+      "level": 0,
+      "levelName": "confederacy",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-tajik-510",
+      "name": "Tajik",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-panjshiri-511",
+      "name": "Panjshiri",
+      "parentId": "af-tajik-510",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-badakhshi-512",
+      "name": "Badakhshi",
+      "parentId": "af-tajik-510",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-herati-513",
+      "name": "Herati",
+      "parentId": "af-tajik-510",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kohistani-514",
+      "name": "Kohistani",
+      "parentId": "af-tajik-510",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-andarabi-515",
+      "name": "Andarabi",
+      "parentId": "af-tajik-510",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-hazara-516",
+      "name": "Hazara",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-dai-kundi-517",
+      "name": "Dai Kundi",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-dai-zangi-518",
+      "name": "Dai Zangi",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-dai-mirak-519",
+      "name": "Dai Mirak",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-jaghori-520",
+      "name": "Jaghori",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-behsud-521",
+      "name": "Behsud",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sheikh-ali-522",
+      "name": "Sheikh Ali",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-polada-523",
+      "name": "Polada",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-uruzgani-524",
+      "name": "Uruzgani",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-jaghatu-525",
+      "name": "Jaghatu",
+      "parentId": "af-hazara-516",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-uzbek-526",
+      "name": "Uzbek",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-turkmen-527",
+      "name": "Turkmen",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ersari-528",
+      "name": "Ersari",
+      "parentId": "af-turkmen-527",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-teke-529",
+      "name": "Teke",
+      "parentId": "af-turkmen-527",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-salor-530",
+      "name": "Salor",
+      "parentId": "af-turkmen-527",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-saryk-531",
+      "name": "Saryk",
+      "parentId": "af-turkmen-527",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-yomut-532",
+      "name": "Yomut",
+      "parentId": "af-turkmen-527",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-chaudur-533",
+      "name": "Chaudur",
+      "parentId": "af-turkmen-527",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-aimaq-534",
+      "name": "Aimaq",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-jamshidi-535",
+      "name": "Jamshidi",
+      "parentId": "af-aimaq-534",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-firozkohi-536",
+      "name": "Firozkohi",
+      "parentId": "af-aimaq-534",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-taimani-537",
+      "name": "Taimani",
+      "parentId": "af-aimaq-534",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-taimuri-538",
+      "name": "Taimuri",
+      "parentId": "af-aimaq-534",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-hazara-e-qala-e-naw-539",
+      "name": "Hazara-e-Qala-e-Naw",
+      "parentId": "af-aimaq-534",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-zuri-540",
+      "name": "Zuri",
+      "parentId": "af-aimaq-534",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-nuristani-541",
+      "name": "Nuristani",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kata-542",
+      "name": "Kata",
+      "parentId": "af-nuristani-541",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kom-543",
+      "name": "Kom",
+      "parentId": "af-nuristani-541",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-vasi-544",
+      "name": "Vasi",
+      "parentId": "af-nuristani-541",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ashkun-545",
+      "name": "Ashkun",
+      "parentId": "af-nuristani-541",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-waigali-546",
+      "name": "Waigali",
+      "parentId": "af-nuristani-541",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-tregami-547",
+      "name": "Tregami",
+      "parentId": "af-nuristani-541",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-gambiri-548",
+      "name": "Gambiri",
+      "parentId": "af-nuristani-541",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-pashai-549",
+      "name": "Pashai",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-northeast-pashai-550",
+      "name": "Northeast Pashai",
+      "parentId": "af-pashai-549",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-northwest-pashai-551",
+      "name": "Northwest Pashai",
+      "parentId": "af-pashai-549",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-southeast-pashai-552",
+      "name": "Southeast Pashai",
+      "parentId": "af-pashai-549",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-southwest-pashai-553",
+      "name": "Southwest Pashai",
+      "parentId": "af-pashai-549",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-pamiri-554",
+      "name": "Pamiri",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-shughni-555",
+      "name": "Shughni",
+      "parentId": "af-pamiri-554",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-rushani-556",
+      "name": "Rushani",
+      "parentId": "af-pamiri-554",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-ishkashimi-557",
+      "name": "Ishkashimi",
+      "parentId": "af-pamiri-554",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-munji-558",
+      "name": "Munji",
+      "parentId": "af-pamiri-554",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sanglechi-559",
+      "name": "Sanglechi",
+      "parentId": "af-pamiri-554",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-wakhi-560",
+      "name": "Wakhi",
+      "parentId": "af-pamiri-554",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-baloch-561",
+      "name": "Baloch",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-brahui-562",
+      "name": "Brahui",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-kyrgyz-563",
+      "name": "Kyrgyz",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-qizilbash-564",
+      "name": "Qizilbash",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-arab-565",
+      "name": "Arab",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-gujjar-566",
+      "name": "Gujjar",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-moghol-567",
+      "name": "Moghol",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-jogi-jat-568",
+      "name": "Jogi / Jat",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-hindu-sikh-hindki-569",
+      "name": "Hindu & Sikh (Hindki)",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "af-sadat-570",
+      "name": "Sadat",
+      "parentId": "af-non-pashtun-peoples-of-afghanistan-509",
+      "level": 1,
+      "levelName": "tribe",
+      "aliases": [],
+      "country": "AF"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--ashu-khel",
+      "name": "Ashu Khel",
+      "parentId": "pk-kp-adam-khel-29",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--ashu-khel--ali-khel",
+      "name": "Ali Khel",
+      "parentId": "pk-kp-adam-khel-29--ashu-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--ashu-khel--ali-khel--alam-sher-kor",
+      "name": "Alam Sher Kor",
+      "parentId": "pk-kp-adam-khel-29--ashu-khel--ali-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--ashu-khel--ali-khel--babar-khel",
+      "name": "Babar Khel",
+      "parentId": "pk-kp-adam-khel-29--ashu-khel--ali-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--ashu-khel--kalla-khel",
+      "name": "Kalla Khel",
+      "parentId": "pk-kp-adam-khel-29--ashu-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--ashu-khel--kalla-khel--bahar-khel",
+      "name": "Bahar Khel",
+      "parentId": "pk-kp-adam-khel-29--ashu-khel--kalla-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai",
+      "name": "Galai",
+      "parentId": "pk-kp-adam-khel-29",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--bosti-khel",
+      "name": "Bosti Khel",
+      "parentId": "pk-kp-adam-khel-29--galai",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--bosti-khel--misri-khel",
+      "name": "Misri Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--bosti-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--bosti-khel--misri-khel--alafdin-khel",
+      "name": "Alafdin Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--bosti-khel--misri-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--sharaki",
+      "name": "Sharaki",
+      "parentId": "pk-kp-adam-khel-29--galai",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--sharaki--bash-khel",
+      "name": "Bash Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--sharaki",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--sharaki--bash-khel--ali-khan-khel",
+      "name": "Ali Khan Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--sharaki--bash-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--sharaki--bash-khel--aziz-khel",
+      "name": "Aziz Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--sharaki--bash-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--sharaki--tashi-khel",
+      "name": "Tashi Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--sharaki",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--sharaki--tashi-khel--aimal-khel",
+      "name": "Aimal Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--sharaki--tashi-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--tor-sapar",
+      "name": "Tor Sapar",
+      "parentId": "pk-kp-adam-khel-29--galai",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--tor-sapar--feroz-khel",
+      "name": "Feroz Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--tor-sapar",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--tor-sapar--feroz-khel--alam-khel",
+      "name": "Alam Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--tor-sapar--feroz-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--tor-sapar--kui-khel",
+      "name": "Kui Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--tor-sapar",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--tor-sapar--kui-khel--babadar-khel",
+      "name": "Babadar Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--tor-sapar--kui-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--tor-sapar--nekzam-khel",
+      "name": "Nekzam Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--tor-sapar",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--tor-sapar--nekzam-khel--atlak",
+      "name": "Atlak",
+      "parentId": "pk-kp-adam-khel-29--galai--tor-sapar--nekzam-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--zargun-khel",
+      "name": "Zargun Khel",
+      "parentId": "pk-kp-adam-khel-29--galai",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--zargun-khel--sunni-khel",
+      "name": "Sunni Khel",
+      "parentId": "pk-kp-adam-khel-29--galai--zargun-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--galai--zargun-khel--sunni-khel--akhel",
+      "name": "Akhel",
+      "parentId": "pk-kp-adam-khel-29--galai--zargun-khel--sunni-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki",
+      "name": "Jawaki",
+      "parentId": "pk-kp-adam-khel-29",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--haibat-khel",
+      "name": "Haibat Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--haibat-khel--ghulam-khel",
+      "name": "Ghulam Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--haibat-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--haibat-khel--ghulam-khel--ara-khel",
+      "name": "Ara Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--haibat-khel--ghulam-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--haibat-khel--mawal-khel",
+      "name": "Mawal Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--haibat-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--haibat-khel--mawal-khel--asaf-khel",
+      "name": "Asaf Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--haibat-khel--mawal-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--haibat-khel--mawal-khel--atam-khel",
+      "name": "Atam Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--haibat-khel--mawal-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--kimat-khel",
+      "name": "Kimat Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--kimat-khel--kasim-khel",
+      "name": "Kasim Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--kimat-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--kimat-khel--kasim-khel--aimal-khel",
+      "name": "Aimal Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--kimat-khel--kasim-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-adam-khel-29--jawaki--kimat-khel--kasim-khel--ali-khan-khel",
+      "name": "Ali Khan Khel",
+      "parentId": "pk-kp-adam-khel-29--jawaki--kimat-khel--kasim-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan",
+      "name": "Sahib Jan",
+      "parentId": "pk-kp-aka-khel-28",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan--kamal-khel",
+      "name": "Kamal Khel",
+      "parentId": "pk-kp-aka-khel-28--sahib-jan",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--ashraf-khel",
+      "name": "Ashraf Khel",
+      "parentId": "pk-kp-aka-khel-28--sahib-jan--kamal-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--basi-khel",
+      "name": "Basi Khel",
+      "parentId": "pk-kp-aka-khel-28--sahib-jan--kamal-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--basi-khel--mirghat-khel",
+      "name": "Mirghat Khel",
+      "parentId": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--basi-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--basi-khel--mirghat-khel--adili-khel",
+      "name": "Adili Khel",
+      "parentId": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--basi-khel--mirghat-khel",
+      "level": 7,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--sanzal-khel",
+      "name": "Sanzal Khel",
+      "parentId": "pk-kp-aka-khel-28--sahib-jan--kamal-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--sanzal-khel--ambara-khel",
+      "name": "Ambara Khel",
+      "parentId": "pk-kp-aka-khel-28--sahib-jan--kamal-khel--sanzal-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sher-gulla",
+      "name": "Sher Gulla",
+      "parentId": "pk-kp-aka-khel-28",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sher-gulla--sultan-khel",
+      "name": "Sultan Khel",
+      "parentId": "pk-kp-aka-khel-28--sher-gulla",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-aka-khel-28--sher-gulla--sultan-khel--azad-khel",
+      "name": "Azad Khel",
+      "parentId": "pk-kp-aka-khel-28--sher-gulla--sultan-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel",
+      "name": "Kambar Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel--durbi-khel",
+      "name": "Durbi Khel",
+      "parentId": "pk-kp-afridi-2--kambar-khel",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel--durbi-khel--azar-khel",
+      "name": "Azar Khel",
+      "parentId": "pk-kp-afridi-2--kambar-khel--durbi-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel--durbi-khel--aziz-khel",
+      "name": "Aziz Khel",
+      "parentId": "pk-kp-afridi-2--kambar-khel--durbi-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel--mat-khan-khel",
+      "name": "Mat Khan Khel",
+      "parentId": "pk-kp-afridi-2--kambar-khel",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel--mat-khan-khel--ambar-khel",
+      "name": "Ambar Khel",
+      "parentId": "pk-kp-afridi-2--kambar-khel--mat-khan-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel--shekhmal",
+      "name": "Shekhmal",
+      "parentId": "pk-kp-afridi-2--kambar-khel",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kambar-khel--shekhmal--ali-khel",
+      "name": "Ali Khel",
+      "parentId": "pk-kp-afridi-2--kambar-khel--shekhmal",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai",
+      "name": "Kamrai",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai--ashant-khel",
+      "name": "Ashant Khel",
+      "parentId": "pk-kp-afridi-2--kamrai",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai--khwaidad-khel",
+      "name": "Khwaidad Khel",
+      "parentId": "pk-kp-afridi-2--kamrai",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai--khwaidad-khel--azad-khel",
+      "name": "Azad Khel",
+      "parentId": "pk-kp-afridi-2--kamrai--khwaidad-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai--khwaidad-khel--azad-khel--amir-khan-khel",
+      "name": "Amir Khan Khel",
+      "parentId": "pk-kp-afridi-2--kamrai--khwaidad-khel--azad-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai-khel",
+      "name": "Kamrai Khel",
+      "parentId": "pk-kp-afridi-2",
+      "level": 2,
+      "levelName": "clan",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai-khel--yar-ali-khel",
+      "name": "Yar Ali Khel",
+      "parentId": "pk-kp-afridi-2--kamrai-khel",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-afridi-2--kamrai-khel--yar-ali-khel--ayub-khel",
+      "name": "Ayub Khel",
+      "parentId": "pk-kp-afridi-2--kamrai-khel--yar-ali-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel",
+      "name": "Mitha Khan Khel",
+      "parentId": "pk-kp-kuki-khel-3",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--asad-khel",
+      "name": "Asad Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--asad-khel--tor-khel",
+      "name": "Tor Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--asad-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--asad-khel--tor-khel--aimal-khel",
+      "name": "Aimal Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--asad-khel--tor-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--asad-khel--tor-khel--ali-khel",
+      "name": "Ali Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--asad-khel--tor-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel",
+      "name": "Hasan Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel",
+      "name": "Kattia Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel--mohmand-khel",
+      "name": "Mohmand Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel--mohmand-khel--dildar-khel",
+      "name": "Dildar Khel",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel--mohmand-khel",
+      "level": 7,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel--mohmand-khel--dildar-khel--rehram-kor",
+      "name": "Rehram Kor",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel--mohmand-khel--dildar-khel",
+      "level": 8,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel--mohmand-khel--dildar-khel--rehram-kor--adala-kor",
+      "name": "Adala Kor",
+      "parentId": "pk-kp-kuki-khel-3--mitha-khan-khel--hasan-khel--kattia-khel--mohmand-khel--dildar-khel--rehram-kor",
+      "level": 9,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malikdin-khel-18--kama-khel",
+      "name": "Kama Khel",
+      "parentId": "pk-kp-malikdin-khel-18",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-malikdin-khel-18--kama-khel--allia-khel",
+      "name": "Allia Khel",
+      "parentId": "pk-kp-malikdin-khel-18--kama-khel",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sipah-20--babakri",
+      "name": "Babakri",
+      "parentId": "pk-kp-sipah-20",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sipah-20--babakri--jawakai",
+      "name": "Jawakai",
+      "parentId": "pk-kp-sipah-20--babakri",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-sipah-20--babakri--jawakai--ali-khel",
+      "name": "Ali Khel",
+      "parentId": "pk-kp-sipah-20--babakri--jawakai",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-landi-khel-22--abdul-rahim-khel",
+      "name": "Abdul Rahim Khel",
+      "parentId": "pk-kp-landi-khel-22",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-landi-khel-22--ali-khel",
+      "name": "Ali Khel",
+      "parentId": "pk-kp-landi-khel-22",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--abdul-khel",
+      "name": "Abdul Khel",
+      "parentId": "pk-kp-urmuz-khel-21",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--abdul-khel--auli-khel",
+      "name": "Auli Khel",
+      "parentId": "pk-kp-urmuz-khel-21--abdul-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--keimal-khel",
+      "name": "Keimal Khel",
+      "parentId": "pk-kp-urmuz-khel-21",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--keimal-khel--babur-khel",
+      "name": "Babur Khel",
+      "parentId": "pk-kp-urmuz-khel-21--keimal-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--keimal-khel--babur-khel--ali-sher-khel",
+      "name": "Ali Sher Khel",
+      "parentId": "pk-kp-urmuz-khel-21--keimal-khel--babur-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--keimal-khel--babur-khel--ali-sher-khel--aziz-khel",
+      "name": "Aziz Khel",
+      "parentId": "pk-kp-urmuz-khel-21--keimal-khel--babur-khel--ali-sher-khel",
+      "level": 7,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--keimal-khel--baghdad-khel",
+      "name": "Baghdad Khel",
+      "parentId": "pk-kp-urmuz-khel-21--keimal-khel",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-urmuz-khel-21--keimal-khel--baghdad-khel--ali-ahmad-khel",
+      "name": "Ali Ahmad Khel",
+      "parentId": "pk-kp-urmuz-khel-21--keimal-khel--baghdad-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai",
+      "name": "Budai",
+      "parentId": "pk-kp-zakka-khel-23",
+      "level": 3,
+      "levelName": "division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--anai",
+      "name": "Anai",
+      "parentId": "pk-kp-zakka-khel-23--budai",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--anai--shekhai",
+      "name": "Shekhai",
+      "parentId": "pk-kp-zakka-khel-23--budai--anai",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--anai--shekhai--mohib-khel",
+      "name": "Mohib Khel",
+      "parentId": "pk-kp-zakka-khel-23--budai--anai--shekhai",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--anai--shekhai--mohib-khel--ahmad-beg-khel",
+      "name": "Ahmad Beg Khel",
+      "parentId": "pk-kp-zakka-khel-23--budai--anai--shekhai--mohib-khel",
+      "level": 7,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--pakhai",
+      "name": "Pakhai",
+      "parentId": "pk-kp-zakka-khel-23--budai",
+      "level": 4,
+      "levelName": "sub_division",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel",
+      "name": "Hasan Khel",
+      "parentId": "pk-kp-zakka-khel-23--budai--pakhai",
+      "level": 5,
+      "levelName": "section",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel--nikki-khel",
+      "name": "Nikki Khel",
+      "parentId": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel--nikki-khel--ahmad-khel",
+      "name": "Ahmad Khel",
+      "parentId": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel--nikki-khel",
+      "level": 7,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel--sultan-khel",
+      "name": "Sultan Khel",
+      "parentId": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel--sultan-khel--alim-khan-kor",
+      "name": "Alim Khan Kor",
+      "parentId": "pk-kp-zakka-khel-23--budai--pakhai--hasan-khel--sultan-khel",
+      "level": 7,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    },
+    {
+      "id": "pk-kp-dreplara-26--amin-khan-kor",
+      "name": "Amin Khan Kor",
+      "parentId": "pk-kp-dreplara-26",
+      "level": 6,
+      "levelName": "minor_fraction",
+      "aliases": [],
+      "country": "PK-KP"
+    }
+  ],
+  "tribeDistricts": {
+    "pk-kp-afridi-2": {
+      "dominantIn": [
+        "pk-kp-khyber"
+      ],
+      "presentIn": [
+        "pk-kp-orakzai",
+        "pk-kp-peshawar"
+      ]
+    },
+    "pk-kp-shinwari-287": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-khyber",
+        "pk-kp-bajaur"
+      ]
+    },
+    "pk-kp-mullagori-236": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-khyber",
+        "pk-kp-mohmand"
+      ]
+    },
+    "pk-kp-bangash-50": {
+      "dominantIn": [
+        "pk-kp-kurram",
+        "pk-kp-kohat",
+        "pk-kp-hangu"
+      ],
+      "presentIn": [
+        "pk-kp-khyber",
+        "pk-kp-orakzai",
+        "pk-kp-peshawar"
+      ]
+    },
+    "pk-kp-orakzai-30": {
+      "dominantIn": [
+        "pk-kp-orakzai",
+        "pk-kp-hangu"
+      ],
+      "presentIn": [
+        "pk-kp-kohat"
+      ]
+    },
+    "pk-kp-sheikhan-47": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-orakzai"
+      ]
+    },
+    "pk-kp-turi-57": {
+      "dominantIn": [
+        "pk-kp-kurram"
+      ],
+      "presentIn": [
+        "pk-kp-hangu"
+      ]
+    },
+    "pk-kp-mangal-103": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kurram"
+      ]
+    },
+    "pk-kp-zazi-104": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kurram"
+      ]
+    },
+    "pk-kp-muqbil-122": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kurram"
+      ]
+    },
+    "pk-kp-massuzai-49": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kurram"
+      ]
+    },
+    "pk-kp-chamkani-105": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kurram"
+      ]
+    },
+    "pk-kp-dawar-99": {
+      "dominantIn": [
+        "pk-kp-north-waziristan"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-mahsud-87": {
+      "dominantIn": [
+        "pk-kp-south-waziristan",
+        "pk-kp-tank"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-utman-khel-32": {
+      "dominantIn": [
+        "pk-kp-bajaur",
+        "pk-kp-malakand"
+      ],
+      "presentIn": [
+        "pk-kp-bajaur",
+        "pk-kp-mohmand",
+        "pk-kp-dir-upper",
+        "pk-kp-dir-lower"
+      ]
+    },
+    "pk-kp-safi-231": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-bajaur",
+        "pk-kp-mohmand"
+      ]
+    },
+    "pk-kp-mohmand-188": {
+      "dominantIn": [
+        "pk-kp-mohmand"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-khalil-294": {
+      "dominantIn": [
+        "pk-kp-peshawar"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-daudzai-295": {
+      "dominantIn": [
+        "pk-kp-peshawar",
+        "pk-kp-charsadda"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-gigyani-299": {
+      "dominantIn": [
+        "pk-kp-peshawar"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-khattak-64": {
+      "dominantIn": [
+        "pk-kp-kohat",
+        "pk-kp-karak"
+      ],
+      "presentIn": [
+        "pk-kp-peshawar",
+        "pk-kp-mardan",
+        "pk-kp-swabi"
+      ]
+    },
+    "pk-kp-hindkowan-411": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-peshawar",
+        "pk-kp-kohat"
+      ]
+    },
+    "pk-kp-kashmiri-412": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-peshawar"
+      ]
+    },
+    "pk-kp-utmanzai-79": {
+      "dominantIn": [
+        "pk-kp-charsadda"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-kheshgi-300": {
+      "dominantIn": [
+        "pk-kp-nowshera"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-mandanr-169": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-nowshera"
+      ]
+    },
+    "pk-kp-yusufzai-125": {
+      "dominantIn": [
+        "pk-kp-mardan",
+        "pk-kp-shangla",
+        "pk-kp-battagram"
+      ],
+      "presentIn": [
+        "pk-kp-nowshera",
+        "pk-kp-swabi"
+      ]
+    },
+    "pk-kp-gujjar-387": {
+      "dominantIn": [
+        "pk-kp-mansehra"
+      ],
+      "presentIn": [
+        "pk-kp-mardan",
+        "pk-kp-swat",
+        "pk-kp-dir-upper",
+        "pk-kp-dir-lower",
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower",
+        "pk-kp-kohistan-upper",
+        "pk-kp-kohistan-lower",
+        "pk-kp-kolai-palas"
+      ]
+    },
+    "pk-kp-gadun-301": {
+      "dominantIn": [
+        "pk-kp-swabi"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-torwali-384": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-swat"
+      ]
+    },
+    "pk-kp-gawri-385": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-swat"
+      ]
+    },
+    "pk-kp-ushojo-386": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-swat"
+      ]
+    },
+    "pk-kp-swati-395": {
+      "dominantIn": [
+        "pk-kp-shangla",
+        "pk-kp-mansehra",
+        "pk-kp-battagram"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-kho-373": {
+      "dominantIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-kalasha-374": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ]
+    },
+    "pk-kp-palula-375": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ]
+    },
+    "pk-kp-dameli-376": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ]
+    },
+    "pk-kp-gawarbati-377": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ]
+    },
+    "pk-kp-yidgha-378": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ]
+    },
+    "pk-kp-wakhi-379": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ]
+    },
+    "pk-kp-madaglashti-380": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-chitral-upper",
+        "pk-kp-chitral-lower"
+      ]
+    },
+    "pk-kp-bateri-391": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kohistan-upper",
+        "pk-kp-kohistan-lower",
+        "pk-kp-kolai-palas"
+      ]
+    },
+    "pk-kp-chilisso-392": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kohistan-upper",
+        "pk-kp-kohistan-lower",
+        "pk-kp-kolai-palas"
+      ]
+    },
+    "pk-kp-gowro-393": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-kohistan-upper",
+        "pk-kp-kohistan-lower",
+        "pk-kp-kolai-palas"
+      ]
+    },
+    "pk-kp-banuchi-113": {
+      "dominantIn": [
+        "pk-kp-bannu"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-marwat-332": {
+      "dominantIn": [
+        "pk-kp-bannu",
+        "pk-kp-lakki-marwat"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-wazir-74": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-bannu"
+      ]
+    },
+    "pk-kp-mughal-khel-117": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-bannu"
+      ]
+    },
+    "pk-kp-bhittani-314": {
+      "dominantIn": [
+        "pk-kp-tank"
+      ],
+      "presentIn": [
+        "pk-kp-lakki-marwat"
+      ]
+    },
+    "pk-kp-niazi-339": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-lakki-marwat"
+      ]
+    },
+    "pk-kp-gandapur-349": {
+      "dominantIn": [
+        "pk-kp-tank",
+        "pk-kp-dera-ismail-khan"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-kundi-355": {
+      "dominantIn": [
+        "pk-kp-dera-ismail-khan"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-babar-356": {
+      "dominantIn": [
+        "pk-kp-dera-ismail-khan"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-miani-357": {
+      "dominantIn": [
+        "pk-kp-dera-ismail-khan"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-lohani-343": {
+      "dominantIn": [
+        "pk-kp-dera-ismail-khan"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-ustarana-354": {
+      "dominantIn": [
+        "pk-kp-dera-ismail-khan"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-baloch-417": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-dera-ismail-khan"
+      ]
+    },
+    "pk-kp-jat-416": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-dera-ismail-khan"
+      ]
+    },
+    "pk-kp-sherani-350": {
+      "dominantIn": [],
+      "presentIn": [
+        "pk-kp-dera-ismail-khan"
+      ]
+    },
+    "pk-kp-dhund-abbasi-401": {
+      "dominantIn": [
+        "pk-kp-abbottabad"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-karlal-402": {
+      "dominantIn": [
+        "pk-kp-abbottabad"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-jadoon-400": {
+      "dominantIn": [
+        "pk-kp-abbottabad",
+        "pk-kp-haripur"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-tanoli-358": {
+      "dominantIn": [
+        "pk-kp-abbottabad",
+        "pk-kp-haripur",
+        "pk-kp-mansehra"
+      ],
+      "presentIn": []
+    },
+    "pk-kp-awan-403": {
+      "dominantIn": [
+        "pk-kp-abbottabad",
+        "pk-kp-haripur"
+      ],
+      "presentIn": []
+    }
+  }
+}

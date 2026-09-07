@@ -1,0 +1,535 @@
+{
+  "countries": [
+    {
+      "id": "pk",
+      "name": "Pakistan",
+      "provinces": [
+        {
+          "id": "pk-kp",
+          "name": "Khyber Pakhtunkhwa",
+          "districts": [
+            {
+              "id": "pk-kp-abbottabad",
+              "name": "Abbottabad",
+              "language": "Hindko; Pashto; Pahari",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-bajaur",
+              "name": "Bajaur",
+              "language": "Pashto (Northern)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-bannu",
+              "name": "Bannu",
+              "language": "Pashto (Banuchi)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-battagram",
+              "name": "Battagram",
+              "language": "Hindko; Pashto",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-buner",
+              "name": "Buner",
+              "language": "Pashto",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-charsadda",
+              "name": "Charsadda",
+              "language": "Pashto (Northern)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-chitral-lower",
+              "name": "Chitral Lower",
+              "language": "Khowar; Kalasha-mun; Palula; Dameli; Gawar-Bati; Yidgha; Wakhi; Persian; Kirghiz",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-chitral-upper",
+              "name": "Chitral Upper",
+              "language": "Khowar; Kalasha-mun; Palula; Dameli; Gawar-Bati; Yidgha; Wakhi; Persian; Kirghiz",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-dera-ismail-khan",
+              "name": "Dera Ismail Khan",
+              "language": "Saraiki; Pashto; Balochi",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-dir-lower",
+              "name": "Dir Lower",
+              "language": "Pashto; Gawri; Gujari",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-dir-upper",
+              "name": "Dir Upper",
+              "language": "Pashto; Gawri; Gujari",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-hangu",
+              "name": "Hangu",
+              "language": "Pashto",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-haripur",
+              "name": "Haripur",
+              "language": "Hindko",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-karak",
+              "name": "Karak",
+              "language": "Pashto",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-khyber",
+              "name": "Khyber",
+              "language": "Pashto (Northern)",
+              "tehsils": [
+                {
+                  "id": "pk-kp-khyber-bara",
+                  "name": "Bara"
+                },
+                {
+                  "id": "pk-kp-khyber-jamrud",
+                  "name": "Jamrud"
+                },
+                {
+                  "id": "pk-kp-khyber-landi-kotal",
+                  "name": "Landi Kotal"
+                },
+                {
+                  "id": "pk-kp-khyber-mula-gori",
+                  "name": "Mula Gori"
+                }
+              ]
+            },
+            {
+              "id": "pk-kp-kohat",
+              "name": "Kohat",
+              "language": "Pashto; Hindko",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-kohistan-lower",
+              "name": "Kohistan Lower",
+              "language": "Indus Kohistani; Shina; Bateri; Chilisso; Gowro; Gujari",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-kohistan-upper",
+              "name": "Kohistan Upper",
+              "language": "Indus Kohistani; Shina; Bateri; Chilisso; Gowro; Gujari",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-kolai-palas",
+              "name": "Kolai-Palas",
+              "language": "Indus Kohistani; Shina; Bateri; Chilisso; Gowro; Gujari",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-kurram",
+              "name": "Kurram",
+              "language": "Pashto (Northern)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-lakki-marwat",
+              "name": "Lakki Marwat",
+              "language": "Pashto (Marwat)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-malakand",
+              "name": "Malakand",
+              "language": "Pashto",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-mansehra",
+              "name": "Mansehra",
+              "language": "Hindko; Gujari; Pashto; Kohistani",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-mardan",
+              "name": "Mardan",
+              "language": "Pashto (Northern)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-mohmand",
+              "name": "Mohmand",
+              "language": "Pashto (Northern)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-north-waziristan",
+              "name": "North Waziristan",
+              "language": "Pashto (Waziri dialect)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-nowshera",
+              "name": "Nowshera",
+              "language": "Pashto; Hindko",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-orakzai",
+              "name": "Orakzai",
+              "language": "Pashto (Northern)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-peshawar",
+              "name": "Peshawar",
+              "language": "Pashto (Northern); Hindko; Urdu; Persian",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-shangla",
+              "name": "Shangla",
+              "language": "Pashto; Torwali",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-south-waziristan",
+              "name": "South Waziristan",
+              "language": "Pashto (Waziri); Ormuri (Kaniguram)",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-swabi",
+              "name": "Swabi",
+              "language": "Pashto",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-swat",
+              "name": "Swat",
+              "language": "Pashto (Northern); Torwali; Gawri; Gujari; Ushojo",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-tank",
+              "name": "Tank",
+              "language": "Pashto; Saraiki",
+              "tehsils": []
+            },
+            {
+              "id": "pk-kp-torghar",
+              "name": "Torghar",
+              "language": "Pashto",
+              "tehsils": []
+            }
+          ]
+        },
+        {
+          "id": "pk-punjab",
+          "name": "Punjab",
+          "districts": []
+        },
+        {
+          "id": "pk-sindh",
+          "name": "Sindh",
+          "districts": []
+        },
+        {
+          "id": "pk-balochistan",
+          "name": "Balochistan",
+          "districts": []
+        },
+        {
+          "id": "pk-gilgit-baltistan",
+          "name": "Gilgit-Baltistan",
+          "districts": []
+        },
+        {
+          "id": "pk-azad-kashmir",
+          "name": "Azad Kashmir",
+          "districts": []
+        },
+        {
+          "id": "pk-islamabad-capital-territory",
+          "name": "Islamabad Capital Territory",
+          "districts": []
+        }
+      ]
+    },
+    {
+      "id": "af",
+      "name": "Afghanistan",
+      "provinces": [
+        {
+          "id": "af-badakhshan",
+          "name": "Badakhshan",
+          "districts": []
+        },
+        {
+          "id": "af-badghis",
+          "name": "Badghis",
+          "districts": []
+        },
+        {
+          "id": "af-baghlan",
+          "name": "Baghlan",
+          "districts": []
+        },
+        {
+          "id": "af-balkh",
+          "name": "Balkh",
+          "districts": []
+        },
+        {
+          "id": "af-bamyan",
+          "name": "Bamyan",
+          "districts": []
+        },
+        {
+          "id": "af-daykundi",
+          "name": "Daykundi",
+          "districts": []
+        },
+        {
+          "id": "af-farah",
+          "name": "Farah",
+          "districts": []
+        },
+        {
+          "id": "af-faryab",
+          "name": "Faryab",
+          "districts": []
+        },
+        {
+          "id": "af-ghazni",
+          "name": "Ghazni",
+          "districts": []
+        },
+        {
+          "id": "af-ghor",
+          "name": "Ghor",
+          "districts": []
+        },
+        {
+          "id": "af-helmand",
+          "name": "Helmand",
+          "districts": []
+        },
+        {
+          "id": "af-herat",
+          "name": "Herat",
+          "districts": []
+        },
+        {
+          "id": "af-jowzjan",
+          "name": "Jowzjan",
+          "districts": []
+        },
+        {
+          "id": "af-kabul",
+          "name": "Kabul",
+          "districts": []
+        },
+        {
+          "id": "af-kandahar",
+          "name": "Kandahar",
+          "districts": []
+        },
+        {
+          "id": "af-kapisa",
+          "name": "Kapisa",
+          "districts": []
+        },
+        {
+          "id": "af-khost",
+          "name": "Khost",
+          "districts": []
+        },
+        {
+          "id": "af-kunar",
+          "name": "Kunar",
+          "districts": []
+        },
+        {
+          "id": "af-kunduz",
+          "name": "Kunduz",
+          "districts": []
+        },
+        {
+          "id": "af-laghman",
+          "name": "Laghman",
+          "districts": []
+        },
+        {
+          "id": "af-logar",
+          "name": "Logar",
+          "districts": []
+        },
+        {
+          "id": "af-maidan-wardak",
+          "name": "Maidan Wardak",
+          "districts": []
+        },
+        {
+          "id": "af-nangarhar",
+          "name": "Nangarhar",
+          "districts": []
+        },
+        {
+          "id": "af-nimruz",
+          "name": "Nimruz",
+          "districts": []
+        },
+        {
+          "id": "af-nuristan",
+          "name": "Nuristan",
+          "districts": []
+        },
+        {
+          "id": "af-paktia",
+          "name": "Paktia",
+          "districts": []
+        },
+        {
+          "id": "af-paktika",
+          "name": "Paktika",
+          "districts": []
+        },
+        {
+          "id": "af-panjshir",
+          "name": "Panjshir",
+          "districts": []
+        },
+        {
+          "id": "af-parwan",
+          "name": "Parwan",
+          "districts": []
+        },
+        {
+          "id": "af-samangan",
+          "name": "Samangan",
+          "districts": []
+        },
+        {
+          "id": "af-sar-e-pol",
+          "name": "Sar-e Pol",
+          "districts": []
+        },
+        {
+          "id": "af-takhar",
+          "name": "Takhar",
+          "districts": []
+        },
+        {
+          "id": "af-uruzgan",
+          "name": "Uruzgan",
+          "districts": []
+        },
+        {
+          "id": "af-zabul",
+          "name": "Zabul",
+          "districts": []
+        }
+      ]
+    },
+    {
+      "id": "overseas",
+      "name": "Overseas",
+      "provinces": [
+        {
+          "id": "ov-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "districts": []
+        },
+        {
+          "id": "ov-saudi-arabia",
+          "name": "Saudi Arabia",
+          "districts": []
+        },
+        {
+          "id": "ov-qatar",
+          "name": "Qatar",
+          "districts": []
+        },
+        {
+          "id": "ov-kuwait",
+          "name": "Kuwait",
+          "districts": []
+        },
+        {
+          "id": "ov-oman",
+          "name": "Oman",
+          "districts": []
+        },
+        {
+          "id": "ov-bahrain",
+          "name": "Bahrain",
+          "districts": []
+        },
+        {
+          "id": "ov-united-kingdom",
+          "name": "United Kingdom",
+          "districts": []
+        },
+        {
+          "id": "ov-germany",
+          "name": "Germany",
+          "districts": []
+        },
+        {
+          "id": "ov-netherlands",
+          "name": "Netherlands",
+          "districts": []
+        },
+        {
+          "id": "ov-norway",
+          "name": "Norway",
+          "districts": []
+        },
+        {
+          "id": "ov-sweden",
+          "name": "Sweden",
+          "districts": []
+        },
+        {
+          "id": "ov-united-states",
+          "name": "United States",
+          "districts": []
+        },
+        {
+          "id": "ov-canada",
+          "name": "Canada",
+          "districts": []
+        },
+        {
+          "id": "ov-australia",
+          "name": "Australia",
+          "districts": []
+        },
+        {
+          "id": "ov-malaysia",
+          "name": "Malaysia",
+          "districts": []
+        },
+        {
+          "id": "ov-tu-rkiye",
+          "name": "Türkiye",
+          "districts": []
+        }
+      ]
+    }
+  ]
+}

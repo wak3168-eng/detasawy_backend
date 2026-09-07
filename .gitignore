@@ -1,5 +1,10 @@
-node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
 .env
-*.log
+.env.*
+db.sqlite3
+dev.sqlite3
+staticfiles/
 .DS_Store
-.vercel

@@ -1,0 +1,8 @@
+Django>=5.2,<6.0
+djangorestframework>=3.16
+drf-spectacular>=0.28
+django-cors-headers>=4.7
+gunicorn>=23.0
+dj-database-url>=2.3
+psycopg[binary]>=3.2
+whitenoise>=6.9
