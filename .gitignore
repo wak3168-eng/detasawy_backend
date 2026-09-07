@@ -7,4 +7,5 @@ venv/
 db.sqlite3
 dev.sqlite3
 staticfiles/
+media/
 .DS_Store
