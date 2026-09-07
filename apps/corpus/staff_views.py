@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 
+from apps.corpus.images import store_image
 from apps.corpus.models import Prompt
 from apps.identity.permissions import IsContentManager
 
@@ -23,7 +24,7 @@ def serialize_prompt(prompt, request):
 @permission_classes([IsContentManager])
 def staff_prompts(request):
     if request.method == "GET":
-        rows = Prompt.objects.all()[:50]
+        rows = Prompt.objects.select_related("blob")[:50]
         return Response([serialize_prompt(p, request) for p in rows])
 
     kind = request.data.get("kind")
@@ -33,16 +34,26 @@ def staff_prompts(request):
     media_url = (request.data.get("mediaUrl") or "").strip()
     if not media and not media_url:
         return Response({"error": "a media file or mediaUrl is required"}, status=400)
+    blob = None
     if media:
         expected = "image/" if kind == "picture" else "audio/"
         if not (media.content_type or "").startswith(expected):
             return Response(
                 {"error": f"a {kind} prompt needs a {expected}* file"}, status=400,
             )
+        if kind == "picture":
+            # pictures live as DB blobs so they survive redeploys
+            try:
+                blob = store_image(media.read())
+            except Exception:
+                return Response(
+                    {"error": "that image file can't be read"}, status=400,
+                )
 
     prompt = Prompt.objects.create(
         kind=kind,
-        media=media,
+        blob=blob,
+        media=None if blob else media,
         media_url=media_url[:500],
         source_url=(request.data.get("sourceUrl") or "").strip()[:500],
         licence=(request.data.get("licence") or "").strip()[:200],

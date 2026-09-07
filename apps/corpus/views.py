@@ -1,6 +1,7 @@
 import random
 from collections import defaultdict
 
+from django.http import Http404, HttpResponse, HttpResponseNotModified
 from django.utils import timezone
 from django.db.models import F
 from drf_spectacular.utils import OpenApiParameter, extend_schema
@@ -8,7 +9,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
-from apps.corpus.models import Contribution, Prompt
+from apps.corpus.models import Contribution, MediaBlob, Prompt
 from apps.identity.models import Profile
 from apps.ref.normalize import normalize_name
 
@@ -34,7 +35,7 @@ def prompts(request):
         Prompt.objects.filter(kind=kind, active=True).values_list("id", flat=True),
     )
     chosen = random.sample(ids, min(count, len(ids)))
-    rows = Prompt.objects.filter(id__in=chosen)
+    rows = Prompt.objects.filter(id__in=chosen).select_related("blob")
     Prompt.objects.filter(id__in=chosen).update(
         served_count=F("served_count") + 1,
     )
@@ -50,6 +51,10 @@ def prompts(request):
             item["captionEn"] = row.caption_en
         if row.caption_ps:
             item["captionPs"] = row.caption_ps
+        if row.source_url:
+            item["sourceUrl"] = row.source_url
+        if row.licence:
+            item["licence"] = row.licence
         data.append(item)
     random.shuffle(data)
 
@@ -106,6 +111,23 @@ def today(request):
         contributor=request.user, created_at__date=timezone.localdate(),
     ).count()
     return Response({"count": count})
+
+
+def blob(request, sha):
+    """Serve DB-stored prompt media. Content-addressed, so the response is
+    immutable and cached hard by browsers."""
+    etag = f'"{sha}"'
+    if request.headers.get("If-None-Match") == etag:
+        response = HttpResponseNotModified()
+    else:
+        try:
+            row = MediaBlob.objects.get(sha256=sha)
+        except MediaBlob.DoesNotExist:
+            raise Http404 from None
+        response = HttpResponse(bytes(row.data), content_type=row.mime)
+    response["Cache-Control"] = "public, max-age=31536000, immutable"
+    response["ETag"] = etag
+    return response
 
 
 @api_view(["GET"])

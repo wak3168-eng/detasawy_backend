@@ -37,6 +37,21 @@ class Contribution(models.Model):
         return f"{self.text_raw} ({self.contributor})"
 
 
+class MediaBlob(models.Model):
+    """Prompt media stored as bytes in Postgres itself, so images survive
+    restarts and redeploys without external object storage. Content-addressed
+    by sha256 — identical images are stored once."""
+
+    sha256 = models.CharField(max_length=64, unique=True)
+    mime = models.CharField(max_length=50)
+    data = models.BinaryField()
+    size = models.PositiveIntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.sha256[:12]} ({self.mime}, {self.size} bytes)"
+
+
 class Prompt(models.Model):
     """A picture or voice note uploaded by admins and served randomly to
     contributors as the seed of a contribution."""
@@ -44,6 +59,13 @@ class Prompt(models.Model):
     KIND_CHOICES = [("picture", "picture"), ("voice", "voice")]
 
     kind = models.CharField(max_length=10, choices=KIND_CHOICES)
+    blob = models.ForeignKey(
+        "corpus.MediaBlob",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="prompts",
+    )
     media = models.FileField(upload_to="prompts/%Y/%m/", blank=True, null=True)
     media_url = models.URLField(
         max_length=500,
@@ -77,6 +99,8 @@ class Prompt(models.Model):
         ordering = ["-created_at"]
 
     def resolve_media_url(self, request):
+        if self.blob_id:
+            return request.build_absolute_uri(f"/api/blob/{self.blob.sha256}")
         if self.media_url:
             return self.media_url
         if self.media:
