@@ -1,4 +1,4 @@
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission
 from django.db.models import Q
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework.decorators import api_view, permission_classes
@@ -33,13 +33,33 @@ def users(request):
     return Response([serialize_row(u) for u in rows[:20]])
 
 
+def _campaign_group():
+    group, created = Group.objects.get_or_create(name="Campaign managers")
+    if created or group.permissions.count() == 0:
+        perms = Permission.objects.filter(
+            content_type__app_label__in=["corpus", "portal"],
+            codename__in=[
+                "add_prompt",
+                "change_prompt",
+                "view_prompt",
+                "add_campaign",
+                "change_campaign",
+                "view_campaign",
+            ],
+        )
+        group.permissions.set(perms)
+    return group
+
+
 @api_view(["POST"])
 @permission_classes([IsSuperUser])
 def set_role(request):
     email = (request.data.get("email") or "").strip().lower()
     role = request.data.get("role")
-    if role not in ("reviewer", "contributor"):
-        return Response({"error": "role must be reviewer or contributor"}, status=400)
+    if role not in ("reviewer", "campaign", "contributor"):
+        return Response(
+            {"error": "role must be reviewer, campaign or contributor"}, status=400,
+        )
     try:
         user = User.objects.get(email__iexact=email)
     except User.DoesNotExist:
@@ -47,13 +67,18 @@ def set_role(request):
     if user.is_superuser:
         return Response({"error": "superadmin roles can't be changed here"}, status=400)
 
-    group, _ = Group.objects.get_or_create(name="Reviewers")
+    reviewers, _ = Group.objects.get_or_create(name="Reviewers")
+    campaigners = _campaign_group()
     if role == "reviewer":
         user.is_staff = True
-        user.save(update_fields=["is_staff"])
-        user.groups.add(group)
+        user.groups.add(reviewers)
+        user.groups.remove(campaigners)
+    elif role == "campaign":
+        user.is_staff = True
+        user.groups.add(campaigners)
+        user.groups.remove(reviewers)
     else:
         user.is_staff = False
-        user.save(update_fields=["is_staff"])
-        user.groups.remove(group)
+        user.groups.remove(reviewers, campaigners)
+    user.save(update_fields=["is_staff"])
     return Response(serialize_row(user))

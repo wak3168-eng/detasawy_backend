@@ -1,7 +1,19 @@
-from drf_spectacular.utils import OpenApiParameter, extend_schema
+﻿from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import BasePermission, IsAdminUser
 from rest_framework.response import Response
+
+
+class IsReviewer(BasePermission):
+    """Superadmin, or a member of the Reviewers group."""
+
+    def has_permission(self, request, view):
+        user = request.user
+        return bool(
+            user
+            and user.is_authenticated
+            and (user.is_superuser or user.groups.filter(name="Reviewers").exists()),
+        )
 
 from apps.corpus.models import Prompt
 from apps.identity.models import Profile, User
@@ -47,7 +59,7 @@ def overview(request):
 
 @extend_schema(parameters=[OpenApiParameter("status", str, required=False)])
 @api_view(["GET"])
-@permission_classes([IsAdminUser])
+@permission_classes([IsReviewer])
 def suggestions(request):
     status = request.GET.get("status", "pending")
     rows = Suggestion.objects.filter(status=status).order_by("-times_suggested", "-created_at")[:50]
@@ -55,7 +67,7 @@ def suggestions(request):
 
 
 @api_view(["POST"])
-@permission_classes([IsAdminUser])
+@permission_classes([IsReviewer])
 def suggestion_action(request, pk):
     try:
         suggestion = Suggestion.objects.get(pk=pk)

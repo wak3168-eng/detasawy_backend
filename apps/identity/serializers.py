@@ -43,6 +43,9 @@ class UserSerializer(serializers.ModelSerializer):
         if obj.is_superuser:
             return "superadmin"
         if obj.is_staff:
+            names = set(obj.groups.values_list("name", flat=True))
+            if "Campaign managers" in names and "Reviewers" not in names:
+                return "campaign"
             return "reviewer"
         return "contributor"
 
