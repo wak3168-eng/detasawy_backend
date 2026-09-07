@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "apps.identity",
     "apps.ref",
     "apps.corpus",
+    "apps.portal",
 ]
 
 AUTH_USER_MODEL = "identity.User"
