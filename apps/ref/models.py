@@ -80,6 +80,17 @@ class Tribe(models.Model):
         return self.name
 
 
+class Language(models.Model):
+    id = models.SlugField(primary_key=True, max_length=80)
+    name = models.CharField(max_length=120, unique=True)
+
+    class Meta:
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+
 class Suggestion(models.Model):
     """Review queue for entries contributors add through the wizard's
     "can't find it? add yours" flow."""
@@ -89,6 +100,7 @@ class Suggestion(models.Model):
         ("district", "district"),
         ("tehsil", "tehsil"),
         ("tribe", "tribe"),
+        ("language", "language"),
     ]
     STATUS_CHOICES = [
         ("pending", "pending"),

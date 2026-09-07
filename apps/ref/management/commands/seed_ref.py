@@ -4,9 +4,41 @@ from pathlib import Path
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from apps.ref.models import Country, District, Province, Tehsil, Tribe, TribeDistrict
+from apps.ref.models import (
+    Country,
+    District,
+    Language,
+    Province,
+    Tehsil,
+    Tribe,
+    TribeDistrict,
+)
+from apps.ref.normalize import slug_part
 
 DATA_DIR = Path(__file__).resolve().parents[4] / "data"
+
+CURATED_LANGUAGES = [
+    "Pashto (Northern)",
+    "Pashto (Southern)",
+    "Pashto (Central)",
+    "Pashto (Wanetsi)",
+    "Hindko",
+    "Saraiki",
+    "Urdu",
+    "Dari",
+    "Balochi",
+    "Brahui",
+    "Khowar",
+    "Kohistani",
+    "Shina",
+    "Gojri",
+    "Wakhi",
+    "Kalasha",
+    "Pashayi",
+    "Nuristani",
+    "Uzbek",
+    "Turkmen",
+]
 
 
 class Command(BaseCommand):
@@ -21,6 +53,25 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
+        geography = json.loads((DATA_DIR / "geography.json").read_text(encoding="utf-8"))
+
+        names = set(CURATED_LANGUAGES)
+        for country in geography["countries"]:
+            for province in country["provinces"]:
+                for district in province["districts"]:
+                    for part in str(district.get("language") or "").split(";"):
+                        part = part.strip()
+                        if part:
+                            names.add(part)
+        new_languages = 0
+        for name in sorted(names):
+            _, created = Language.objects.get_or_create(
+                id=f"lang-{slug_part(name)}", defaults={"name": name},
+            )
+            new_languages += 1 if created else 0
+        if new_languages:
+            self.stdout.write(f"languages ensured: {new_languages} added")
+
         if Country.objects.exists() and not options["force"]:
             self.stdout.write("ref data already present — skipping (use --force to reseed)")
             return
@@ -33,7 +84,6 @@ class Command(BaseCommand):
             Province.objects.all().delete()
             Country.objects.all().delete()
 
-        geography = json.loads((DATA_DIR / "geography.json").read_text(encoding="utf-8"))
         tribes = json.loads((DATA_DIR / "tribes.json").read_text(encoding="utf-8"))
 
         for country in geography["countries"]:

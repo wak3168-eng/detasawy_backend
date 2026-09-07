@@ -3,7 +3,14 @@ from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from apps.ref.models import District, Province, Tehsil, Tribe, TribeDistrict
+from apps.ref.models import (
+    District,
+    Language,
+    Province,
+    Tehsil,
+    Tribe,
+    TribeDistrict,
+)
 from apps.ref.serializers import RefOptionSerializer
 
 REF_CACHE = "public, s-maxage=86400, stale-while-revalidate=604800"
@@ -79,6 +86,16 @@ def tehsils(request):
         return Response({"error": "district is required"}, status=400)
     items = Tehsil.objects.filter(district_id=district)
     return cached([option(id=t.id, name=t.name) for t in items])
+
+
+@extend_schema(responses=RefOptionSerializer(many=True))
+@api_view(["GET"])
+def languages(request):
+    items = sorted(
+        Language.objects.all(),
+        key=lambda lang: (not lang.name.startswith("Pashto"), lang.name),
+    )
+    return cached([option(id=lang.id, name=lang.name) for lang in items])
 
 
 @extend_schema(

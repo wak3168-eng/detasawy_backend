@@ -7,4 +7,5 @@ urlpatterns = [
     path("districts", views.districts),
     path("tehsils", views.tehsils),
     path("tribes", views.tribes),
+    path("languages", views.languages),
 ]

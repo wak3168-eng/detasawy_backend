@@ -5,6 +5,7 @@ from django.contrib import admin
 from apps.ref.models import (
     Country,
     District,
+    Language,
     Province,
     Suggestion,
     Tehsil,
@@ -61,6 +62,12 @@ class TribeDistrictAdmin(admin.ModelAdmin):
     list_display = ["tribe", "district", "role"]
     list_filter = ["role", "district"]
     search_fields = ["tribe__name", "district__name"]
+
+
+@admin.register(Language)
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ["id", "name"]
+    search_fields = ["name"]
 
 
 @admin.register(Suggestion)

@@ -2,7 +2,14 @@ from django.db.models import F
 from django.utils import timezone
 
 from apps.identity.models import Profile
-from apps.ref.models import District, Province, Suggestion, Tehsil, Tribe
+from apps.ref.models import (
+    District,
+    Language,
+    Province,
+    Suggestion,
+    Tehsil,
+    Tribe,
+)
 from apps.ref.normalize import normalize_name, slug_part, unique_ref_id
 
 LEVEL_NAMES = [
@@ -73,6 +80,15 @@ def capture_suggestions(profile: Profile) -> int:
         created += _add_suggestion(user, "tribe", node, parent_id, parent_name)
         parent_id = node.get("id") or ""
         parent_name = node.get("name") or ""
+
+    language = (profile.language or "").strip()
+    if language:
+        normalized = normalize_name(language)
+        known = {normalize_name(l.name) for l in Language.objects.all()}
+        if normalized and normalized not in known:
+            created += _add_suggestion(
+                user, "language", {"name": language, "pending": True}, "", "",
+            )
     return created
 
 
@@ -93,6 +109,10 @@ def _repoint(kind, suggestion, ref_id, ref_name):
                     node["name"] = ref_name
                     node.pop("pending", None)
                     changed = True
+        elif kind == "language":
+            if normalize_name(profile.language or "") == normalized:
+                profile.language = ref_name
+                changed = True
         else:
             entry = getattr(profile, kind)
             if (
@@ -105,7 +125,8 @@ def _repoint(kind, suggestion, ref_id, ref_name):
                 )
                 changed = True
         if changed:
-            profile.save(update_fields=[kind if kind != "tribe" else "tribe_path", "updated_at"])
+            field = "tribe_path" if kind == "tribe" else kind
+            profile.save(update_fields=[field, "updated_at"])
             updated += 1
     return updated
 
@@ -163,6 +184,11 @@ def approve_suggestion(suggestion: Suggestion, reviewer) -> str:
             id=unique_ref_id(Province, f"{parent.id}-{slug_part(name)}"),
             name=name,
             country=parent,
+        )
+    elif kind == "language":
+        row = Language.objects.create(
+            id=unique_ref_id(Language, f"lang-{slug_part(name)}"),
+            name=name,
         )
     else:
         raise ValueError(f"unknown suggestion kind {kind}")
