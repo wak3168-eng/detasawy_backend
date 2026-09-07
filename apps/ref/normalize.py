@@ -16,6 +16,35 @@ def normalize_name(value: str) -> str:
     return re.sub(r"[\s\-_]+", " ", value).strip()
 
 
+# Transliteration families of the generic lineage suffixes. Spellings within
+# a family are the same word; Khel and Zai are NOT interchangeable.
+SUFFIX_FAMILIES = {
+    "khel": "khel", "khail": "khel", "kheil": "khel", "khell": "khel",
+    "zai": "zai", "zay": "zai", "zi": "zai", "zey": "zai",
+}
+
+
+def split_generic_suffix(normalized: str) -> tuple[str, str]:
+    """('sheikhmal khel') → ('sheikhmal', 'khel'); single words keep ''."""
+    parts = normalized.split()
+    if len(parts) > 1 and parts[-1] in SUFFIX_FAMILIES:
+        return " ".join(parts[:-1]), SUFFIX_FAMILIES[parts[-1]]
+    return normalized, ""
+
+
+def names_equivalent(a: str, b: str) -> bool:
+    """Same normalized name, tolerating a missing or differently spelled
+    generic suffix of the SAME family (Sheikhmal ~ Sheikhmal Khel ~
+    Sheikhmal Khail, but Adam Khel ≠ Adam Zai)."""
+    if a == b:
+        return True
+    head_a, fam_a = split_generic_suffix(a)
+    head_b, fam_b = split_generic_suffix(b)
+    if head_a != head_b:
+        return False
+    return fam_a == fam_b or not fam_a or not fam_b
+
+
 def slug_part(value: str) -> str:
     ascii_form = (
         unicodedata.normalize("NFKD", value or "")

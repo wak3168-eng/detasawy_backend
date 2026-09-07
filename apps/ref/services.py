@@ -12,7 +12,13 @@ from apps.ref.models import (
     Tehsil,
     Tribe,
 )
-from apps.ref.normalize import normalize_name, slug_part, unique_ref_id
+from apps.ref.normalize import (
+    names_equivalent,
+    normalize_name,
+    slug_part,
+    split_generic_suffix,
+    unique_ref_id,
+)
 
 LEVEL_NAMES = [
     "confederacy",
@@ -29,15 +35,86 @@ def _entry(value):
     return value if isinstance(value, dict) else {}
 
 
+def _sibling_rows(kind, parent_id):
+    """Existing canonical rows a submitted name must be checked against."""
+    if kind == "tribe":
+        if parent_id:
+            return Tribe.objects.filter(parent_id=parent_id)
+        return Tribe.objects.filter(parent__isnull=True)
+    if kind == "district":
+        return District.objects.filter(province_id=parent_id)
+    if kind == "tehsil":
+        return Tehsil.objects.filter(district_id=parent_id)
+    if kind == "province":
+        return Province.objects.filter(country_id=parent_id)
+    if kind == "language":
+        return Language.objects.all()
+    return []
+
+
+def _row_names(row):
+    names = []
+    for name in [row.name, *(getattr(row, "aliases", None) or [])]:
+        normalized = normalize_name(name)
+        if normalized:
+            names.append(normalized)
+    return names
+
+
+def _canonical_match(kind, normalized, parent_id):
+    """The canonical row a submitted spelling exactly is — name or alias,
+    tolerating a missing/same-family generic suffix (Khel ≠ Zai)."""
+    for row in _sibling_rows(kind, parent_id):
+        if any(names_equivalent(n, normalized) for n in _row_names(row)):
+            return row
+    return None
+
+
+def _pair_ratio(a, b):
+    best = difflib.SequenceMatcher(None, a, b).ratio()
+    head_a, fam_a = split_generic_suffix(a)
+    head_b, fam_b = split_generic_suffix(b)
+    if fam_a == fam_b or not fam_a or not fam_b:
+        best = max(best, difflib.SequenceMatcher(None, head_a, head_b).ratio())
+    return best
+
+
+def _fuzzy_candidates(kind, normalized, parent_id, limit=3, cutoff=0.75):
+    """Near-spelling canonical rows, alias- and suffix-aware, best first."""
+    scored = []
+    for row in _sibling_rows(kind, parent_id):
+        best = max(
+            (_pair_ratio(n, normalized) for n in _row_names(row)), default=0.0,
+        )
+        if best >= cutoff:
+            scored.append((best, row))
+    scored.sort(key=lambda pair: -pair[0])
+    return [row for _, row in scored[:limit]]
+
+
 def _add_suggestion(user, kind, entry, parent_id, parent_name):
+    """Returns (suggestions_created, canonical_row_if_auto_resolved).
+
+    A spelling that exactly matches an existing sibling (name or alias,
+    suffix-tolerant) never enters the queue — the entry is re-pointed to the
+    canonical row on the spot. Near matches enter the queue pre-linked to
+    their likely duplicate so review defaults to merge."""
     entry = _entry(entry)
     name = (entry.get("name") or "").strip()
     if not entry.get("pending") or not name:
-        return 0
+        return 0, None
     normalized = normalize_name(name)
     if not normalized:
-        return 0
-    _, created = Suggestion.objects.get_or_create(
+        return 0, None
+
+    canonical = _canonical_match(kind, normalized, parent_id or "")
+    if canonical is not None:
+        entry["id"] = canonical.id
+        entry["name"] = canonical.name
+        entry.pop("pending", None)
+        return 0, canonical
+
+    suggestion, created = Suggestion.objects.get_or_create(
         kind=kind,
         normalized_name=normalized,
         parent_id=parent_id or "",
@@ -47,7 +124,13 @@ def _add_suggestion(user, kind, entry, parent_id, parent_name):
             "suggested_by": user,
         },
     )
-    if not created:
+    if created:
+        if kind == "tribe" and suggestion.merge_into is None:
+            near = _fuzzy_candidates(kind, normalized, parent_id or "", limit=1)
+            if near:
+                suggestion.merge_into = near[0]
+                suggestion.save(update_fields=["merge_into"])
+    else:
         Suggestion.objects.filter(
             kind=kind,
             normalized_name=normalized,
@@ -56,41 +139,58 @@ def _add_suggestion(user, kind, entry, parent_id, parent_name):
         ).exclude(suggested_by=user).update(
             times_suggested=F("times_suggested") + 1,
         )
-    return 1 if created else 0
+    return (1 if created else 0), None
 
 
 def capture_suggestions(profile: Profile) -> int:
-    """Extract every pending entry in a profile into the review queue."""
+    """Resolve or queue every pending entry in a profile. Exact spellings of
+    known entries are canonicalized immediately; the rest go to review."""
     user = profile.user
     country = _entry(profile.country)
     province = _entry(profile.province)
     district = _entry(profile.district)
     created = 0
-    created += _add_suggestion(
-        user, "province", profile.province, country.get("id"), country.get("name"),
-    )
-    created += _add_suggestion(
-        user, "district", profile.district, province.get("id"), province.get("name"),
-    )
-    created += _add_suggestion(
-        user, "tehsil", profile.tehsil, district.get("id"), district.get("name"),
-    )
+    changed = set()
+
+    for kind, entry, pid, pname in [
+        ("province", profile.province, country.get("id"), country.get("name")),
+        ("district", profile.district, province.get("id"), province.get("name")),
+        ("tehsil", profile.tehsil, district.get("id"), district.get("name")),
+    ]:
+        n, resolved = _add_suggestion(user, kind, entry, pid, pname)
+        created += n
+        if resolved is not None:
+            changed.add(kind)
+
     parent_id = ""
     parent_name = ""
     for node in profile.tribe_path or []:
         node = _entry(node)
-        created += _add_suggestion(user, "tribe", node, parent_id, parent_name)
+        n, resolved = _add_suggestion(user, "tribe", node, parent_id, parent_name)
+        created += n
+        if resolved is not None:
+            changed.add("tribe_path")
+        # an auto-resolved node now carries its canonical id, so the next
+        # level is checked against the right siblings
         parent_id = node.get("id") or ""
         parent_name = node.get("name") or ""
 
     language = (profile.language or "").strip()
     if language:
         normalized = normalize_name(language)
-        known = {normalize_name(l.name) for l in Language.objects.all()}
-        if normalized and normalized not in known:
-            created += _add_suggestion(
+        known = {normalize_name(l.name): l.name for l in Language.objects.all()}
+        if normalized and normalized in known:
+            if profile.language != known[normalized]:
+                profile.language = known[normalized]
+                changed.add("language")
+        elif normalized:
+            n, _ = _add_suggestion(
                 user, "language", {"name": language, "pending": True}, "", "",
             )
+            created += n
+
+    if changed:
+        profile.save(update_fields=[*changed, "updated_at"])
     return created
 
 
@@ -222,15 +322,13 @@ def reject_suggestion(suggestion: Suggestion, reviewer):
 
 
 def sibling_candidates(suggestion: Suggestion, limit: int = 3):
-    """Fuzzy possible-duplicate matches among the suggestion's siblings."""
-    if suggestion.kind != "tribe":
-        return []
-    if suggestion.parent_id:
-        siblings = Tribe.objects.filter(parent_id=suggestion.parent_id)
-    else:
-        siblings = Tribe.objects.filter(parent__isnull=True)
-    by_norm = {normalize_name(t.name): t for t in siblings}
-    close = difflib.get_close_matches(
-        suggestion.normalized_name, by_norm.keys(), n=limit, cutoff=0.6,
+    """Fuzzy possible-duplicate matches among the suggestion's siblings —
+    alias- and suffix-aware, for every suggestion kind."""
+    rows = _fuzzy_candidates(
+        suggestion.kind,
+        suggestion.normalized_name,
+        suggestion.parent_id,
+        limit=limit,
+        cutoff=0.6,
     )
-    return [{"id": by_norm[n].id, "name": by_norm[n].name} for n in close]
+    return [{"id": row.id, "name": row.name} for row in rows]

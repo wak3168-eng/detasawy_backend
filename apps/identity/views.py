@@ -107,4 +107,5 @@ def profile(request):
     serializer.is_valid(raise_exception=True)
     serializer.save()
     capture_suggestions(instance)
-    return Response(serializer.data)
+    # capture may have canonicalized spellings in place — return the final state
+    return Response(ProfileSerializer(instance).data)

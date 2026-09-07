@@ -44,6 +44,8 @@ def serialize_suggestion(suggestion):
         "resolvedRefId": suggestion.resolved_ref_id or None,
         "createdAt": suggestion.created_at.isoformat(),
         "candidates": sibling_candidates(suggestion),
+        "mergeIntoId": suggestion.merge_into_id or None,
+        "mergeIntoName": suggestion.merge_into.name if suggestion.merge_into else None,
     }
 
 
