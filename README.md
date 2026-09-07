@@ -7,6 +7,11 @@ Django backend for Detasawy, hosted on Railway with Railway PostgreSQL. Currentl
 | Path                          | What                                              |
 | ----------------------------- | ------------------------------------------------- |
 | `/api/health`                 | Health check (Railway healthcheck)                |
+| `/api/auth/signup`            | POST — create account (name, email, password, consent) → token |
+| `/api/auth/login`             | POST — email + password → token + profile         |
+| `/api/auth/logout`            | POST — revoke the token                           |
+| `/api/auth/me`                | GET — current user + profile (token auth)         |
+| `/api/profile`                | PUT — save the contributor profile (token auth)   |
 | `/api/ref/provinces?country=` | Provinces of a country (`pk`, `af`, `overseas`)   |
 | `/api/ref/districts?province=`| Districts of a province (+ `hasTehsils`, language)|
 | `/api/ref/tehsils?district=`  | Tehsils of a district                             |
