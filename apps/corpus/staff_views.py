@@ -9,11 +9,12 @@ def serialize_prompt(prompt, request):
     return {
         "id": prompt.id,
         "kind": prompt.kind,
-        "mediaUrl": request.build_absolute_uri(prompt.media.url),
+        "mediaUrl": prompt.resolve_media_url(request),
         "captionEn": prompt.caption_en or None,
         "captionPs": prompt.caption_ps or None,
         "active": prompt.active,
         "servedCount": prompt.served_count,
+        "licence": prompt.licence or None,
         "createdAt": prompt.created_at.isoformat(),
     }
 
@@ -29,17 +30,22 @@ def staff_prompts(request):
     if kind not in ("picture", "voice"):
         return Response({"error": "kind must be picture or voice"}, status=400)
     media = request.FILES.get("media")
-    if not media:
-        return Response({"error": "a media file is required"}, status=400)
-    expected = "image/" if kind == "picture" else "audio/"
-    if not (media.content_type or "").startswith(expected):
-        return Response(
-            {"error": f"a {kind} prompt needs a {expected}* file"}, status=400,
-        )
+    media_url = (request.data.get("mediaUrl") or "").strip()
+    if not media and not media_url:
+        return Response({"error": "a media file or mediaUrl is required"}, status=400)
+    if media:
+        expected = "image/" if kind == "picture" else "audio/"
+        if not (media.content_type or "").startswith(expected):
+            return Response(
+                {"error": f"a {kind} prompt needs a {expected}* file"}, status=400,
+            )
 
     prompt = Prompt.objects.create(
         kind=kind,
         media=media,
+        media_url=media_url[:500],
+        source_url=(request.data.get("sourceUrl") or "").strip()[:500],
+        licence=(request.data.get("licence") or "").strip()[:200],
         caption_en=(request.data.get("captionEn") or "").strip()[:160],
         caption_ps=(request.data.get("captionPs") or "").strip()[:160],
         created_by=request.user,

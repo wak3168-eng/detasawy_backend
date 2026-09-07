@@ -44,7 +44,7 @@ def prompts(request):
         item = {
             "id": row.id,
             "kind": row.kind,
-            "mediaUrl": request.build_absolute_uri(row.media.url),
+            "mediaUrl": row.resolve_media_url(request),
         }
         if row.caption_en:
             item["captionEn"] = row.caption_en

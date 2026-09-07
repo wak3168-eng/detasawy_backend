@@ -44,7 +44,14 @@ class Prompt(models.Model):
     KIND_CHOICES = [("picture", "picture"), ("voice", "voice")]
 
     kind = models.CharField(max_length=10, choices=KIND_CHOICES)
-    media = models.FileField(upload_to="prompts/%Y/%m/")
+    media = models.FileField(upload_to="prompts/%Y/%m/", blank=True, null=True)
+    media_url = models.URLField(
+        max_length=500,
+        blank=True,
+        help_text="External media URL (e.g. Wikimedia Commons) instead of an upload.",
+    )
+    source_url = models.URLField(max_length=500, blank=True)
+    licence = models.CharField(max_length=200, blank=True)
     caption_en = models.CharField(
         max_length=160,
         blank=True,
@@ -69,5 +76,12 @@ class Prompt(models.Model):
     class Meta:
         ordering = ["-created_at"]
 
+    def resolve_media_url(self, request):
+        if self.media_url:
+            return self.media_url
+        if self.media:
+            return request.build_absolute_uri(self.media.url)
+        return ""
+
     def __str__(self):
-        return f"{self.kind}: {self.caption_en or self.media.name}"
+        return f"{self.kind}: {self.caption_en or self.media_url or self.media.name}"
