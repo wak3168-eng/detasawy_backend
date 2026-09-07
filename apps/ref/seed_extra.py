@@ -157,7 +157,7 @@ def _ensure_child(parent, name):
     siblings = (
         Tribe.objects.filter(parent=parent)
         if parent is not None
-        else Tribe.objects.filter(parent__isnull=True, country="AF")
+        else Tribe.objects.filter(parent__isnull=True)
     )
     for row in siblings:
         candidates = [row.name, *(row.aliases or [])]
@@ -165,14 +165,14 @@ def _ensure_child(parent, name):
             return row
 
     if parent is None:
-        # a confederation may already live nested in the older data
-        # (e.g. Durrani under Sarbani) — graft onto it rather than duplicate
-        for row in Tribe.objects.filter(country="AF", level__lte=2):
+        # the same confederations exist in the Pakistani data — graft onto
+        # whatever is already there instead of starting a parallel tree
+        for row in Tribe.objects.filter(level__lte=2):
             if names_equivalent(normalize_name(row.name), normalized):
                 return row
 
     if parent is not None:
-        flat = Tribe.objects.filter(parent__isnull=True, country="AF", level=1)
+        flat = Tribe.objects.filter(parent__isnull=True, country="AF")
         for row in flat:
             if _is_ancestor_or_self(row, parent):
                 continue

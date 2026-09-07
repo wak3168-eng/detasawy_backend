@@ -68,6 +68,19 @@ def _canonical_match(kind, normalized, parent_id):
     for row in _sibling_rows(kind, parent_id):
         if any(names_equivalent(n, normalized) for n in _row_names(row)):
             return row
+
+    if kind == "tribe" and not parent_id:
+        # Someone naming their tribe at the top level usually means one that
+        # already sits under a confederation (Zadran lives under Karlani).
+        # Reuse it rather than starting a rival root — but only when the name
+        # is unambiguous in the whole tree.
+        found = [
+            row
+            for row in Tribe.objects.all()
+            if any(names_equivalent(n, normalized) for n in _row_names(row))
+        ]
+        if len(found) == 1:
+            return found[0]
     return None
 
 
@@ -102,6 +115,7 @@ def _add_suggestion(user, kind, entry, parent_id, parent_name):
     their likely duplicate so review defaults to merge."""
     entry = _entry(entry)
     name = (entry.get("name") or "").strip()
+    pashto = (entry.get("ps") or "").strip()
     if not entry.get("pending") or not name:
         return 0, None
     normalized = normalize_name(name)
@@ -110,6 +124,10 @@ def _add_suggestion(user, kind, entry, parent_id, parent_name):
 
     canonical = _canonical_match(kind, normalized, parent_id or "")
     if canonical is not None:
+        # a contributor who typed the Pashto spelling fills in a gap
+        if pashto and hasattr(canonical, "pashto") and not canonical.pashto:
+            canonical.pashto = pashto[:160]
+            canonical.save(update_fields=["pashto"])
         entry["id"] = canonical.id
         entry["name"] = canonical.name
         entry.pop("pending", None)
@@ -121,6 +139,7 @@ def _add_suggestion(user, kind, entry, parent_id, parent_name):
         parent_id=parent_id or "",
         defaults={
             "name": name,
+            "pashto": pashto[:160],
             "parent_name": parent_name or "",
             "suggested_by": user,
         },
@@ -277,6 +296,7 @@ def approve_suggestion(suggestion: Suggestion, reviewer) -> str:
         row = Tribe.objects.create(
             id=unique_ref_id(Tribe, base),
             name=name,
+            pashto=suggestion.pashto,
             parent=parent,
             level=level,
             level_name=LEVEL_NAMES[min(level, len(LEVEL_NAMES) - 1)],
@@ -289,6 +309,7 @@ def approve_suggestion(suggestion: Suggestion, reviewer) -> str:
         row = District.objects.create(
             id=unique_ref_id(District, f"{parent.id}-{slug_part(name)}"),
             name=name,
+            pashto=suggestion.pashto,
             province=parent,
         )
     elif kind == "tehsil":
@@ -298,6 +319,7 @@ def approve_suggestion(suggestion: Suggestion, reviewer) -> str:
         row = Tehsil.objects.create(
             id=unique_ref_id(Tehsil, f"{parent.id}-{slug_part(name)}"),
             name=name,
+            pashto=suggestion.pashto,
             district=parent,
         )
     elif kind == "province":
@@ -309,6 +331,7 @@ def approve_suggestion(suggestion: Suggestion, reviewer) -> str:
         row = Province.objects.create(
             id=unique_ref_id(Province, f"{parent.id}-{slug_part(name)}"),
             name=name,
+            pashto=suggestion.pashto,
             country=parent,
         )
     elif kind == "language":

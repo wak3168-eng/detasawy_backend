@@ -17,27 +17,17 @@ from apps.ref.normalize import slug_part
 
 DATA_DIR = Path(__file__).resolve().parents[4] / "data"
 
+# Detasawy collects Pashto, so only Pashto varieties are offered. Anything
+# else a contributor speaks they can still type in ("add yours").
 CURATED_LANGUAGES = [
+    "Pashto",
     "Pashto (Northern)",
     "Pashto (Southern)",
     "Pashto (Central)",
     "Pashto (Wanetsi)",
-    "Hindko",
-    "Saraiki",
-    "Urdu",
-    "Dari",
-    "Balochi",
-    "Brahui",
-    "Khowar",
-    "Kohistani",
-    "Shina",
-    "Gojri",
-    "Wakhi",
-    "Kalasha",
-    "Pashayi",
-    "Nuristani",
-    "Uzbek",
-    "Turkmen",
+    "Pashto (Waziri)",
+    "Pashto (Marwat)",
+    "Pashto (Banuchi)",
 ]
 
 
@@ -55,13 +45,17 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         geography = json.loads((DATA_DIR / "geography.json").read_text(encoding="utf-8"))
 
+        # district language values include the region's other tongues; only
+        # the Pashto varieties belong in the picker
         names = set(CURATED_LANGUAGES)
         for country in geography["countries"]:
             for province in country["provinces"]:
                 for district in province["districts"]:
                     for part in str(district.get("language") or "").split(";"):
-                        part = part.strip()
-                        if part:
+                        # "Pashto (Waziri dialect)" is the same entry as
+                        # "Pashto (Waziri)" — keep one spelling
+                        part = part.strip().replace(" dialect", "")
+                        if part.lower().startswith("pashto"):
                             names.add(part)
         new_languages = 0
         for name in sorted(names):
@@ -69,8 +63,21 @@ class Command(BaseCommand):
                 id=f"lang-{slug_part(name)}", defaults={"name": name},
             )
             new_languages += 1 if created else 0
-        if new_languages:
-            self.stdout.write(f"languages ensured: {new_languages} added")
+        stale = Language.objects.exclude(name__istartswith="Pashto")
+        removed = stale.count()
+        stale.delete()
+        # drop wordier spellings of a variety that is already listed
+        existing = set(Language.objects.values_list("name", flat=True))
+        for name in list(existing):
+            trimmed = name.replace(" dialect", "")
+            if trimmed != name and trimmed in existing:
+                Language.objects.filter(name=name).delete()
+                existing.discard(name)
+                removed += 1
+        if new_languages or removed:
+            self.stdout.write(
+                f"languages: {new_languages} added, {removed} non-Pashto removed",
+            )
 
         if Country.objects.exists() and not options["force"]:
             self._enrich()
@@ -148,10 +155,14 @@ class Command(BaseCommand):
             ensure_pashto_names,
         )
 
+        from apps.ref.dedupe import dedupe_tribes
+
         renamed = ensure_pashto_names()
         af_added, af_links = ensure_afghanistan_tribes(DATA_DIR)
-        if renamed or af_added or af_links:
+        merged = dedupe_tribes()
+        if renamed or af_added or af_links or merged:
             self.stdout.write(
                 f"enrichment: {renamed} Pashto names set, "
-                f"{af_added} AF tribes added, {af_links} province links",
+                f"{af_added} AF tribes added, {af_links} province links, "
+                f"{merged} duplicates merged",
             )

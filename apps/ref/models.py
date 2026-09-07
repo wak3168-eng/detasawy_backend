@@ -114,6 +114,11 @@ class Suggestion(models.Model):
 
     kind = models.CharField(max_length=20, choices=KIND_CHOICES)
     name = models.CharField(max_length=160)
+    pashto = models.CharField(
+        max_length=160,
+        blank=True,
+        help_text="The same name written in Pashto, when the contributor gave it.",
+    )
     normalized_name = models.CharField(max_length=160)
     parent_id = models.CharField(max_length=220, blank=True)
     parent_name = models.CharField(max_length=160, blank=True)
