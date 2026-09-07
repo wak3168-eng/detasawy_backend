@@ -15,8 +15,13 @@ class IsReviewer(BasePermission):
             and (user.is_superuser or user.groups.filter(name="Reviewers").exists()),
         )
 
-from apps.corpus.models import Prompt
+from datetime import timedelta
+
+from django.utils import timezone
+
+from apps.corpus.models import Contribution, Prompt
 from apps.identity.models import Profile, User
+from apps.portal.models import Campaign
 from apps.ref.models import Language, Suggestion, Tribe
 from apps.ref.services import (
     approve_suggestion,
@@ -45,14 +50,48 @@ def serialize_suggestion(suggestion):
 @api_view(["GET"])
 @permission_classes([IsAdminUser])
 def overview(request):
+    now = timezone.now()
+    contributions = Contribution.objects.all()
     return Response(
         {
+            # the dataset itself
+            "uniqueWords": contributions.values("text_norm").distinct().count(),
+            "pictures": Prompt.objects.filter(kind="picture").count(),
+            "picturesActive": Prompt.objects.filter(
+                kind="picture", active=True,
+            ).count(),
+            "picturesAnswered": contributions.values("prompt_id")
+            .distinct()
+            .count(),
+            "contributions": contributions.count(),
+            "contributionsToday": contributions.filter(
+                created_at__date=timezone.localdate(),
+            ).count(),
+            "contributionsWeek": contributions.filter(
+                created_at__gte=now - timedelta(days=7),
+            ).count(),
+            "voiceNotes": contributions.exclude(audio="")
+            .exclude(audio__isnull=True)
+            .count(),
+            # the community
             "users": User.objects.count(),
             "profilesCompleted": Profile.objects.exclude(completed_at=None).count(),
+            "contributors": contributions.values("contributor_id")
+            .distinct()
+            .count(),
+            "districtsCovered": contributions.exclude(district__isnull=True)
+            .values("district__id")
+            .distinct()
+            .count(),
+            # operations
+            "campaignsLive": Campaign.objects.filter(
+                starts_at__lte=now, ends_at__gte=now,
+            ).count(),
+            "suggestionsPending": Suggestion.objects.filter(
+                status="pending",
+            ).count(),
             "tribes": Tribe.objects.count(),
             "languages": Language.objects.count(),
-            "suggestionsPending": Suggestion.objects.filter(status="pending").count(),
-            "prompts": Prompt.objects.filter(active=True).count(),
         },
     )
 
