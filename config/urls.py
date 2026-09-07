@@ -22,6 +22,7 @@ urlpatterns = [
     path("", root),
     path("api/health", health),
     path("admin/", admin.site.urls),
+    path("api/", include("apps.identity.urls")),
     path("api/ref/", include("apps.ref.urls")),
     path("api/schema", SpectacularAPIView.as_view(), name="schema"),
     path("api/docs", SpectacularSwaggerView.as_view(url_name="schema"), name="docs"),
