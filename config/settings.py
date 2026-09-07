@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "apps.identity",
     "apps.ref",
+    "apps.corpus",
 ]
 
 AUTH_USER_MODEL = "identity.User"
@@ -101,7 +102,32 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = Path(os.environ.get("MEDIA_ROOT", BASE_DIR / "media"))
+
+# S3-compatible media (R2 etc.) when configured; local disk otherwise —
+# attach a Railway volume and set MEDIA_ROOT for the local mode to persist.
+USE_S3_MEDIA = bool(os.environ.get("S3_BUCKET"))
+
 STORAGES = {
+    "default": (
+        {
+            "BACKEND": "storages.backends.s3.S3Storage",
+            "OPTIONS": {
+                "bucket_name": os.environ.get("S3_BUCKET", ""),
+                "endpoint_url": os.environ.get("S3_ENDPOINT", ""),
+                "access_key": os.environ.get("S3_ACCESS_KEY_ID", ""),
+                "secret_key": os.environ.get("S3_SECRET_ACCESS_KEY", ""),
+                "region_name": os.environ.get("S3_REGION", "auto"),
+                "default_acl": None,
+                "querystring_auth": False,
+                "custom_domain": os.environ.get("S3_PUBLIC_DOMAIN") or None,
+            },
+        }
+        if USE_S3_MEDIA
+        else {"BACKEND": "django.core.files.storage.FileSystemStorage"}
+    ),
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
