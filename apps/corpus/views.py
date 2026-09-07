@@ -1,12 +1,16 @@
 import random
+from collections import defaultdict
 
+from django.utils import timezone
 from django.db.models import F
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
-from apps.corpus.models import Prompt
+from apps.corpus.models import Contribution, Prompt
+from apps.identity.models import Profile
+from apps.ref.normalize import normalize_name
 
 
 @extend_schema(
@@ -51,4 +55,91 @@ def prompts(request):
 
     response = Response(data)
     response["Cache-Control"] = "no-store"
+    return response
+
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def contribute(request):
+    profile = Profile.objects.filter(user=request.user).first()
+    if profile is None or not profile.completed_at:
+        return Response(
+            {"error": "Complete your profile before contributing."}, status=403,
+        )
+
+    prompt_id = request.data.get("prompt")
+    text = (request.data.get("text") or "").strip()
+    if not text:
+        return Response({"error": "text is required"}, status=400)
+    try:
+        prompt = Prompt.objects.get(id=prompt_id, active=True)
+    except (Prompt.DoesNotExist, ValueError, TypeError):
+        return Response({"error": "unknown prompt"}, status=400)
+
+    contribution, _ = Contribution.objects.update_or_create(
+        prompt=prompt,
+        contributor=request.user,
+        defaults={
+            "text_raw": text[:200],
+            "text_norm": normalize_name(text)[:200],
+            "district": profile.district,
+            "tribe_path": profile.tribe_path or [],
+            "language": profile.language or "",
+        },
+    )
+    audio = request.FILES.get("audio")
+    if audio:
+        contribution.audio = audio
+        contribution.save(update_fields=["audio"])
+
+    today = timezone.localdate()
+    today_count = Contribution.objects.filter(
+        contributor=request.user, created_at__date=today,
+    ).count()
+    return Response({"id": contribution.id, "todayCount": today_count}, status=201)
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def today(request):
+    count = Contribution.objects.filter(
+        contributor=request.user, created_at__date=timezone.localdate(),
+    ).count()
+    return Response({"count": count})
+
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def prompt_words(request, pk):
+    rows = Contribution.objects.filter(prompt_id=pk)
+    grouped = defaultdict(lambda: {"count": 0, "display": defaultdict(int), "cells": defaultdict(int)})
+    for row in rows:
+        entry = grouped[row.text_norm]
+        entry["count"] += 1
+        entry["display"][row.text_raw] += 1
+        district = (row.district or {}).get("name") or "—"
+        tribe_path = [t.get("name") for t in (row.tribe_path or []) if isinstance(t, dict)]
+        tribe = tribe_path[0] if tribe_path else "—"
+        clan = tribe_path[1] if len(tribe_path) > 1 else ""
+        entry["cells"][(district, tribe, clan)] += 1
+
+    data = []
+    for entry in grouped.values():
+        display = max(entry["display"], key=entry["display"].get)
+        data.append(
+            {
+                "word": display,
+                "count": entry["count"],
+                "rows": [
+                    {"district": d, "tribe": t, "clan": c or None, "count": n}
+                    for (d, t, c), n in sorted(
+                        entry["cells"].items(), key=lambda kv: -kv[1],
+                    )
+                ],
+            },
+        )
+    data.sort(key=lambda item: -item["count"])
+
+    response = Response(data)
+    response["Cache-Control"] = "public, s-maxage=30, stale-while-revalidate=120"
     return response
