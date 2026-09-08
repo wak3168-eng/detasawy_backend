@@ -28,20 +28,22 @@ def staff_prompts(request):
         return Response([serialize_prompt(p, request) for p in rows])
 
     kind = request.data.get("kind")
-    if kind not in ("picture", "voice"):
-        return Response({"error": "kind must be picture or voice"}, status=400)
+    if kind not in ("picture", "scene", "voice"):
+        return Response(
+            {"error": "kind must be picture, scene or voice"}, status=400,
+        )
     media = request.FILES.get("media")
     media_url = (request.data.get("mediaUrl") or "").strip()
     if not media and not media_url:
         return Response({"error": "a media file or mediaUrl is required"}, status=400)
     blob = None
     if media:
-        expected = "image/" if kind == "picture" else "audio/"
+        expected = "audio/" if kind == "voice" else "image/"
         if not (media.content_type or "").startswith(expected):
             return Response(
                 {"error": f"a {kind} prompt needs a {expected}* file"}, status=400,
             )
-        if kind == "picture":
+        if kind in ("picture", "scene"):
             # pictures live as DB blobs so they survive redeploys
             try:
                 blob = store_image(media.read())

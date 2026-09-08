@@ -56,7 +56,11 @@ class Prompt(models.Model):
     """A picture or voice note uploaded by admins and served randomly to
     contributors as the seed of a contribution."""
 
-    KIND_CHOICES = [("picture", "picture"), ("voice", "voice")]
+    KIND_CHOICES = [
+        ("picture", "picture"),
+        ("scene", "scene"),
+        ("voice", "voice"),
+    ]
 
     kind = models.CharField(max_length=10, choices=KIND_CHOICES)
     blob = models.ForeignKey(

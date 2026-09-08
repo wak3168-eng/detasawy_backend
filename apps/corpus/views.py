@@ -17,7 +17,9 @@ from apps.ref.normalize import normalize_name
 
 @extend_schema(
     parameters=[
-        OpenApiParameter("kind", str, required=True, enum=["picture", "voice"]),
+        OpenApiParameter(
+            "kind", str, required=True, enum=["picture", "scene", "voice"],
+        ),
         OpenApiParameter("count", int, required=False),
     ],
 )
@@ -25,8 +27,10 @@ from apps.ref.normalize import normalize_name
 @permission_classes([IsAuthenticated])
 def prompts(request):
     kind = request.GET.get("kind")
-    if kind not in ("picture", "voice"):
-        return Response({"error": "kind must be picture or voice"}, status=400)
+    if kind not in ("picture", "scene", "voice"):
+        return Response(
+            {"error": "kind must be picture, scene or voice"}, status=400,
+        )
     try:
         count = max(1, min(int(request.GET.get("count", 1)), 10))
     except ValueError:
@@ -75,12 +79,18 @@ def contribute(request):
 
     prompt_id = request.data.get("prompt")
     text = (request.data.get("text") or "").strip()
-    if not text:
-        return Response({"error": "text is required"}, status=400)
+    audio = request.FILES.get("audio")
     try:
         prompt = Prompt.objects.get(id=prompt_id, active=True)
     except (Prompt.DoesNotExist, ValueError, TypeError):
         return Response({"error": "unknown prompt"}, status=400)
+
+    if prompt.kind == "scene":
+        # a scene is spoken about; writing it down is a bonus
+        if audio is None:
+            return Response({"error": "record your voice to answer"}, status=400)
+    elif not text:
+        return Response({"error": "text is required"}, status=400)
 
     contribution, _ = Contribution.objects.update_or_create(
         prompt=prompt,
@@ -93,7 +103,6 @@ def contribute(request):
             "language": profile.language or "",
         },
     )
-    audio = request.FILES.get("audio")
     if audio:
         contribution.audio = audio
         contribution.save(update_fields=["audio"])
