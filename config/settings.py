@@ -164,3 +164,6 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.vercel\.app$",
 ]
+if DEBUG:
+    # the local dev server picks a free port when 3000 is taken
+    CORS_ALLOWED_ORIGIN_REGEXES.append(r"^http://localhost:\d+$")
