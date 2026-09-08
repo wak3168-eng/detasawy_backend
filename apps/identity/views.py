@@ -40,19 +40,12 @@ def session_payload(user, token):
 @permission_classes([AllowAny])
 @throttle_classes([AuthThrottle])
 def signup(request):
-    serializer = SignupSerializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
-    data = serializer.validated_data
-    user = User.objects.create_user(
-        email=data["email"],
-        password=data["password"],
-        name=data["name"],
-        consent_version=CONSENT_VERSION,
-        consented_at=timezone.now(),
+    """Closed while the pilot is invitation-only: a superadmin creates the
+    account instead (POST /api/admin/users/create)."""
+    return Response(
+        {"error": "Detasawy is invite-only for now. Ask the team for an account."},
+        status=status.HTTP_403_FORBIDDEN,
     )
-    Profile.objects.create(user=user)
-    token = Token.objects.create(user=user)
-    return Response(session_payload(user, token), status=status.HTTP_201_CREATED)
 
 
 @extend_schema(request=LoginSerializer)

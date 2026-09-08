@@ -10,5 +10,6 @@ urlpatterns = [
     path("profile", views.profile),
     path("profile/photo", views.profile_photo),
     path("admin/users", staff_views.users),
+    path("admin/users/create", staff_views.create_user),
     path("admin/users/role", staff_views.set_role),
 ]

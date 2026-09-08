@@ -1,12 +1,18 @@
+import secrets
+
 from django.contrib.auth.models import Group, Permission
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
 from django.db.models import Q
+from django.utils import timezone
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import BasePermission
 from rest_framework.response import Response
 
-from apps.identity.models import User
-from apps.identity.serializers import UserSerializer
+from apps.identity.models import Profile, User
+from apps.identity.serializers import CONSENT_VERSION, UserSerializer
 
 
 class IsSuperUser(BasePermission):
@@ -82,3 +88,46 @@ def set_role(request):
         user.groups.remove(reviewers, campaigners)
     user.save(update_fields=["is_staff"])
     return Response(serialize_row(user))
+
+
+@api_view(["POST"])
+@permission_classes([IsSuperUser])
+def create_user(request):
+    """Grant someone access. Public signup is closed, so accounts are made
+    here; the person changes the starting password after their first login."""
+    name = (request.data.get("name") or "").strip()
+    email = (request.data.get("email") or "").strip().lower()
+    password = request.data.get("password") or ""
+
+    if not name:
+        return Response({"error": "a name is required"}, status=400)
+    try:
+        validate_email(email)
+    except ValidationError:
+        return Response({"error": "that email address isn't valid"}, status=400)
+    if User.objects.filter(email__iexact=email).exists():
+        return Response({"error": "an account with this email already exists"}, status=400)
+
+    generated = not password
+    if generated:
+        password = secrets.token_urlsafe(9)
+    else:
+        try:
+            validate_password(password)
+        except ValidationError as error:
+            return Response({"error": " ".join(error.messages)}, status=400)
+
+    user = User.objects.create_user(
+        email=email,
+        password=password,
+        name=name,
+        consent_version=CONSENT_VERSION,
+        consented_at=timezone.now(),
+    )
+    Profile.objects.get_or_create(user=user)
+
+    data = serialize_row(user)
+    # shown once, to hand over — never stored in readable form
+    data["startingPassword"] = password
+    data["passwordGenerated"] = generated
+    return Response(data, status=201)
