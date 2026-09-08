@@ -1,5 +1,6 @@
 import random
 from collections import defaultdict
+from datetime import timedelta
 
 from django.http import Http404, HttpResponse, HttpResponseNotModified
 from django.utils import timezone
@@ -13,6 +14,9 @@ from apps.corpus.models import Contribution, MediaBlob, Prompt
 from apps.corpus.wordcluster import cluster
 from apps.identity.models import Profile
 from apps.ref.normalize import normalize_name
+
+# how long a prompt rests for someone after they answer it
+REPEAT_AFTER_DAYS = 10
 
 
 @extend_schema(
@@ -36,9 +40,16 @@ def prompts(request):
     except ValueError:
         count = 1
 
-    ids = list(
-        Prompt.objects.filter(kind=kind, active=True).values_list("id", flat=True),
-    )
+    pool = Prompt.objects.filter(kind=kind, active=True)
+    # don't hand someone back a prompt they answered in the last ten days
+    seen = Contribution.objects.filter(
+        contributor=request.user,
+        updated_at__gte=timezone.now() - timedelta(days=REPEAT_AFTER_DAYS),
+    ).values_list("prompt_id", flat=True)
+    ids = list(pool.exclude(id__in=seen).values_list("id", flat=True))
+    if not ids:
+        # they have worked through everything — let the oldest come round again
+        ids = list(pool.values_list("id", flat=True))
     chosen = random.sample(ids, min(count, len(ids)))
     rows = Prompt.objects.filter(id__in=chosen).select_related("blob")
     Prompt.objects.filter(id__in=chosen).update(
