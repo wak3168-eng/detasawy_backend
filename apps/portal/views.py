@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from apps.corpus.models import Contribution, Prompt
 from apps.identity.models import Profile
 from apps.portal.models import Campaign
+from apps.ref.models import Language, Tribe
 
 
 @api_view(["GET"])
@@ -36,17 +37,57 @@ def campaigns(request):
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def public_stats(request):
-    """Live numbers for the landing page."""
+    """Everything the landing page shows, in one live call."""
     contributions = Contribution.objects.all()
+    written = contributions.exclude(text_norm="")
+
+    # who is carrying the work right now — drives the map and the race
+    top = (
+        contributions.exclude(district__isnull=True)
+        .values("district__id", "district__name")
+        .annotate(words=Count("id"))
+        .order_by("-words")[:12]
+    )
+    top_districts = [
+        {
+            "id": row["district__id"],
+            "name": row["district__name"] or "Unknown",
+            "words": row["words"],
+        }
+        for row in top
+    ]
+
+    # the newest words, for the line that scrolls under the numbers
+    recent = []
+    for row in written.select_related(None).order_by("-created_at")[:12]:
+        place = (row.district or {}).get("name")
+        tribe = next(
+            (t.get("name") for t in (row.tribe_path or []) if isinstance(t, dict)),
+            None,
+        )
+        recent.append(
+            {"word": row.text_raw, "district": place, "tribe": tribe},
+        )
+
     response = Response(
         {
             "contributors": Profile.objects.exclude(completed_at=None).count(),
-            "uniqueWords": contributions.values("text_norm").distinct().count(),
+            "uniqueWords": written.values("text_norm").distinct().count(),
+            "words": written.count(),
+            "voices": contributions.exclude(audio="").exclude(audio__isnull=True).count(),
             "pictures": Prompt.objects.filter(kind="picture", active=True).count(),
+            "scenes": Prompt.objects.filter(kind="scene", active=True).count(),
             "districts": contributions.exclude(district__isnull=True)
             .values("district__id")
             .distinct()
             .count(),
+            "tribes": Tribe.objects.count(),
+            "languages": Language.objects.count(),
+            "campaignsLive": Campaign.objects.filter(
+                starts_at__lte=timezone.now(), ends_at__gte=timezone.now(),
+            ).count(),
+            "topDistricts": top_districts,
+            "recent": recent,
         },
     )
     response["Cache-Control"] = "public, s-maxage=60, stale-while-revalidate=300"

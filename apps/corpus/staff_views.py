@@ -1,3 +1,6 @@
+import os
+import re
+
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 
@@ -79,3 +82,71 @@ def staff_prompt_update(request, pk):
     prompt.active = active
     prompt.save(update_fields=["active"])
     return Response(serialize_prompt(prompt, request))
+
+
+def caption_from_filename(name):
+    """A folder of photos names itself: apple.png -> apple,
+    Red_Dahlia.jpg -> red dahlia."""
+    stem = os.path.splitext(os.path.basename(name))[0]
+    stem = re.sub(r"[_-]+", " ", stem)
+    return re.sub(r"\s+", " ", stem).strip().lower()[:160]
+
+
+@api_view(["POST"])
+@permission_classes([IsContentManager])
+def staff_prompts_batch(request):
+    """Upload a whole folder at once. Each file's name becomes its caption,
+    and anything already carrying that caption is left alone."""
+    kind = request.data.get("kind")
+    if kind not in ("picture", "scene", "voice"):
+        return Response(
+            {"error": "kind must be picture, scene or voice"}, status=400,
+        )
+    files = request.FILES.getlist("media")
+    if not files:
+        return Response({"error": "choose a folder of files first"}, status=400)
+
+    expected = "audio/" if kind == "voice" else "image/"
+    taken = {
+        c.lower()
+        for c in Prompt.objects.filter(kind=kind).values_list("caption_en", flat=True)
+    }
+    created, skipped, failed = [], [], []
+
+    for upload in files:
+        caption = caption_from_filename(upload.name)
+        if not caption:
+            failed.append({"name": upload.name, "why": "no name to read"})
+            continue
+        if caption in taken:
+            skipped.append(caption)
+            continue
+        if not (upload.content_type or "").startswith(expected):
+            failed.append({"name": upload.name, "why": f"not a {expected[:-1]} file"})
+            continue
+        blob = None
+        if kind in ("picture", "scene"):
+            try:
+                blob = store_image(upload.read())
+            except Exception:
+                failed.append({"name": upload.name, "why": "could not be read"})
+                continue
+        prompt = Prompt.objects.create(
+            kind=kind,
+            blob=blob,
+            media=None if blob else upload,
+            caption_en=caption,
+            created_by=request.user,
+        )
+        taken.add(caption)
+        created.append(serialize_prompt(prompt, request))
+
+    return Response(
+        {
+            "created": created,
+            "createdCount": len(created),
+            "skipped": skipped,
+            "failed": failed,
+        },
+        status=201 if created else 200,
+    )
