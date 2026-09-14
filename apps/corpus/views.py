@@ -1,5 +1,4 @@
 import random
-from collections import defaultdict
 from datetime import timedelta
 
 from django.http import Http404, HttpResponse, HttpResponseNotModified
@@ -11,7 +10,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
 from apps.corpus.models import Contribution, MediaBlob, Prompt
-from apps.corpus.wordcluster import cluster
+from apps.corpus.aggregate import group_words
 from apps.identity.models import Profile
 from apps.ref.normalize import normalize_name
 
@@ -154,53 +153,7 @@ def blob(request, sha):
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def prompt_words(request, pk):
-    rows = list(Contribution.objects.filter(prompt_id=pk))
-
-    # spellings of one word travel together; different words stay apart
-    clusters = cluster(row.text_norm for row in rows)
-    key_of = {}
-    for group in clusters:
-        key = min(group)
-        for form in group:
-            key_of[form] = key
-
-    grouped = defaultdict(
-        lambda: {
-            "count": 0,
-            "display": defaultdict(int),
-            "cells": defaultdict(int),
-        },
-    )
-    for row in rows:
-        entry = grouped[key_of.get(row.text_norm, row.text_norm)]
-        entry["count"] += 1
-        entry["display"][row.text_raw] += 1
-        district = (row.district or {}).get("name") or "—"
-        tribe_path = [t.get("name") for t in (row.tribe_path or []) if isinstance(t, dict)]
-        tribe = tribe_path[0] if tribe_path else "—"
-        clan = tribe_path[1] if len(tribe_path) > 1 else ""
-        entry["cells"][(district, tribe, clan)] += 1
-
-    data = []
-    for entry in grouped.values():
-        spellings = sorted(entry["display"].items(), key=lambda kv: -kv[1])
-        data.append(
-            {
-                "word": spellings[0][0],
-                "count": entry["count"],
-                # every other way people wrote the same word, most used first
-                "variants": [
-                    {"word": word, "count": n} for word, n in spellings[1:]
-                ],
-                "rows": [
-                    {"district": d, "tribe": t, "clan": c or None, "count": n}
-                    for (d, t, c), n in sorted(
-                        entry["cells"].items(), key=lambda kv: -kv[1],
-                    )
-                ],
-            },
-        )
-    data.sort(key=lambda item: -item["count"])
+    data = group_words(Contribution.objects.filter(prompt_id=pk))
 
     response = Response(data)
     response["Cache-Control"] = "public, s-maxage=30, stale-while-revalidate=120"

@@ -4,8 +4,12 @@ import re
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 
+from django.db.models import Count, Q
+from rest_framework.permissions import BasePermission
+
+from apps.corpus.aggregate import group_words
 from apps.corpus.images import store_image
-from apps.corpus.models import Prompt
+from apps.corpus.models import Contribution, Prompt
 from apps.identity.permissions import IsContentManager
 
 
@@ -150,3 +154,57 @@ def staff_prompts_batch(request):
         },
         status=201 if created else 200,
     )
+
+
+class IsSuperUser(BasePermission):
+    def has_permission(self, request, view):
+        return bool(request.user and request.user.is_superuser)
+
+
+@api_view(["GET"])
+@permission_classes([IsSuperUser])
+def dataset(request):
+    """The collection itself: every picture beside the words people gave it."""
+    query = (request.GET.get("q") or "").strip()
+    show_all = request.GET.get("all") == "1"
+    try:
+        limit = max(1, min(int(request.GET.get("limit", 20)), 50))
+        offset = max(0, int(request.GET.get("offset", 0)))
+    except ValueError:
+        limit, offset = 20, 0
+
+    prompts = Prompt.objects.annotate(
+        answers=Count("contributions", distinct=True),
+        voices=Count(
+            "contributions",
+            filter=Q(contributions__audio__isnull=False) & ~Q(contributions__audio=""),
+            distinct=True,
+        ),
+    )
+    if query:
+        prompts = prompts.filter(caption_en__icontains=query)
+    if not show_all:
+        prompts = prompts.filter(answers__gt=0)
+    prompts = prompts.order_by("-answers", "caption_en")
+
+    total = prompts.count()
+    page = list(prompts.select_related("blob")[offset:offset + limit])
+
+    # one query for every contribution on this page, grouped in memory
+    by_prompt = {}
+    for row in Contribution.objects.filter(prompt__in=page):
+        by_prompt.setdefault(row.prompt_id, []).append(row)
+
+    items = [
+        {
+            "id": p.id,
+            "kind": p.kind,
+            "caption": p.caption_en or f"#{p.id}",
+            "mediaUrl": p.resolve_media_url(request),
+            "answers": p.answers,
+            "voices": p.voices,
+            "words": group_words(by_prompt.get(p.id, [])),
+        }
+        for p in page
+    ]
+    return Response({"total": total, "items": items})
