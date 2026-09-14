@@ -13,7 +13,8 @@ def group_words(rows):
     """Rows for ONE prompt -> the words given for it, most said first.
 
     Each word carries the other spellings people used and a breakdown of who
-    said it, by district, tribe and clan.
+    said it, by district, tribe and clan. Counts are people; recordings are
+    counted separately, since most answers are written only.
     """
     rows = [row for row in rows if row.text_norm]
     if not rows:
@@ -30,6 +31,7 @@ def group_words(rows):
             "count": 0,
             "display": defaultdict(int),
             "cells": defaultdict(int),
+            "cell_voices": defaultdict(int),
         },
     )
     for row in rows:
@@ -41,6 +43,8 @@ def group_words(rows):
         tribe = path[0] if path else "—"
         clan = path[1] if len(path) > 1 else ""
         entry["cells"][(district, tribe, clan)] += 1
+        if row.audio:
+            entry["cell_voices"][(district, tribe, clan)] += 1
 
     data = []
     for entry in grouped.values():
@@ -51,8 +55,15 @@ def group_words(rows):
                 "count": entry["count"],
                 # every other way people wrote the same word, most used first
                 "variants": [{"word": w, "count": n} for w, n in spellings[1:]],
+                "voices": sum(entry["cell_voices"].values()),
                 "rows": [
-                    {"district": d, "tribe": t, "clan": c or None, "count": n}
+                    {
+                        "district": d,
+                        "tribe": t,
+                        "clan": c or None,
+                        "count": n,
+                        "voices": entry["cell_voices"][(d, t, c)],
+                    }
                     for (d, t, c), n in sorted(
                         entry["cells"].items(), key=lambda kv: -kv[1],
                     )
