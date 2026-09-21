@@ -13,6 +13,11 @@ ALLOWED_HOSTS = [
     h.strip() for h in os.environ.get("ALLOWED_HOSTS", "*").split(",") if h.strip()
 ]
 
+# Railway terminates TLS at its edge and forwards plain HTTP inside, so Django
+# has to be told what the browser actually asked for. Without this every media
+# URL it builds says http://, and the https site reports mixed content.
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 CSRF_TRUSTED_ORIGINS = [
     o.strip()
     for o in os.environ.get(
