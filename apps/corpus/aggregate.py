@@ -38,8 +38,14 @@ def group_words(rows):
         entry = grouped[key_of.get(row.text_norm, row.text_norm)]
         entry["count"] += 1
         entry["display"][row.text_raw] += 1
-        district = (row.district or {}).get("name") or "—"
-        path = [t.get("name") for t in (row.tribe_path or []) if isinstance(t, dict)]
+        place = row.district if isinstance(row.district, dict) else {}
+        district = place.get("name")
+        district = district if isinstance(district, str) and district else "—"
+        nodes = row.tribe_path if isinstance(row.tribe_path, list) else []
+        path = [
+            t["name"] if isinstance(t, dict) and isinstance(t.get("name"), str) else "—"
+            for t in nodes
+        ]
         tribe = path[0] if path else "—"
         clan = path[1] if len(path) > 1 else ""
         entry["cells"][(district, tribe, clan)] += 1

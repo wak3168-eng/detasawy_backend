@@ -50,8 +50,31 @@ class UserSerializer(serializers.ModelSerializer):
         return "contributor"
 
 
+class PlaceField(serializers.JSONField):
+    def to_internal_value(self, data):
+        value = super().to_internal_value(data)
+        if not isinstance(value, dict):
+            raise serializers.ValidationError("Expected a place object.")
+        name = value.get("name")
+        if not isinstance(name, str) or not name.strip():
+            raise serializers.ValidationError("A non-empty name is required.")
+        for key in ("id", "ps"):
+            if key in value and not isinstance(value[key], str):
+                raise serializers.ValidationError(f"{key} must be text.")
+        if "pending" in value and not isinstance(value["pending"], bool):
+            raise serializers.ValidationError("pending must be true or false.")
+        return value
+
+
 class ProfileSerializer(serializers.ModelSerializer):
-    tribePath = serializers.JSONField(source="tribe_path", required=False)
+    country = PlaceField(required=False, allow_null=True)
+    residence = PlaceField(required=False, allow_null=True)
+    province = PlaceField(required=False, allow_null=True)
+    district = PlaceField(required=False, allow_null=True)
+    tehsil = PlaceField(required=False, allow_null=True)
+    tribePath = serializers.ListField(
+        child=PlaceField(), source="tribe_path", required=False,
+    )
     completedAt = serializers.DateTimeField(
         source="completed_at", required=False, allow_null=True
     )

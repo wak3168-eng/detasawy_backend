@@ -88,8 +88,18 @@ def contribute(request):
         )
 
     prompt_id = request.data.get("prompt")
-    text = (request.data.get("text") or "").strip()
+    text = request.data.get("text", "")
+    if not isinstance(text, str):
+        return Response({"error": "text must be a string"}, status=400)
+    text = text.strip()
+    if len(text) > 200:
+        return Response({"error": "text must be 200 characters or fewer"}, status=400)
     audio = request.FILES.get("audio")
+    if audio is not None:
+        if not (audio.content_type or "").startswith("audio/"):
+            return Response({"error": "upload an audio file"}, status=400)
+        if not audio.size or audio.size > 20 * 1024 * 1024:
+            return Response({"error": "audio must be non-empty and at most 20 MB"}, status=400)
     try:
         prompt = Prompt.objects.get(id=prompt_id, active=True)
     except (Prompt.DoesNotExist, ValueError, TypeError):
@@ -106,17 +116,16 @@ def contribute(request):
         prompt=prompt,
         contributor=request.user,
         defaults={
-            "text_raw": text[:200],
-            "text_norm": normalize_name(text)[:200],
+            "text_raw": text,
+            "text_norm": normalize_name(text),
+            # Text and audio belong to this submission. Omitted audio must
+            # clear any previous recording rather than label new text with it.
+            "audio": audio,
             "district": profile.district,
             "tribe_path": profile.tribe_path or [],
             "language": profile.language or "",
         },
     )
-    if audio:
-        contribution.audio = audio
-        contribution.save(update_fields=["audio"])
-
     today = timezone.localdate()
     today_count = Contribution.objects.filter(
         contributor=request.user, created_at__date=today,

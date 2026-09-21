@@ -10,7 +10,7 @@ from rest_framework.decorators import (
 )
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.throttling import ScopedRateThrottle
+from rest_framework.throttling import UserRateThrottle
 
 from apps.identity.models import Profile
 from apps.identity.serializers import (
@@ -23,7 +23,7 @@ from apps.identity.serializers import (
 from apps.identity.models import User
 
 
-class AuthThrottle(ScopedRateThrottle):
+class AuthThrottle(UserRateThrottle):
     scope = "auth"
 
 
