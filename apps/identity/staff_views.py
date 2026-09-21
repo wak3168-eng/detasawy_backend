@@ -10,9 +10,11 @@ from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import BasePermission
 from rest_framework.response import Response
+from rest_framework import serializers
 
 from apps.identity.models import Profile, User
 from apps.identity.serializers import CONSENT_VERSION, UserSerializer
+from apps.corpus.admin_serializers import ListQuery, list_page
 
 
 class IsSuperUser(BasePermission):
@@ -32,10 +34,14 @@ def serialize_row(user):
 @api_view(["GET"])
 @permission_classes([IsSuperUser])
 def users(request):
+    params = ListQuery(data=request.query_params)
+    params.is_valid(raise_exception=True)
     query = (request.GET.get("q") or "").strip()
-    rows = User.objects.select_related("profile").order_by("-date_joined")
+    rows = User.objects.select_related("profile").prefetch_related("groups").order_by("-date_joined", "-id")
     if query:
         rows = rows.filter(Q(email__icontains=query) | Q(name__icontains=query))
+    if "page" in request.query_params:
+        return Response(list_page(rows, params.validated_data, serialize_row))
     return Response([serialize_row(u) for u in rows[:20]])
 
 
@@ -60,8 +66,13 @@ def _campaign_group():
 @api_view(["POST"])
 @permission_classes([IsSuperUser])
 def set_role(request):
-    email = (request.data.get("email") or "").strip().lower()
-    role = request.data.get("role")
+    class Input(serializers.Serializer):
+        email = serializers.EmailField()
+        role = serializers.ChoiceField(choices=["reviewer", "campaign", "contributor"])
+    validation = Input(data=request.data)
+    validation.is_valid(raise_exception=True)
+    email = validation.validated_data["email"].lower()
+    role = validation.validated_data["role"]
     if role not in ("reviewer", "campaign", "contributor"):
         return Response(
             {"error": "role must be reviewer, campaign or contributor"}, status=400,
@@ -95,9 +106,15 @@ def set_role(request):
 def create_user(request):
     """Grant someone access. Public signup is closed, so accounts are made
     here; the person changes the starting password after their first login."""
-    name = (request.data.get("name") or "").strip()
-    email = (request.data.get("email") or "").strip().lower()
-    password = request.data.get("password") or ""
+    class Input(serializers.Serializer):
+        name = serializers.CharField(max_length=120)
+        email = serializers.EmailField()
+        password = serializers.CharField(required=False, allow_blank=True, trim_whitespace=False)
+    validation = Input(data=request.data)
+    validation.is_valid(raise_exception=True)
+    name = validation.validated_data["name"]
+    email = validation.validated_data["email"].lower()
+    password = validation.validated_data.get("password", "")
 
     if not name:
         return Response({"error": "a name is required"}, status=400)

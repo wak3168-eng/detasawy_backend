@@ -18,6 +18,7 @@ class IsReviewer(BasePermission):
 from datetime import timedelta
 
 from django.utils import timezone
+from django.db.models import Q
 
 from apps.corpus.models import Contribution, Prompt
 from apps.identity.models import Profile, User
@@ -64,12 +65,12 @@ def overview(request):
     return Response(
         {
             # the dataset itself
-            "uniqueWords": contributions.values("text_norm").distinct().count(),
+            "uniqueWords": contributions.exclude(text_norm="").values("text_norm").distinct().count(),
             "pictures": Prompt.objects.filter(kind="picture").count(),
             "picturesActive": Prompt.objects.filter(
                 kind="picture", active=True,
             ).count(),
-            "picturesAnswered": contributions.values("prompt_id")
+            "picturesAnswered": contributions.filter(prompt__kind="picture").values("prompt_id")
             .distinct()
             .count(),
             "contributions": contributions.count(),
@@ -88,7 +89,7 @@ def overview(request):
             "contributors": contributions.values("contributor_id")
             .distinct()
             .count(),
-            "districtsCovered": contributions.exclude(district__isnull=True)
+            "districtsCovered": contributions.exclude(district__id__isnull=True).exclude(district__id="")
             .values("district__id")
             .distinct()
             .count(),
@@ -97,7 +98,7 @@ def overview(request):
                 starts_at__lte=now, ends_at__gte=now,
             ).count(),
             "suggestionsPending": Suggestion.objects.filter(
-                status="pending",
+                Q(status="pending") | Q(status="approved", reviewed_by__isnull=True, resolved_ref_id__gt=""),
             ).count(),
             "tribes": Tribe.objects.count(),
             "languages": Language.objects.count(),

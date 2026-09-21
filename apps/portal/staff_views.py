@@ -5,14 +5,16 @@ from rest_framework.response import Response
 
 from apps.identity.permissions import IsContentManager
 from apps.portal.models import Campaign
+from apps.ref.models import District, Province
+from rest_framework import serializers
 
 
 def serialize_campaign(campaign):
     now = timezone.now()
-    if campaign.starts_at > now:
-        status = "upcoming"
-    elif campaign.ends_at < now:
+    if campaign.ends_at <= now:
         status = "ended"
+    elif campaign.starts_at > now:
+        status = "upcoming"
     else:
         status = "live"
     return {
@@ -28,7 +30,10 @@ def serialize_campaign(campaign):
 
 
 def _parse_dt(value):
-    dt = parse_datetime(str(value or ""))
+    try:
+        dt = parse_datetime(str(value or ""))
+    except (ValueError, TypeError):
+        return None
     if dt is None:
         return None
     if timezone.is_naive(dt):
@@ -43,10 +48,18 @@ def staff_campaigns(request):
         rows = Campaign.objects.order_by("-ends_at")[:30]
         return Response([serialize_campaign(c) for c in rows])
 
-    name = (request.data.get("name") or "").strip()
+    class Input(serializers.Serializer):
+        name = serializers.CharField(max_length=120)
+        description = serializers.CharField(max_length=200, required=False, allow_blank=True)
+        scopeType = serializers.ChoiceField(choices=["all", "district", "province"], default="all")
+        scopeId = serializers.CharField(max_length=120, required=False, allow_blank=True)
+    validation = Input(data=request.data)
+    validation.is_valid(raise_exception=True)
+    data = validation.validated_data
+    name = data["name"]
     if not name:
         return Response({"error": "name is required"}, status=400)
-    scope_type = request.data.get("scopeType", "all")
+    scope_type = data["scopeType"]
     if scope_type not in ("all", "district", "province"):
         return Response({"error": "invalid scope"}, status=400)
     starts_at = _parse_dt(request.data.get("startsAt"))
@@ -54,12 +67,20 @@ def staff_campaigns(request):
     if not starts_at or not ends_at or ends_at <= starts_at:
         return Response({"error": "valid start and end dates are required"}, status=400)
 
+    scope_id, scope_name = "", ""
+    if scope_type != "all":
+        model = District if scope_type == "district" else Province
+        scope = model.objects.filter(pk=data.get("scopeId", "")).first()
+        if scope is None:
+            return Response({"error": "Select a valid scope."}, status=400)
+        scope_id, scope_name = scope.pk, scope.name
+
     campaign = Campaign.objects.create(
         name=name[:120],
-        description=(request.data.get("description") or "").strip()[:200],
+        description=data.get("description", ""),
         scope_type=scope_type,
-        scope_id=(request.data.get("scopeId") or "")[:120],
-        scope_name=(request.data.get("scopeName") or "")[:120],
+        scope_id=scope_id,
+        scope_name=scope_name,
         starts_at=starts_at,
         ends_at=ends_at,
         created_by=request.user,

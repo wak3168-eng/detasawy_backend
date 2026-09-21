@@ -9,6 +9,7 @@ urlpatterns = [
     path("contributions", views.contribute),
     path("contributions/today", views.today),
     path("admin/dataset", staff_views.dataset),
+    path("admin/contributions", staff_views.staff_contributions),
     path("admin/prompts", staff_views.staff_prompts),
     path("admin/prompts/batch", staff_views.staff_prompts_batch),
     path("admin/prompts/<int:pk>", staff_views.staff_prompt_update),
