@@ -105,8 +105,59 @@ class AdminWorkspaceTests(APITestCase):
         self.assertEqual(overview["districtsCovered"], 1)
 
     def test_dataset_rejects_invalid_pagination(self):
-        for query in ("offset=-1", "limit=0", "limit=51", "all=maybe", "offset=abc"):
+        for query in (
+            "offset=-1", "limit=0", "limit=51", "all=maybe", "offset=abc",
+            "groupBy=unknown", "minSample=0", "minSample=101",
+        ):
             self.assertEqual(self.client.get("/api/admin/dataset?" + query).status_code, 400)
+
+    def test_dataset_clubs_pictures_and_answers_into_selectable_group_views(self):
+        cricket = Prompt.objects.create(kind="picture", caption_en="Cricket")
+        unused = Prompt.objects.create(kind="picture", caption_en="Unused")
+        contributors = [self.contributor] + [
+            User.objects.create_user(email=f"speaker-{index}@example.invalid")
+            for index in range(3)
+        ]
+        places = [
+            ({"id": "pk", "name": "Pakistan"}, {"id": "swat", "name": "Swat"}, "کرکټ"),
+            ({"id": "pk", "name": "Pakistan"}, {"id": "swat", "name": "Swat"}, "کرکټ"),
+            ({"id": "pk", "name": "Pakistan"}, {"id": "peshawar", "name": "Peshawar"}, "کرکټ"),
+            ({"id": "af", "name": "Afghanistan"}, {"id": "kabul", "name": "Kabul"}, "بل نوم"),
+        ]
+        for user, (country, district, word) in zip(contributors, places):
+            Contribution.objects.create(
+                prompt=cricket, contributor=user, text_raw=word, text_norm=word,
+                country=country, district=district,
+                tribe_path=[
+                    {"id": "tribe-a", "name": "Tribe A"},
+                    {"id": "clan-a", "name": "Clan A"},
+                    {"id": "branch-a", "name": "Branch A"},
+                ],
+            )
+
+        result = self.client.get(
+            "/api/admin/dataset?all=1&groupBy=country&group=pk&minSample=3",
+        )
+        self.assertEqual(result.status_code, 200)
+        self.assertEqual(result.data["total"], 2)
+        self.assertEqual(result.data["summary"]["responses"], 3)
+        self.assertEqual(result.data["summary"]["answeredPictures"], 1)
+        self.assertEqual(
+            {group["label"]: group["responses"] for group in result.data["grouping"]["groups"]},
+            {"Pakistan": 3, "Afghanistan": 1},
+        )
+        cricket_row = next(item for item in result.data["items"] if item["id"] == cricket.id)
+        self.assertEqual(cricket_row["representative"]["word"], "کرکټ")
+        self.assertEqual(cricket_row["representative"]["status"], "representative")
+        self.assertEqual(cricket_row["representative"]["share"], 1.0)
+        unused_row = next(item for item in result.data["items"] if item["id"] == unused.id)
+        self.assertIsNone(unused_row["representative"])
+
+        branch = self.client.get(
+            "/api/admin/dataset?groupBy=subclan&group=branch-a&minSample=3",
+        )
+        self.assertEqual(branch.data["summary"]["responses"], 4)
+        self.assertEqual(branch.data["items"][0]["answers"], 4)
 
     def test_users_are_paginated_and_superadmin_cannot_be_demoted(self):
         result = self.client.get("/api/admin/users?page=1&pageSize=2")

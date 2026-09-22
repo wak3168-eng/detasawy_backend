@@ -53,6 +53,22 @@ class ContributionAudioTests(APITestCase):
         self.assertFalse(Contribution.objects.get().audio)
         self.assert_voice_count(0)
 
+    def test_contribution_snapshots_complete_geography(self):
+        profile = self.user.profile
+        profile.country = {"id": "pk", "name": "Pakistan"}
+        profile.province = {"id": "kp", "name": "Khyber Pakhtunkhwa"}
+        profile.district = {"id": "swat", "name": "Swat"}
+        profile.tehsil = {"id": "kabal", "name": "Kabal"}
+        profile.tribe_path = [{"id": "sample", "name": "Sample clan"}]
+        profile.save()
+        self.assertEqual(self.submit().status_code, 201)
+        row = Contribution.objects.get()
+        self.assertEqual(row.country["id"], "pk")
+        self.assertEqual(row.province["id"], "kp")
+        self.assertEqual(row.district["id"], "swat")
+        self.assertEqual(row.tehsil["id"], "kabal")
+        self.assertEqual(row.tribe_path[0]["id"], "sample")
+
     def test_non_audio_and_empty_uploads_are_rejected(self):
         for upload in (
             SimpleUploadedFile("notes.txt", b"not a recording", "text/plain"),

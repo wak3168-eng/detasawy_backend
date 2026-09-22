@@ -9,14 +9,14 @@ All endpoints use the existing `Authorization: Token ...` authentication. The UI
 | POST `/api/admin/prompts` | Superadmin, campaign manager | Exactly one media file or HTTP(S) media URL; kind, captions, source URL, licence. Images for picture/scene; audio for voice. File limit 20 MB |
 | POST `/api/admin/prompts/{id}` | Superadmin, campaign manager | Boolean `active` |
 | GET `/api/admin/contributions` | Superadmin | `page`, `pageSize`, `q`, `kind`, `prompt`, `audio=yes/no`. Original text, audio URL or null, district, timestamps. No contributor emails in this response |
-| GET `/api/admin/dataset` | Superadmin | `q`, `all=0/1`, `limit` (1–50), `offset`. Aggregated source records, not an approval system |
+| GET `/api/admin/dataset` | Superadmin | `q`, `all=0/1`, `limit` (1–50), `offset`, `groupBy`, `group`, `minSample`. The combined prompt-and-answer collection, dynamically sliced by country, province, district, tehsil, tribe, clan or subclan. Includes usage shares and a conservative representative-word result |
 | GET `/api/admin/users` | Superadmin | `page`, `pageSize`, `q` (name/email). Existing account creation and role routes remain supported |
 | GET/POST `/api/admin/campaigns` | Superadmin, campaign manager | Existing list/create contract; validated date interval and canonical province/district scope |
 | GET `/api/admin/suggestions` | Superadmin, reviewer | Existing reference-review contract; unrelated to contribution approval |
 
 Paginated prompt, user and contribution responses contain `{items, total, page, pageSize}`. Prompt/user callers omitting `page` retain the old array response. Invalid pagination or create input returns HTTP 400. Contributions without audio return `audioUrl: null`.
 
-Deploy this backend before the new frontend. No model migration is required. The frontend uses a same-origin `/api/*` rewrite; its server-side `BACKEND_URL` must point to this backend. Existing explicit `NEXT_PUBLIC_API_BASE` deployments continue using that origin and require corresponding CORS configuration.
+Deploy this backend before the new frontend and run migrations so contribution geography is snapshotted. Existing records are backfilled from current contributor profiles. The frontend uses a same-origin `/api/*` rewrite; its server-side `BACKEND_URL` must point to this backend. Existing explicit `NEXT_PUBLIC_API_BASE` deployments continue using that origin and require corresponding CORS configuration.
 
 Audio uses the existing storage backend. Production must retain its S3 configuration or persistent media volume for uploaded recordings to survive redeploys. This redesign does not move audio storage or introduce dataset approval/export workflows.
 

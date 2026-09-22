@@ -7,7 +7,13 @@ from rest_framework.response import Response
 from django.db.models import Count, Q
 from rest_framework.permissions import BasePermission
 
-from apps.corpus.aggregate import group_words
+from apps.corpus.aggregate import (
+    PLACE_DIMENSIONS,
+    TRIBE_LEVELS,
+    group_breakdown,
+    group_words,
+    representative_word,
+)
 from apps.corpus.images import store_image
 from apps.corpus.models import Contribution, Prompt
 from apps.identity.permissions import IsContentManager
@@ -181,22 +187,47 @@ class IsSuperUser(BasePermission):
         return bool(request.user and request.user.is_superuser)
 
 
+def dimension_filter(dimension, key, prefix=""):
+    """Filter a JSON snapshot by canonical id, with its name as a fallback."""
+    if not key or dimension == "all":
+        return Q()
+    if dimension in PLACE_DIMENSIONS:
+        field = f"{prefix}{dimension}"
+    else:
+        field = f"{prefix}tribe_path__{TRIBE_LEVELS[dimension]}"
+    return Q(**{f"{field}__id": key}) | Q(**{f"{field}__name": key})
+
+
 @api_view(["GET"])
 @permission_classes([IsSuperUser])
 def dataset(request):
-    """The collection itself: every picture beside the words people gave it."""
+    """Every prompt and answer, sliced without duplicating the source records."""
     validation = DatasetQuery(data=request.query_params)
     validation.is_valid(raise_exception=True)
     params = validation.validated_data
     query = params.get("q", "")
     show_all = params["all"] == "1"
+    group_by = params["groupBy"]
+    selected_group = params.get("group", "")
+    minimum_sample = params["minSample"]
     limit, offset = params["limit"], params["offset"]
 
+    all_contributions = Contribution.objects.only(
+        "prompt_id", "audio", "country", "province", "district", "tehsil", "tribe_path",
+    )
+    groups = group_breakdown(all_contributions, group_by) if group_by != "all" else []
+    selected_label = next(
+        (group["label"] for group in groups if group["key"] == selected_group),
+        None,
+    )
+    contribution_scope = dimension_filter(group_by, selected_group)
+    prompt_scope = dimension_filter(group_by, selected_group, "contributions__")
+
     prompts = Prompt.objects.annotate(
-        answers=Count("contributions", distinct=True),
+        answers=Count("contributions", filter=prompt_scope, distinct=True),
         voices=Count(
             "contributions",
-            filter=Q(contributions__audio__isnull=False) & ~Q(contributions__audio=""),
+            filter=prompt_scope & Q(contributions__audio__isnull=False) & ~Q(contributions__audio=""),
             distinct=True,
         ),
     )
@@ -211,22 +242,52 @@ def dataset(request):
 
     # one query for every contribution on this page, grouped in memory
     by_prompt = {}
-    for row in Contribution.objects.filter(prompt__in=page):
+    for row in Contribution.objects.filter(contribution_scope, prompt__in=page):
         by_prompt.setdefault(row.prompt_id, []).append(row)
 
-    items = [
-        {
-            "id": p.id,
-            "kind": p.kind,
-            "caption": p.caption_en or f"#{p.id}",
-            "mediaUrl": p.resolve_media_url(request),
-            "answers": p.answers,
-            "voices": p.voices,
-            "words": group_words(by_prompt.get(p.id, [])),
-        }
-        for p in page
-    ]
-    return Response({"total": total, "items": items})
+    items = []
+    for prompt in page:
+        words = group_words(by_prompt.get(prompt.id, []))
+        items.append({
+            "id": prompt.id,
+            "kind": prompt.kind,
+            "caption": prompt.caption_en or f"#{prompt.id}",
+            "mediaUrl": prompt.resolve_media_url(request),
+            "answers": prompt.answers,
+            "voices": prompt.voices,
+            "words": words,
+            "representative": representative_word(words, minimum_sample),
+        })
+
+    scoped_contributions = Contribution.objects.filter(contribution_scope)
+    if query:
+        scoped_contributions = scoped_contributions.filter(
+            Q(prompt__caption_en__icontains=query) | Q(prompt__caption_ps__icontains=query),
+        )
+    summary = {
+        "pictures": total,
+        "answeredPictures": scoped_contributions.values("prompt_id").distinct().count(),
+        "responses": scoped_contributions.count(),
+        "voices": scoped_contributions.exclude(audio__isnull=True).exclude(audio="").count(),
+    }
+    response = Response({
+        "total": total,
+        "items": items,
+        "summary": summary,
+        "grouping": {
+            "by": group_by,
+            "selectedKey": selected_group or None,
+            "selectedLabel": selected_label,
+            "groups": groups,
+        },
+        "representativeRules": {
+            "minimumSample": minimum_sample,
+            "minimumShare": 0.60,
+            "minimumMargin": 0.15,
+        },
+    })
+    response["Cache-Control"] = "private, no-store"
+    return response
 
 
 @api_view(["GET"])

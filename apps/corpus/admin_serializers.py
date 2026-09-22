@@ -44,5 +44,11 @@ class PromptInput(serializers.Serializer):
 class DatasetQuery(serializers.Serializer):
     q = serializers.CharField(required=False, allow_blank=True, max_length=200)
     all = serializers.ChoiceField(choices=["0", "1"], default="0")
+    groupBy = serializers.ChoiceField(
+        choices=["all", "country", "province", "district", "tehsil", "tribe", "clan", "subclan"],
+        default="all",
+    )
+    group = serializers.CharField(required=False, allow_blank=True, max_length=220)
+    minSample = serializers.IntegerField(min_value=1, max_value=100, default=10)
     limit = serializers.IntegerField(min_value=1, max_value=50, default=20)
     offset = serializers.IntegerField(min_value=0, default=0)

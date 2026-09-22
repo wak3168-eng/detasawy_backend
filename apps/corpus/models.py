@@ -4,7 +4,8 @@ from django.db import models
 
 class Contribution(models.Model):
     """One contributor's answer to a prompt: the Pashto word as written,
-    optionally spoken, with dialect labels snapshotted from the profile."""
+    optionally spoken, with geography and community labels snapshotted from
+    the profile so later profile edits cannot rewrite the dataset."""
 
     prompt = models.ForeignKey(
         "corpus.Prompt", on_delete=models.CASCADE, related_name="contributions"
@@ -19,7 +20,10 @@ class Contribution(models.Model):
     audio = models.FileField(
         upload_to="contributions/%Y/%m/", blank=True, null=True
     )
+    country = models.JSONField(null=True, blank=True)
+    province = models.JSONField(null=True, blank=True)
     district = models.JSONField(null=True, blank=True)
+    tehsil = models.JSONField(null=True, blank=True)
     tribe_path = models.JSONField(default=list, blank=True)
     language = models.CharField(max_length=120, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

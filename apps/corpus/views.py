@@ -121,7 +121,10 @@ def contribute(request):
             # Text and audio belong to this submission. Omitted audio must
             # clear any previous recording rather than label new text with it.
             "audio": audio,
+            "country": profile.country,
+            "province": profile.province,
             "district": profile.district,
+            "tehsil": profile.tehsil,
             "tribe_path": profile.tribe_path or [],
             "language": profile.language or "",
         },
