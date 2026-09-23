@@ -7,11 +7,12 @@ Django backend for Detasawy, hosted on Railway with Railway PostgreSQL. Currentl
 | Path                          | What                                              |
 | ----------------------------- | ------------------------------------------------- |
 | `/api/health`                 | Health check (Railway healthcheck)                |
-| `/api/auth/signup`            | POST — create account (name, email, password, consent) → token |
-| `/api/auth/login`             | POST — email + password → token + profile         |
-| `/api/auth/logout`            | POST — revoke the token                           |
-| `/api/auth/me`                | GET — current user + profile (token auth)         |
-| `/api/profile`                | PUT — save the contributor profile (token auth)   |
+| `/api/auth/csrf`              | GET — masked CSRF token and HttpOnly CSRF cookie |
+| `/api/auth/signup`            | POST — disabled during the invitation-only pilot |
+| `/api/auth/login`             | POST — email + password + CSRF → session cookie, user, profile |
+| `/api/auth/logout`            | POST — revoke the current session (requires CSRF) |
+| `/api/auth/me`                | GET — current user + profile (cookie session)    |
+| `/api/profile`                | PUT — save contributor profile (session + CSRF)  |
 | `/api/ref/provinces?country=` | Provinces of a country (`pk`, `af`, `overseas`)   |
 | `/api/ref/districts?province=`| Districts of a province (+ `hasTehsils`, language)|
 | `/api/ref/tehsils?district=`  | Tehsils of a district                             |
@@ -52,8 +53,10 @@ The service builds from `requirements.txt` automatically; `railway.json` runs co
 Required service variables:
 
 - `DATABASE_URL` — add a variable reference to the Postgres service
-- `SECRET_KEY` — any long random string
-- `ALLOWED_HOSTS` — optional, defaults to `*`; set to your domains when stable
+- `SECRET_KEY` — unique, cryptographically random value of at least 50 characters; missing/weak values prevent production startup
+- `ALLOWED_HOSTS` — comma-separated exact production hosts; wildcard hosts are rejected
 - `DJANGO_SUPERUSER_USERNAME` / `DJANGO_SUPERUSER_PASSWORD` (+ optional `_EMAIL`) — one-time superuser creation for `/admin/`
 
-CORS allows `detasawy.com`, `www.detasawy.com`, `localhost:3000`, and `*.vercel.app` previews (see `config/settings.py`).
+CORS and CSRF allow the exact production origins in `config/settings.py`; arbitrary Vercel previews are not trusted. Localhost is allowed only in development. Browser API calls must use the frontend's same-origin `/api/*` proxy.
+
+Read [SECURITY.md](SECURITY.md) before deploying the session migration. Both repositories must be deployed together; old bearer tokens no longer authenticate requests.

@@ -1,6 +1,6 @@
 # Admin workspace API
 
-All endpoints use the existing `Authorization: Token ...` authentication. The UI verifies the current role through `/api/auth/me`; each endpoint also enforces its own permission.
+All endpoints use HttpOnly cookie sessions. Fetch `/api/auth/csrf`, then send its `csrfToken` as `X-CSRFToken` for login and every unsafe request. Login rotates the CSRF token and returns the new value. The UI verifies the current role through `/api/auth/me`; each endpoint also enforces its own permission. Bearer tokens are no longer accepted.
 
 | Endpoint | Access | Query / behaviour |
 | --- | --- | --- |
@@ -16,9 +16,9 @@ All endpoints use the existing `Authorization: Token ...` authentication. The UI
 
 Paginated prompt, user and contribution responses contain `{items, total, page, pageSize}`. Prompt/user callers omitting `page` retain the old array response. Invalid pagination or create input returns HTTP 400. Contributions without audio return `audioUrl: null`.
 
-Deploy this backend before the new frontend and run migrations so contribution geography is snapshotted. Existing records are backfilled from current contributor profiles. The frontend uses a same-origin `/api/*` rewrite; its server-side `BACKEND_URL` must point to this backend. Existing explicit `NEXT_PUBLIC_API_BASE` deployments continue using that origin and require corresponding CORS configuration.
+Deploy this backend and the matching frontend together, following [SECURITY.md](SECURITY.md). Migrations preserve and snapshot contribution geography. The frontend uses a same-origin `/api/*` rewrite; its server-side `BACKEND_URL` must point to this backend. Browser code no longer uses `NEXT_PUBLIC_API_BASE`.
 
-Audio uses the existing storage backend. Production must retain its S3 configuration or persistent media volume for uploaded recordings to survive redeploys. This redesign does not move audio storage or introduce dataset approval/export workflows.
+Audio uses the configured storage backend. On Railway, attach a persistent volume to the backend service and set `MEDIA_ROOT` to its mount path; the database volume alone does not preserve recordings. Authenticated owners and superadmins can stream `/api/private/contributions/{id}/audio`, including byte-range seeking. Other users cannot access the recording. Profile photos follow the same ownership rule at `/api/private/profiles/{userId}/photo`. Private responses are never cacheable. Legacy direct private media URLs return 404. Prompt images/audio remain public.
 
 Run regression tests against an isolated database, e.g. PowerShell:
 

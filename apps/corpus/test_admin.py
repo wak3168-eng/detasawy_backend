@@ -91,7 +91,7 @@ class AdminWorkspaceTests(APITestCase):
         Contribution.objects.create(prompt=scene, contributor=self.contributor, text_raw="", text_norm="", audio="example.wav", district="malformed legacy")
         recorded = self.client.get("/api/admin/contributions?audio=yes&page=1")
         self.assertEqual(recorded.data["total"], 1)
-        self.assertTrue(recorded.data["items"][0]["audioUrl"].endswith("example.wav"))
+        self.assertTrue(recorded.data["items"][0]["audioUrl"].startswith("/api/private/contributions/"))
         self.assertIsNone(recorded.data["items"][0]["district"])
         self.assertEqual(recorded["Cache-Control"], "private, no-store")
         missing = self.client.get("/api/admin/contributions?audio=no&page=1")

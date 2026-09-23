@@ -145,17 +145,22 @@ def today(request):
     return Response({"count": count})
 
 
+@api_view(["GET"])
+@permission_classes([AllowAny])
 def blob(request, sha):
     """Serve DB-stored prompt media. Content-addressed, so the response is
     immutable and cached hard by browsers."""
+    # Public only when explicitly used by a prompt. Photos and orphaned blobs
+    # must not remain accessible through their old content-addressed URLs.
+    row = MediaBlob.objects.filter(sha256=sha, prompts__isnull=False).first()
+    if row is None or Profile.objects.filter(photo_blob=row).exists():
+        response = Response(status=404)
+        response["Cache-Control"] = "private, no-store"
+        return response
     etag = f'"{sha}"'
     if request.headers.get("If-None-Match") == etag:
         response = HttpResponseNotModified()
     else:
-        try:
-            row = MediaBlob.objects.get(sha256=sha)
-        except MediaBlob.DoesNotExist:
-            raise Http404 from None
         response = HttpResponse(bytes(row.data), content_type=row.mime)
     response["Cache-Control"] = "public, max-age=31536000, immutable"
     response["ETag"] = etag

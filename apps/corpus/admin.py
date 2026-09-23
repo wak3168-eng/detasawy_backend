@@ -29,7 +29,7 @@ class ContributionAdmin(admin.ModelAdmin):
         if not obj.audio:
             return "—"
         return format_html(
-            '<audio controls src="{}" style="max-width:260px"></audio>', obj.audio.url,
+            '<audio controls src="{}" style="max-width:260px"></audio>', f"/api/private/contributions/{obj.pk}/audio",
         )
 
 

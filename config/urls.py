@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.http import JsonResponse
 from django.urls import include, path, re_path
-from django.views.static import serve as media_serve
+from apps.corpus.media import legacy_prompt_media
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -34,11 +34,5 @@ urlpatterns = [
     path("api/redoc", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
 ]
 
-if not settings.USE_S3_MEDIA:
-    urlpatterns += [
-        re_path(
-            r"^media/(?P<path>.*)$",
-            media_serve,
-            {"document_root": settings.MEDIA_ROOT},
-        ),
-    ]
+# Existing prompt links keep working; arbitrary storage paths never get served.
+urlpatterns += [re_path(r"^media/(?P<path>.*)$", legacy_prompt_media)]

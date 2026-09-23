@@ -74,3 +74,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"profile of {self.user}"
+
+
+class RateLimitBucket(models.Model):
+    """Shared counters for all workers. Identity keys are HMACs, not raw IPs/emails."""
+
+    key = models.CharField(max_length=64, primary_key=True)
+    count = models.PositiveIntegerField(default=0)
+    expires_at = models.DateTimeField(db_index=True)

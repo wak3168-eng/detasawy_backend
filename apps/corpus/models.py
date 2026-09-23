@@ -112,7 +112,7 @@ class Prompt(models.Model):
         if self.media_url:
             return self.media_url
         if self.media:
-            return request.build_absolute_uri(self.media.url)
+            return f"/api/media/prompts/{self.pk}"
         return ""
 
     def __str__(self):

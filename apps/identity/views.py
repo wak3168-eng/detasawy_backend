@@ -1,7 +1,7 @@
-from django.contrib.auth import authenticate
-from django.utils import timezone
-from drf_spectacular.utils import extend_schema
-from rest_framework import status
+from django.contrib.auth import authenticate, login as start_session, logout as end_session
+from django.middleware.csrf import get_token
+from drf_spectacular.utils import extend_schema, inline_serializer
+from rest_framework import serializers, status
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import (
     api_view,
@@ -10,7 +10,7 @@ from rest_framework.decorators import (
 )
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.throttling import UserRateThrottle
+from apps.identity.throttles import AuthThrottle
 
 from apps.identity.models import Profile
 from apps.identity.serializers import (
@@ -23,16 +23,19 @@ from apps.identity.serializers import (
 from apps.identity.models import User
 
 
-class AuthThrottle(UserRateThrottle):
-    scope = "auth"
-
-
-def session_payload(user, token):
+def session_payload(request, user):
     return {
-        "token": token.key,
+        "csrfToken": get_token(request),
         "user": UserSerializer(user).data,
         "profile": ProfileSerializer(user.profile).data,
     }
+
+
+@extend_schema(responses=inline_serializer(name="CsrfToken", fields={"csrfToken": serializers.CharField()}))
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def csrf(request):
+    return Response({"csrfToken": get_token(request)})
 
 
 @extend_schema(request=SignupSerializer)
@@ -48,7 +51,9 @@ def signup(request):
     )
 
 
-@extend_schema(request=LoginSerializer)
+@extend_schema(request=LoginSerializer, responses=inline_serializer(name="CookieSession", fields={
+    "csrfToken": serializers.CharField(), "user": UserSerializer(), "profile": ProfileSerializer(),
+}))
 @api_view(["POST"])
 @permission_classes([AllowAny])
 @throttle_classes([AuthThrottle])
@@ -66,14 +71,16 @@ def login(request):
             status=status.HTTP_400_BAD_REQUEST,
         )
     Profile.objects.get_or_create(user=user)
-    token, _ = Token.objects.get_or_create(user=user)
-    return Response(session_payload(user, token))
+    start_session(request._request, user)
+    Token.objects.filter(user=user).delete()
+    return Response(session_payload(request, user))
 
 
+@extend_schema(request=None, responses={204: None})
 @api_view(["POST"])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def logout(request):
-    request.auth.delete()
+    end_session(request._request)
     return Response(status=status.HTTP_204_NO_CONTENT)
 
 
