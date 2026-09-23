@@ -311,7 +311,7 @@ def staff_contributions(request):
         return {"id": row.id, "promptId": row.prompt_id,
                 "caption": row.prompt.caption_en or f"Prompt {row.prompt_id}",
                 "kind": row.prompt.kind, "mediaUrl": row.prompt.resolve_media_url(request),
-                "text": row.text_raw, "audioUrl": request.build_absolute_uri(row.audio.url) if row.audio else None,
+                "text": row.text_raw, "audioUrl": f"/api/private/contributions/{row.pk}/audio" if row.audio else None,
                 "district": district.get("name") if isinstance(district.get("name"), str) else None,
                 "createdAt": row.created_at.isoformat(), "updatedAt": row.updated_at.isoformat()}
     response = Response(list_page(rows, params, serialize))

@@ -98,6 +98,4 @@ class ProfileSerializer(serializers.ModelSerializer):
     def get_photoUrl(self, obj):  # noqa: N802 — matches the JSON field name
         if not obj.photo_blob_id:
             return None
-        path = f"/api/blob/{obj.photo_blob.sha256}"
-        request = self.context.get("request")
-        return request.build_absolute_uri(path) if request else path
+        return f"/api/private/profiles/{obj.user_id}/photo"

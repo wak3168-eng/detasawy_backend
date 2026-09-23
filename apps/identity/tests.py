@@ -29,7 +29,8 @@ class AuthThrottleTests(APITestCase):
             "email": "login@example.invalid", "password": "test-password",
         }, format="json")
         self.assertEqual(response.status_code, 200)
-        self.assertIn("token", response.data)
+        self.assertNotIn("token", response.data)
+        self.assertIn("csrfToken", response.data)
 
 
 class ProfileValidationTests(APITestCase):

@@ -1,8 +1,11 @@
 from django.urls import path
 
-from apps.corpus import staff_views, views
+from apps.corpus import media, staff_views, views
 
 urlpatterns = [
+    path("private/contributions/<int:pk>/audio", media.contribution_audio),
+    path("private/profiles/<int:pk>/photo", media.profile_photo),
+    path("media/prompts/<int:pk>", media.prompt_media),
     path("prompts", views.prompts),
     path("prompts/<int:pk>/words", views.prompt_words),
     path("blob/<str:sha>", views.blob),
